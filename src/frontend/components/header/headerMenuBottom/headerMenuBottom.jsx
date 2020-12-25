@@ -22,7 +22,7 @@ const HeaderMenuBottom = () => {
           <li><NavLink to={ROUTES.HOME} exact activeStyle={activeLink}>Главная</NavLink></li>
           <li><NavLink to={ROUTES.ABOUT} activeStyle={activeLink}>О магазине</NavLink></li>
           <li><NavLink to={ROUTES.CATEGORIES} activeStyle={activeLink}>Каталог</NavLink></li>
-          <li><NavLink className={red} to={ROUTES.CLEARANCE_SALE} activeStyle={activeLink}>Распродажа</NavLink></li>
+          <li><NavLink to={ROUTES.CLEARANCE_SALE} activeStyle={activeLink} className={red}>Распродажа</NavLink></li>
           <li><NavLink to={ROUTES.DELIVERY} activeStyle={activeLink}>Доставка и оплата</NavLink></li>
           <li><NavLink to={ROUTES.CONTACTS} activeStyle={activeLink}>Контакты</NavLink></li>
         </ul>

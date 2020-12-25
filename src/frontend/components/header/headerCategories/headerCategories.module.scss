@@ -1,0 +1,26 @@
+.HeaderCategories {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid var(--beige);
+  box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
+  transition: all .5s;
+}
+
+.HeaderCategories li {
+  padding: 23px 12px;
+  transition: all .5s;
+}
+
+.HeaderCategoriesItem:hover {
+  background-color: var(--lightBeige);
+  color: var(--black);
+}
+
+  .HeaderCategories li a {
+  text-transform: uppercase;
+}
+
+.HeaderCategories.active {
+  background-color: var(--beige);
+  color: var(--white);
+}

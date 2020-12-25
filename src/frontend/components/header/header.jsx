@@ -4,6 +4,7 @@ import Hamburger from '@/frontend/components/hamburger'
 import Logo from '@/frontend/components/logo'
 import HeaderMenuTop from '@/frontend/components/header/headerMenuTop'
 import HeaderMenuBottom from '@/frontend/components/header/headerMenuBottom'
+import HeaderCategories from '@/frontend/components/header/headerCategories'
 
 
 const Header = () => {
@@ -20,6 +21,7 @@ const Header = () => {
             <HeaderMenuBottom />
           </div>
         </div>
+        <HeaderCategories />
       </div>
     </div>
   )
