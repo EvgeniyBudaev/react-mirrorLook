@@ -4,6 +4,7 @@ import Header from "@/frontend/components/header";
 import styles from './app.module.scss'
 import {ROUTES} from '@/frontend/routes'
 import EmptyBlockToHomePage from '@/frontend/components/empty/emptyBlockToHomePage'
+import SliderAsNavFor from '@/frontend/components/sliderAsNavFor'
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <div className={styles.content}>
         <Header />
         <EmptyBlockToHomePage />
+        <SliderAsNavFor />
         <Switch>
           <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />
         </Switch>
