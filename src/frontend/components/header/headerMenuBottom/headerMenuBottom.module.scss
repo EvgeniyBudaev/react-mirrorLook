@@ -1,0 +1,63 @@
+.headerMenuBottom {
+  margin-top: 39px;
+  transition: all .5s;
+}
+
+.headerMenuBottom nav ul {
+  display: flex;
+}
+
+.headerMenuBottom nav ul li + li {
+  padding-left: 22px;
+}
+
+.headerMenuBottom nav ul li a:not(.active) {
+  font-size: 18px;
+  line-height: 1.25;
+  transition: all .3s;
+}
+
+.headerMenuBottom nav ul li a.active {
+  font-size: 18px;
+  line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  pointer-events: none;
+  cursor: default;
+}
+
+nav ul li a.active {
+  font-size: 18px;
+  line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  pointer-events: none;
+  cursor: default;
+}
+
+.active {
+  font-size: 18px;
+  line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  pointer-events: none;
+  cursor: default;
+}
+
+a.active {
+  font-size: 18px;
+  line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+.red {
+  color: var(--red);
+}
+
+.headerMenuBottom nav ul li a:not(.active):hover {
+  color: var(--beige);
+}

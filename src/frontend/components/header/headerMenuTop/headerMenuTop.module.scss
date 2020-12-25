@@ -1,0 +1,75 @@
+
+
+.menuTop svg {
+  fill: none;
+}
+
+.menuTop svg,
+.menuTop svg path.icon0,
+.menuTop svg path.icon1 {
+  transition: all .3s;
+}
+
+.icon0 {
+  fill: black;
+}
+
+.icon1 {
+  stroke: black;
+}
+
+.menuTop svg:hover path.icon0 {
+  fill: var(--beige);
+}
+
+.menuTop svg:hover path.icon1 {
+  stroke: var(--beige);
+}
+
+.menuTop.displayOff {
+  display: none;
+}
+
+.menuTop {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuTopButtons {
+  display: flex;
+  align-items: center;
+}
+
+.menuTopButtons li + li {
+  padding-left: 15px;
+}
+
+.menuTopTel {
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 110px;
+  transition: all .3s;
+}
+
+.menuTopTel:hover {
+  color: var(--beige);
+}
+
+.menuTopCity {
+  font-size: 18px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.menuTopCity:hover {
+  color: var(--beige);
+}
+
+.menuTopCity:hover svg path.icon0 {
+  fill: var(--beige);
+}
