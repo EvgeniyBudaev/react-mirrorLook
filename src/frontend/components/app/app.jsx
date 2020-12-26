@@ -14,11 +14,11 @@ const App = () => {
       <div className={styles.content}>
         <Header />
         <EmptyBlockToHomePage />
-        {/*<SliderAsNavFor />*/}
-        <SimpleSlider />
-        <Switch>
-          <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />
-        </Switch>
+        <SliderAsNavFor />
+        {/*<SimpleSlider />*/}
+        {/*<Switch>*/}
+        {/*  <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />*/}
+        {/*</Switch>*/}
       </div>
       <div className={styles.footer}></div>
     </div>
