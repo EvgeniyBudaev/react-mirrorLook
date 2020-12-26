@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react'
+import React, {Component} from 'react'
 import Slider from "react-slick"
 import {Link} from 'react-router-dom'
 import styles from './sliderAsNavFor.module.scss'
@@ -19,7 +19,7 @@ class SliderAsNavFor extends Component {
     super(props);
     this.state = {
       nav1: null,
-      nav2: null
+      nav2: null,
     };
   }
 
