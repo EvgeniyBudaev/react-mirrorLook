@@ -5,7 +5,7 @@ import styles from './app.module.scss'
 import {ROUTES} from '@/frontend/routes'
 import EmptyBlockToHomePage from '@/frontend/components/empty/emptyBlockToHomePage'
 import SliderAsNavFor from '@/frontend/components/sliderAsNavFor'
-import SimpleSlider from '@/frontend/components/slider'
+import SimpleSlider from '@/frontend/components/simpleSlider'
 
 
 const App = () => {
