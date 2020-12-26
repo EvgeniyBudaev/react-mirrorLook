@@ -1,5 +1,18 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from "react"
+import Slider from "react-slick"
+import {Link} from 'react-router-dom'
+import classNames from 'classnames'
+import styles from './sliderAsNavFor.module.scss'
+import './sliderAsNavFor.scss'
+import {ROUTES} from '@/frontend/routes'
+
+import slider1 from '@/assets/images/content/slider-1.jpg'
+import slider2 from '@/assets/images/content/slider-2.jpg'
+import slider3 from '@/assets/images/content/slider-3.jpg'
+
+import slide1 from '@/assets/images/content/slide-1.png'
+import slide2 from '@/assets/images/content/slide-2.png'
+import slide3 from '@/assets/images/content/slide-3.png'
 
 
 class SliderAsNavFor extends Component {
@@ -11,6 +24,8 @@ class SliderAsNavFor extends Component {
     };
   }
 
+  // const hamburger = classNames(styles.item, styles.menuBtn)
+
   componentDidMount() {
     this.setState({
       nav1: this.slider1,
@@ -20,69 +35,75 @@ class SliderAsNavFor extends Component {
 
   render() {
     const settings = {
-      dots: true,
+      // dots: true,
       arrows: true,
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      //centerMode: true,
+      //variableWidth: false,
     };
     return (
-      <div>
-        <h2>Slider Syncing (AsNavFor)</h2>
-        <h4>First Slider</h4>
-        <Slider
-          asNavFor={this.state.nav2}
-          ref={slider => (this.slider1 = slider)}
-          {...settings}
-        >
+      <section className={styles.slider} data-slider="" id="slider">
+        <div className={styles.container}>
           <div>
-            <h3>1</h3>
+
+            <Slider
+              asNavFor={this.state.nav2}
+              ref={slider => (this.slider1 = slider)}
+              className="for"
+              {...settings}
+            >
+                <div className={styles.item}>
+                  <img src={slider1} alt="images" />
+                </div>
+                <div className={styles.item}>
+                  <img src={slider2} alt="images" />
+                </div>
+                <div className={styles.item}>
+                  <img src={slider3} alt="images" />
+                </div>
+            </Slider>
+
+            <Slider
+              asNavFor={this.state.nav1}
+              ref={slider => (this.slider2 = slider)}
+              slidesToShow={3}
+              swipeToSlide={true}
+              focusOnSelect={true}
+              className="nav"
+              arrows={false}
+              dots={true}
+            >
+              <div className={styles.navItem}>
+                <img src={slide1} alt="images" className={styles.navItemImg} />
+              </div>
+              <div className={styles.navItem}>
+                <img src={slide2} alt="images" className={styles.navItemImg} />
+              </div>
+              <div className={styles.navItem}>
+                <img src={slide3} alt="images" className={styles.navItemImg} />
+              </div>
+              <div className={styles.navItem}>
+                <img src={slide1} alt="images" className={styles.navItemImg} />
+              </div>
+              <div className={styles.navItem}>
+                <img src={slide2} alt="images" className={styles.navItemImg} />
+              </div>
+              <div className={styles.navItem}>
+                <img src={slide3} alt="images" className={styles.navItemImg} />
+              </div>
+            </Slider>
+
+            <div className={styles.btn}>
+              <div className={styles.btnLink}>
+                <Link to={ROUTES.CATEGORIES} >Смотреть весь каталог</Link>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-        <h4>Second Slider</h4>
-        <Slider
-          asNavFor={this.state.nav1}
-          ref={slider => (this.slider2 = slider)}
-          slidesToShow={3}
-          swipeToSlide={true}
-          focusOnSelect={true}
-        >
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-      </div>
+        </div>
+      </section>
     );
   }
 

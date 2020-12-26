@@ -7,22 +7,22 @@ const HeaderCategories = () => {
   return (
     <ul className={styles.HeaderCategories}>
       <NavLink to={ROUTES.VENETIAN_MIRRORS}>
-        <li className={styles.HeaderCategoriesItem}>ВЕНЕЦИАНСКИЕ ЗЕРКАЛА</li>
+        <li className={styles.item}>ВЕНЕЦИАНСКИЕ ЗЕРКАЛА</li>
       </NavLink>
       <NavLink to={ROUTES.FLOOR_MIRRORS}>
-        <li className={styles.HeaderCategoriesItem}>НАПОЛЬНЫЕ ЗЕРКАЛА</li>
+        <li className={styles.item}>НАПОЛЬНЫЕ ЗЕРКАЛА</li>
       </NavLink>
       <NavLink to={ROUTES.FRAME_MIRRORS}>
-        <li className={styles.HeaderCategoriesItem}>ЗЕРКАЛА В РАМАХ</li>
+        <li className={styles.item}>ЗЕРКАЛА В РАМАХ</li>
       </NavLink>
       <NavLink to={ROUTES.MIRROR_PANELS}>
-        <li className={styles.HeaderCategoriesItem}>ЗЕРКАЛЬНЫЕ ПАННО</li>
+        <li className={styles.item}>ЗЕРКАЛЬНЫЕ ПАННО</li>
       </NavLink>
       <NavLink to={ROUTES.MIRRORS_SUN}>
-        <li className={styles.HeaderCategoriesItem}>ЗЕРКАЛО-СОЛНЦЕ</li>
+        <li className={styles.item}>ЗЕРКАЛО-СОЛНЦЕ</li>
       </NavLink>
       <NavLink to={ROUTES.CONSOLES}>
-        <li className={styles.HeaderCategoriesItem}>КОНСОЛИ</li>
+        <li className={styles.item}>КОНСОЛИ</li>
       </NavLink>
     </ul>
   )

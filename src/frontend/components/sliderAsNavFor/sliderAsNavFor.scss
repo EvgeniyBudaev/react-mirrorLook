@@ -1,0 +1,64 @@
+.for {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.for .slick-arrow {
+  border: none;
+  width: 35px;
+  height: 70px;
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
+
+.for .slick-prev {
+  background-image: url('../../../assets/images/slider-arrow-left.svg');
+  left: 0;
+  margin-left: 15px;
+}
+
+.for .slick-next {
+  background-image: url('../../../assets/images/slider-arrow-right.svg');
+  right: 0;
+  margin-right: 15px;
+}
+
+
+// Резиновая главная картинка в слайдере
+.slick-slide img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  outline: transparent;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  & li {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  & li.slick-active button {
+    background-color: var(--beige);
+    outline: none;
+  }
+  & button {
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--gray);
+    border: none;
+    outline: none;
+  }
+}
+
+
+

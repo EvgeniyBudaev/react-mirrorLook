@@ -5,7 +5,7 @@ import {Router} from 'react-router-dom'
 import {ConnectedRouter} from 'connected-react-router'
 import 'normalize.css'
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+//import "slick-carousel/slick/slick-theme.css";
 import './index.scss'
 import App from "@/frontend/components/app"
 import store from '@/frontend/redux/store'
