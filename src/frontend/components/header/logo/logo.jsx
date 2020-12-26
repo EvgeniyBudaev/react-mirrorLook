@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {ROUTES} from '@/frontend/routes'
 import styles from './logo.module.scss'
+import './logo.scss'
 
 const Logo = () => {
   return (

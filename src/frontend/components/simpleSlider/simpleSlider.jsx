@@ -2,14 +2,15 @@ import React, {Component} from 'react'
 import Slider from "react-slick";
 import styles from './simpleSlider.module.scss'
 import './simpleSlider.scss'
+import Card from '@/frontend/components/card'
 
 class SimpleSlider extends Component{
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 4,
       slidesToScroll: 1,
     };
 
@@ -19,24 +20,14 @@ class SimpleSlider extends Component{
           <h2 className={styles.title}></h2>
 
           <Slider {...settings}>
-            <div className={styles.card}>
-              <h3>1</h3>
-            </div>
-            <div className={styles.card}>
-              <h3>2</h3>
-            </div>
-            <div className={styles.card}>
-              <h3>3</h3>
-            </div>
-            <div className={styles.card}>
-              <h3>4</h3>
-            </div>
-            <div className={styles.card}>
-              <h3>5</h3>
-            </div>
-            <div className={styles.card}>
-              <h3>6</h3>
-            </div>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </Slider>
 
         </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {Router} from 'react-router-dom'
 import {ConnectedRouter} from 'connected-react-router'
 import 'normalize.css'
 import "slick-carousel/slick/slick.css";

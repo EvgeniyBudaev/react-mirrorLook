@@ -1,4 +1,4 @@
-.HeaderCategories {
+.headerCategories {
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--beige);
@@ -6,7 +6,7 @@
   transition: all .5s;
 }
 
-.HeaderCategories li {
+.headerCategories li {
   padding: 23px 12px;
   transition: all .5s;
 }
@@ -16,11 +16,11 @@
   color: var(--black);
 }
 
-  .HeaderCategories li a {
+.headerCategories li a {
   text-transform: uppercase;
 }
 
-.HeaderCategories.active {
+.headerCategories.active {
   background-color: var(--beige);
   color: var(--white);
 }
