@@ -1,100 +1,93 @@
-import React, { Component } from "react"
+import React, {useEffect, useState} from 'react'
 import Slider from "react-slick"
 import {Link} from 'react-router-dom'
-import classNames from 'classnames'
 import styles from './sliderAsNavFor.module.scss'
 import './sliderAsNavFor.scss'
 import {ROUTES} from '@/frontend/routes'
 
-import slider1 from '@/assets/images/content/slider-1.jpg'
-import slider2 from '@/assets/images/content/slider-2.jpg'
-import slider3 from '@/assets/images/content/slider-3.jpg'
+import slider01 from '@/assets/images/content/slider-1.jpg'
+import slider02 from '@/assets/images/content/slider-2.jpg'
+import slider03 from '@/assets/images/content/slider-3.jpg'
 
-import slide1 from '@/assets/images/content/slide-1.png'
-import slide2 from '@/assets/images/content/slide-2.png'
-import slide3 from '@/assets/images/content/slide-3.png'
+import slide01 from '@/assets/images/content/slide-1.png'
+import slide02 from '@/assets/images/content/slide-2.png'
+import slide03 from '@/assets/images/content/slide-3.png'
 
 
-class SliderAsNavFor extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nav1: null,
-      nav2: null
-    };
-  }
+const SliderAsNavFor = () => {
+  const [nav1, setNav1] = useState(null)
+  const [nav2, setNav2] = useState(null)
+  let slider1
+  let slider2
 
-  // const hamburger = classNames(styles.item, styles.menuBtn)
 
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
-  }
+  useEffect(() => {
+    setNav1(slider1)
+    setNav2(slider2)
+  },[nav1, nav2])
 
-  render() {
-    const settings = {
-      // dots: true,
-      arrows: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      //centerMode: true,
-      //variableWidth: false,
-    };
-    return (
+
+  return (
       <section className={styles.slider} data-slider="" id="slider">
         <div className={styles.container}>
-          <div>
+
 
             <Slider
-              asNavFor={this.state.nav2}
-              ref={slider => (this.slider1 = slider)}
+              asNavFor={nav2}
+              ref={slider => (slider1 = slider)}
               className="for"
-              {...settings}
+              arrows={true}
+              infinite={true}
+              speed={500}
+              slidesToShow={1}
+              slidesToScroll={1}
+              swipeToSlide={true}
+              focusOnSelect={true}
+              swipe={true}
+              touchMove={true}
             >
                 <div className={styles.item}>
-                  <img src={slider1} alt="images" />
+                  <img src={slider01} alt="images" />
                 </div>
                 <div className={styles.item}>
-                  <img src={slider2} alt="images" />
+                  <img src={slider02} alt="images" />
                 </div>
                 <div className={styles.item}>
-                  <img src={slider3} alt="images" />
+                  <img src={slider03} alt="images" />
                 </div>
             </Slider>
 
             <Slider
-              asNavFor={this.state.nav1}
-              ref={slider => (this.slider2 = slider)}
+              asNavFor={nav1}
+              ref={slider => (slider2 = slider)}
               slidesToShow={3}
-              swipeToSlide={true}
-              focusOnSelect={true}
               className="nav"
               arrows={false}
               dots={true}
               centerMode={true}
               variableWidth={false}
+              swipeToSlide={true}
+              focusOnSelect={true}
+              swipe={true}
+              touchMove={true}
             >
               <div className={styles.navItem}>
-                <img src={slide1} alt="images" className={styles.navItemImg} />
+                <img src={slide01} alt="images" className={styles.navItemImg} />
               </div>
               <div className={styles.navItem}>
-                <img src={slide2} alt="images" className={styles.navItemImg} />
+                <img src={slide02} alt="images" className={styles.navItemImg} />
               </div>
               <div className={styles.navItem}>
-                <img src={slide3} alt="images" className={styles.navItemImg} />
+                <img src={slide03} alt="images" className={styles.navItemImg} />
               </div>
               <div className={styles.navItem}>
-                <img src={slide1} alt="images" className={styles.navItemImg} />
+                <img src={slide01} alt="images" className={styles.navItemImg} />
               </div>
               <div className={styles.navItem}>
-                <img src={slide2} alt="images" className={styles.navItemImg} />
+                <img src={slide02} alt="images" className={styles.navItemImg} />
               </div>
               <div className={styles.navItem}>
-                <img src={slide3} alt="images" className={styles.navItemImg} />
+                <img src={slide03} alt="images" className={styles.navItemImg} />
               </div>
             </Slider>
 
@@ -103,11 +96,11 @@ class SliderAsNavFor extends Component {
                 <Link to={ROUTES.CATEGORIES} >Смотреть весь каталог</Link>
               </div>
             </div>
-          </div>
+
         </div>
       </section>
     );
-  }
+
 
 }
 

@@ -60,5 +60,14 @@
   }
 }
 
+.slick-list, .slick-track {
+  touch-action: none;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  touch-action: none;
+}
+
 
 
