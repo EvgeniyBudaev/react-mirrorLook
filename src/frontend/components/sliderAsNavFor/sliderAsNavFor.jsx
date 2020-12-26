@@ -75,6 +75,8 @@ class SliderAsNavFor extends Component {
               className="nav"
               arrows={false}
               dots={true}
+              centerMode={true}
+              variableWidth={false}
             >
               <div className={styles.navItem}>
                 <img src={slide1} alt="images" className={styles.navItemImg} />
