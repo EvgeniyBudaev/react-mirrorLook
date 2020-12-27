@@ -31,12 +31,29 @@ class SliderAsNavFor extends Component {
   }
 
   render() {
+    const settingsNav = {
+      responsive: [{
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        }
+      },
+        {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 1,
+            centerMode: true,
+          }
+        },]
+    };
+
     return (
       <section className={styles.slider} data-slider="" id="slider">
         <div className={styles.container}>
 
           <Slider
-            asNavFor={this.nav2}
+            asNavFor={this.state.nav2}
             ref={slider => (this.slider1 = slider)}
             className="for"
             arrows={true}
@@ -59,7 +76,7 @@ class SliderAsNavFor extends Component {
           </Slider>
 
           <Slider
-            asNavFor={this.nav1}
+            asNavFor={this.state.nav1}
             ref={slider => (this.slider2 = slider)}
             slidesToShow={3}
             className="nav"
@@ -69,6 +86,7 @@ class SliderAsNavFor extends Component {
             variableWidth={false}
             swipeToSlide={true}
             focusOnSelect={true}
+            {...settingsNav}
           >
             <div className={styles.navItem}>
               <img src={slide01} alt="images" className={styles.navItemImg} />

@@ -15,7 +15,7 @@ const App = () => {
     <div className={styles.wrapper}>
       <div className={styles.content}>
         {/*<Header />*/}
-        {/*<SliderAsNavFor />*/}
+        <SliderAsNavFor />
         <SliderNewProducts />
         <Banner />
         <SliderPopularProducts />
