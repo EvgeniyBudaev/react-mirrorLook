@@ -7,6 +7,7 @@ import SliderAsNavFor from '@/frontend/components/sliderAsNavFor'
 import SliderNewProducts from '@/frontend/components/sliderNewProducts'
 import Banner from '@/frontend/components/banner'
 import SliderPopularProducts from '@/frontend/components/sliderPopularProducts'
+import Footer from '@/frontend/components/footer'
 
 
 const App = () => {
@@ -22,7 +23,9 @@ const App = () => {
         {/*  <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />*/}
         {/*</Switch>*/}
       </div>
-      <div className={styles.footer}></div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   )
 }

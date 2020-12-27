@@ -1,0 +1,10 @@
+.footerLogoAndSocial {}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.socialIcon + .socialIcon {
+  margin-left: 10px;
+}
