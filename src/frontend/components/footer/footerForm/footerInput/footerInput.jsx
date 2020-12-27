@@ -1,26 +1,39 @@
 import React from 'react'
-import {makeStyles} from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
+import {withStyles} from '@material-ui/core/styles';
 import styles from './footerInput.module.scss'
 
-const useStyles = makeStyles((theme) => ({
+const CssTextField = withStyles({
   root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
+    '& label.Mui-focused': {
+      color: 'rgba(0, 0, 0, 0.54)',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'rgba(176, 151, 106, 1)',
+    },
+    '& .MuiOutlinedInput-root': {
+      borderRadius: '0',
+      '& fieldset': {
+        borderColor: 'rgba(176, 151, 106, 1)',
+        borderWidth: '2px',
+      },
+      '&:hover fieldset': {
+        borderColor: 'rgba(145, 125, 87, 1)',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'rgba(176, 151, 106, 1)',
+      },
     },
   },
-}));
+})(TextField);
+
 
 const FooterInput = (props) => {
-  const classes = useStyles();
-  const {label} = props
+  const {id, label} = props
 
   return (
     <div className={styles.formInputAndLabel}>
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="outlined-basic" label={label} variant="outlined" />
-      </form>
+        <CssTextField className={styles.input} id={id} label={label} variant="outlined" required />
     </div>
   )
 }

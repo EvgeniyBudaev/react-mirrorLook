@@ -9,7 +9,7 @@ import Twitter from '@/frontend/components/footer/footerLogoAndSocial/twitter'
 const FooterLogoAndSocial = () => {
   return (
     <>
-      <div>
+      <div className={styles.footerLogo}>
         <FooterLogo />
       </div>
       <div className={styles.socialIcons}>

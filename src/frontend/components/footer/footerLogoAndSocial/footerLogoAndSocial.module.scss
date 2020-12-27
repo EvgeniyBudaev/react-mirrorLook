@@ -1,10 +1,27 @@
 .footerLogoAndSocial {}
 
+.footerLogo svg {
+  cursor: pointer;
+}
+
 .socialIcons {
   display: flex;
   justify-content: flex-end;
 }
 
+.socialIcon {
+  cursor: pointer;
+}
+
 .socialIcon + .socialIcon {
   margin-left: 10px;
+}
+
+.socialIcon svg {
+  fill: var(--black);
+  transition: all .3s;
+}
+
+.socialIcon:hover svg {
+  fill: var(--beige);
 }
