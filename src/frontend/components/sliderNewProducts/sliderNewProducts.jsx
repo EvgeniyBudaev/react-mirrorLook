@@ -8,7 +8,7 @@ const SliderNewProducts = () => {
       <div className="sliderContainer">
         <h2 className="sliderTitle">Новые поступления</h2>
         <div className="sliderInner">
-          <SimpleSlider />
+            <SimpleSlider />
         </div>
       </div>
     </section>

@@ -16,7 +16,7 @@ const App = () => {
       <div className={styles.content}>
         {/*<Header />*/}
         {/*<SliderAsNavFor />*/}
-        {/*<SliderNewProducts />*/}
+        <SliderNewProducts />
         {/*<Banner />*/}
         {/*<SliderPopularProducts />*/}
         {/*<Switch>*/}
