@@ -38,3 +38,20 @@
   color: var(--beige);
   text-align: end;
 }
+
+.item {}
+
+@media (max-width: 900px) {
+  .inner {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 735px) {
+  .item {
+    margin: 0 auto;
+  }
+  .centerInfo  {
+    margin-bottom: 49px;
+  }
+}

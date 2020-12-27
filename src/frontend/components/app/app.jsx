@@ -17,8 +17,8 @@ const App = () => {
         {/*<Header />*/}
         {/*<SliderAsNavFor />*/}
         <SliderNewProducts />
-        {/*<Banner />*/}
-        {/*<SliderPopularProducts />*/}
+        <Banner />
+        <SliderPopularProducts />
         {/*<Switch>*/}
         {/*  <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />*/}
         {/*</Switch>*/}

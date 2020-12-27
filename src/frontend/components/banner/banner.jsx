@@ -9,15 +9,15 @@ const Banner = () => {
     <section className={styles.banner}>
       <div className={styles.container}>
         <div className={styles.inner}>
-          <div>
+          <div className={styles.item}>
             <img src={banner1} alt="images" />
           </div>
-          <div>
+          <div className={styles.item}>
             <div className={styles.centerText}>При покупке Зеркало + консоль</div>
             <div className={styles.centerDiscount}>СКИДКА 10%</div>
             <div className={styles.centerInfo}>*Подробности уточняйте у менеджера</div>
           </div>
-          <div>
+          <div className={styles.item}>
             <img src={banner2} alt="images" />
           </div>
         </div>
