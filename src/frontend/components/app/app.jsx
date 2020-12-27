@@ -14,11 +14,11 @@ const App = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <Header />
-        <SliderAsNavFor />
-        <SliderNewProducts />
-        <Banner />
-        <SliderPopularProducts />
+        {/*<Header />*/}
+        {/*<SliderAsNavFor />*/}
+        {/*<SliderNewProducts />*/}
+        {/*<Banner />*/}
+        {/*<SliderPopularProducts />*/}
         {/*<Switch>*/}
         {/*  <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />*/}
         {/*</Switch>*/}

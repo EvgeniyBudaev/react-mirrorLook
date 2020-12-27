@@ -3,8 +3,12 @@ import styles from './footer.module.scss'
 import FooterLogoAndSocial from '@/frontend/components/footer/footerLogoAndSocial/footerLogoAndSocial'
 import FooterForm from '@/frontend/components/footer/footerForm'
 import FooterPolitics from '@/frontend/components/footer/footerPolitics'
+import classNames from 'classnames'
 
 const Footer = () => {
+  const footerLogoAndSocial = classNames(styles.innerItem, styles.footerLogoAndSocial)
+  const footerContacts = classNames(styles.innerItem, styles.footerContacts)
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -38,7 +42,7 @@ const Footer = () => {
               <li><a href="#">Новинки</a></li>
             </ul>
           </div>
-          <div className={styles.innerItem}>
+          <div className={footerContacts}>
             <h4>Контакты</h4>
             <ul>
               <li><a href="tel:89261113968">+7 (926) 111-39-68</a></li>
@@ -46,7 +50,7 @@ const Footer = () => {
               <li><p>г. Москва, ул. Рябиновая, 43 корпус 2</p></li>
             </ul>
           </div>
-          <div className={styles.innerItem}>
+          <div className={footerLogoAndSocial}>
             <FooterLogoAndSocial />
           </div>
         </div>

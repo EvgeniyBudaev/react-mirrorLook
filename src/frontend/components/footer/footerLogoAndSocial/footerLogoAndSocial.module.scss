@@ -1,5 +1,3 @@
-.footerLogoAndSocial {}
-
 .footerLogo svg {
   cursor: pointer;
 }
@@ -25,3 +23,10 @@
 .socialIcon:hover svg {
   fill: var(--beige);
 }
+
+@media (max-width: 1100px) {
+  .socialIcons {
+    justify-content: flex-start;
+  }
+}
+
