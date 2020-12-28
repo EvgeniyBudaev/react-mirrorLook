@@ -27,7 +27,7 @@ const headerStyles = Classnames(styles.header, isOffset ? styles.sticky : null)
 
   return (
     <>
-      <div className={headerStyles}>
+      <div className={headerStyles} data-type="header">
         <div className={styles.container}>
           <div className={styles.innerMenuAndLogo}>
             <div className={styles.logoAndHamburger}>

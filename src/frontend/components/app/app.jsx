@@ -8,6 +8,8 @@ import SliderNewProducts from '@/frontend/components/sliderNewProducts'
 import Banner from '@/frontend/components/banner'
 import SliderPopularProducts from '@/frontend/components/sliderPopularProducts'
 import Footer from '@/frontend/components/footer'
+import Sidebar from '@/frontend/components/sidebar'
+import Bar from '@/frontend/components/proSidebar'
 
 
 const App = () => {
@@ -25,6 +27,8 @@ const App = () => {
       </div>
       <div className={styles.footer}>
         <Footer />
+        <Sidebar />
+        <Bar />
       </div>
     </div>
   )
