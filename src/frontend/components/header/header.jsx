@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useCallback, useState} from 'react'
+import {useDispatch} from 'react-redux'
 import styles from './header.module.scss'
 import Hamburger from '@/frontend/components/hamburger'
 import Logo from '@/frontend/components/header/logo'
@@ -6,9 +7,17 @@ import HeaderMenuTop from '@/frontend/components/header/headerMenuTop'
 import HeaderMenuBottom from '@/frontend/components/header/headerMenuBottom'
 import HeaderCategories from '@/frontend/components/header/headerCategories'
 import EmptyBlockToHomePage from '@/frontend/components/header/empty'
+import useWindowResize from '@/frontend/hooks/useWindowScroll'
+import {handleWindowScroll} from '@/frontend/redux/actions/actions'
 
 
 const Header = () => {
+  const dispatch = useDispatch()
+  const [offset, setOffset] = useState(100);
+  const isOffset = useWindowResize({timerLength: offset});
+  console.log('isOffset', isOffset)
+  // useCallback(() => dispatch(handleWindowScroll()), [dispatch])
+
 
   return (
     <>
