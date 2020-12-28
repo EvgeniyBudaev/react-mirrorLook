@@ -38,4 +38,14 @@
   transition: all .5s;
 }
 
+@media (max-width: 768px) {
+  .menu {
+    height: 46px;
+    justify-content: flex-start;
+  }
+  .innerMenuAndLogo {
+    align-items: start;
+  }
+}
+
 

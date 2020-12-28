@@ -6,3 +6,9 @@
   margin: 0 auto;
   text-align: center;
 }
+
+@media (max-width: 760px) {
+  .footerPolitics {
+    font-size: 12px;
+  }
+}

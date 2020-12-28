@@ -22,7 +22,7 @@ const Card = () => {
         </div>
         <div className={styles.footer}>
           <div className={styles.footerTop}>
-            <div>Цена:</div>
+            <div className={styles.footerBottomLabel}>Цена:</div>
             <button className={styles.footerTopBasket}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.9341 10.8333H6.1233V9.16666H12.9341L15.2491 4.99999H4.36414V3.33333H16.6658C16.9608 3.33333 17.2341 3.48999 17.3841 3.74416C17.5341 3.99916 17.5383 4.31333 17.3941 4.57166L14.3916 9.97583C14.0983 10.5042 13.54 10.8333 12.9341 10.8333Z" fill="#B0976A"/>

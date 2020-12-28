@@ -74,6 +74,10 @@
   justify-content: space-between;
 }
 
+.footerBottomLabel {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .footerBottomNum {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -81,6 +85,15 @@
 
 .footerBottomStatus {
   color: #b0976a;
+}
+
+@media (max-width: 760px) {
+  .contentTitle,
+  .footerBottomLabel,
+  .footerBottomNum,
+  .footerBottomStatus {
+    font-size: 12px;
+  }
 }
 
 

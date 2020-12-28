@@ -11,42 +11,17 @@
   padding-left: 22px;
 }
 
-.headerMenuBottom nav ul li a:not(.active) {
+a {
   font-size: 18px;
   line-height: 1.25;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a:not(.active) {
   transition: all .3s;
 }
 
-.headerMenuBottom nav ul li a.active {
-  font-size: 18px;
-  line-height: 1.25;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  pointer-events: none;
-  cursor: default;
-}
-
-nav ul li a.active {
-  font-size: 18px;
-  line-height: 1.25;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  pointer-events: none;
-  cursor: default;
-}
-
 .active {
-  font-size: 18px;
-  line-height: 1.25;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  pointer-events: none;
-  cursor: default;
-}
-
-a.active {
-  font-size: 18px;
-  line-height: 1.25;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   pointer-events: none;
@@ -58,6 +33,19 @@ a.active {
   color: var(--red);
 }
 
-.headerMenuBottom nav ul li a:not(.active):hover {
+a:not(.active):hover {
   color: var(--beige);
+}
+
+@media (max-width: 1200px) {
+  a.active,
+  a:not(.active) {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerMenuBottom a {
+    display: none;
+  }
 }

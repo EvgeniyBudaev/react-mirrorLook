@@ -36,6 +36,12 @@ form {
   fill: var(--black);
 }
 
+@media (max-width: 760px) {
+  .formTitle {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 600px) {
   form {
     flex-direction: column;

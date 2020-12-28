@@ -71,3 +71,32 @@
 .menuTopCity:hover svg path.icon0 {
   fill: var(--beige);
 }
+
+@media (max-width: 1200px) {
+  .menuTopCity,
+  .menuTopTel {
+    font-size: 12px;
+  }
+  .menuTopCity svg,
+  .menuTopButtons svg {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuTopCity,
+  .menuTopTel {
+    display: none;
+  }
+  .menuTopButtons {
+    position: relative;
+    top: 4px;
+  }
+}
+
+@media (max-width: 500px) {
+  .menuTopButtons {
+    display: none;
+  }
+}

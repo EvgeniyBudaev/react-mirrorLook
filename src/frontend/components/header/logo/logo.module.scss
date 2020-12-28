@@ -4,3 +4,28 @@
   transition: all .5s;
 }
 
+@media (max-width: 1200px) {
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo svg {
+    max-width: 200px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo svg {
+    position: relative;
+    top: -5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo svg {
+    height: 32px;
+    max-width: 135px;
+  }
+}
+
