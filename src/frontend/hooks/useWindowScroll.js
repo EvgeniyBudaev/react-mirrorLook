@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 
-const useWindowResize = ({ timerLength }) => {
+const useWindowScroll = ({ timerLength }) => {
   //console.log("useWindowResize");
 
   const [isOffset, setIsOffset] = useState(false);
@@ -26,7 +26,7 @@ const useWindowResize = ({ timerLength }) => {
   return isOffset;
 };
 
-export default useWindowResize
+export default useWindowScroll
 
 
 // Вариант №2 с использованием lodash
