@@ -6,6 +6,7 @@ const useWindowScroll = ({ timerLength }) => {
   const [isOffset, setIsOffset] = useState(false);
   const timer = useRef();
 
+
   const handleScrollEvent = useCallback(() => {
     const offset = window.pageYOffset;
     setIsOffset(offset > 100);
