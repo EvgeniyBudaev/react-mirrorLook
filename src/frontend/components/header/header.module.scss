@@ -12,6 +12,13 @@
   transition: all .5s;
 }
 
+.sticky {}
+
+.header.sticky {
+  padding: 15px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
 .container {
   /*ширина контейнера чистая 1170px*/
   max-width: 1200px;

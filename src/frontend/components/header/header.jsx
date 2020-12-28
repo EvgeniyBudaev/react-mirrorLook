@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
+import Classnames from 'classnames'
 import styles from './header.module.scss'
 import Hamburger from '@/frontend/components/hamburger'
 import Logo from '@/frontend/components/header/logo'
@@ -7,7 +8,7 @@ import HeaderMenuTop from '@/frontend/components/header/headerMenuTop'
 import HeaderMenuBottom from '@/frontend/components/header/headerMenuBottom'
 import HeaderCategories from '@/frontend/components/header/headerCategories'
 import EmptyBlockToHomePage from '@/frontend/components/header/empty'
-import useWindowResize from '@/frontend/hooks/useWindowScroll'
+import useWindowScroll from '@/frontend/hooks/useWindowScroll'
 import {handleWindowScroll} from '@/frontend/redux/actions/actions'
 
 
@@ -15,18 +16,18 @@ const Header = () => {
   const offset = useSelector(state => state.windowScrollReducer.offset)
   const dispatch = useDispatch()
 
-  const isOffset = useWindowResize({timerLength: offset});
+  const isOffset = useWindowScroll({timerLength: offset});
   console.log('isOffset', isOffset)
 
   useEffect(() => {
     dispatch(handleWindowScroll(isOffset))
   }, [isOffset, dispatch])
 
-
+const headerStyles = Classnames(styles.header, isOffset ? styles.sticky : null)
 
   return (
     <>
-      <div className={styles.header} data-header="sticky" data-type="header">
+      <div className={headerStyles}>
         <div className={styles.container}>
           <div className={styles.innerMenuAndLogo}>
             <div className={styles.logoAndHamburger}>

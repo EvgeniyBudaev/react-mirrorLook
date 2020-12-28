@@ -8,20 +8,15 @@ const useWindowResize = ({ timerLength }) => {
 
   const handleScrollEvent = useCallback(() => {
     const offset = window.pageYOffset;
-    let isNewOffset;
-    offset > 100 ? isNewOffset = true : isNewOffset = false
-    //console.log("handleScrollEvent", isNewOffset);
-    setIsOffset(isNewOffset);
+    setIsOffset(offset > 100);
   }, []);
 
   const handleScroll = useCallback(() => {
-    // console.log("TIMER");
     if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(handleScrollEvent, timerLength);
+      timer.current = setTimeout(handleScrollEvent, timerLength);
   }, [handleScrollEvent, timerLength]);
 
   useEffect(() => {
-    //console.log("setting effect");
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
