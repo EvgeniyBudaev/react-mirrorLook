@@ -7,6 +7,7 @@ const initialState = {
 
 const windowScrollReducer = (state = initialState, action) => {
   const {type, payload} = action
+  console.log('payload', payload)
 
   switch (type) {
     case IS_WINDOW_SCROLL: {
