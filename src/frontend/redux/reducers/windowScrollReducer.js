@@ -1,15 +1,16 @@
 import {IS_WINDOW_SCROLL} from '@/frontend/redux/constants'
 
 const initialState = {
-  offset: false
+  offset: 100,
+  isOffset: false
 }
 
 const windowScrollReducer = (state = initialState, action) => {
-  const {type} = action
+  const {type, payload} = action
 
   switch (type) {
     case IS_WINDOW_SCROLL: {
-      return {...state, offset: true}
+      return {...state, isOffset: payload.isOffset}
     }
     default:
       return state

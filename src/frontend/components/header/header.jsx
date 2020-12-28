@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react'
-import {useDispatch} from 'react-redux'
+import React, {useCallback, useEffect, useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import styles from './header.module.scss'
 import Hamburger from '@/frontend/components/hamburger'
 import Logo from '@/frontend/components/header/logo'
@@ -12,11 +12,17 @@ import {handleWindowScroll} from '@/frontend/redux/actions/actions'
 
 
 const Header = () => {
+  const offset = useSelector(state => state.windowScrollReducer.offset)
   const dispatch = useDispatch()
-  const [offset, setOffset] = useState(100);
+
+  useEffect(() => {
+    dispatch(handleWindowScroll(isOffset))
+  }, [isOffset])
+
   const isOffset = useWindowResize({timerLength: offset});
   console.log('isOffset', isOffset)
-  // useCallback(() => dispatch(handleWindowScroll()), [dispatch])
+
+
 
 
   return (
