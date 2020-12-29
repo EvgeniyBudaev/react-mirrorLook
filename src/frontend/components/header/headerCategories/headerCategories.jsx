@@ -6,7 +6,7 @@ import {ROUTES} from '@/frontend/routes'
 const HeaderCategories = () => {
   return (
     <ul className={styles.headerCategories}>
-      <NavLink to={ROUTES.VENETIAN_MIRRORS}>
+      <NavLink to={ROUTES.CATALOG}>
         <li className={styles.item}>ВЕНЕЦИАНСКИЕ ЗЕРКАЛА</li>
       </NavLink>
       <NavLink to={ROUTES.FLOOR_MIRRORS}>

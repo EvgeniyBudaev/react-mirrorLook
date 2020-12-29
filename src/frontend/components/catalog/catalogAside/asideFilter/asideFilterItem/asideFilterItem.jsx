@@ -16,6 +16,9 @@ const AsideFilterItem = () => {
       </div>
       <div className={styles.content}>
         <AsideFilterItemContentBox />
+        <AsideFilterItemContentBox />
+        <AsideFilterItemContentBox />
+        <AsideFilterItemContentBox />
       </div>
     </div>
   )

@@ -9,6 +9,8 @@ const AsideFilter = () => {
         <form>
           <ul>
             <AsideFilterItem />
+            <AsideFilterItem />
+            <AsideFilterItem />
           </ul>
         </form>
       </div>

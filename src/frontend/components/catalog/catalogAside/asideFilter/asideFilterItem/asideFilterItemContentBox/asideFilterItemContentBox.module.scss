@@ -1,3 +1,5 @@
-.asideFilterItemContentBox {
-  margin: 10px 0;
+.asideFilterItemContentBox {}
+
+.asideFilterItemContentBox .MuiFormControlLabel-root .MuiIconButton-root {
+  padding: 2px !important;
 }

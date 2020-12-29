@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Slider from "react-slick";
 import '@/frontend/components/simpleSlider/simpleSlider.scss'
-import Card from '@/frontend/components/card'
+import CardSlider from '@/frontend/components/cardSlider'
 
 class SimpleSlider extends Component{
   render() {
@@ -36,14 +36,14 @@ class SimpleSlider extends Component{
     return (
       <>
           <Slider {...settings}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+              <CardSlider />
+              <CardSlider />
+              <CardSlider />
+              <CardSlider />
+              <CardSlider />
+              <CardSlider />
+              <CardSlider />
+              <CardSlider />
           </Slider>
       </>
     )

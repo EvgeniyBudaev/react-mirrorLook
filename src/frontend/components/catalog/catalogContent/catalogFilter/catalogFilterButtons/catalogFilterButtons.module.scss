@@ -1,0 +1,28 @@
+.catalogFilterButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+  & button.active svg path {
+    fill: var(--beige);
+    stroke: var(--beige);
+  }
+  & button + button {
+    margin-left: 20px;
+  }
+}
+
+.btnLine {}
+
+.btnGrid {}
+
+.button {}
+
+.active {}

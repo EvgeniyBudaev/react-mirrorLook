@@ -1,17 +1,16 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { green } from '@material-ui/core/colors'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
-import ClassNames from 'classnames'
 import styles from '@/frontend/components/catalog/catalogAside/asideFilter/asideFilterItem/asideFilterItemContentBox/asideFilterItemContentBox.module.scss'
 
 const GreenCheckbox = withStyles({
   root: {
-    color: green[400],
+    padding: '5px',
+    color: '#B0976A',
     '&$checked': {
-      color: green[600],
+      color: '#B0976A',
     },
   },
   checked: {},
