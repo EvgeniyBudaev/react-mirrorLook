@@ -6,6 +6,7 @@ export const ROUTES = {
   CLEARANCE_SALE: "/clearance_sale/",
   DELIVERY: "/delivery",
   BASKET: "/basket/",
+  CATALOG: "/catalog",
 
   VENETIAN_MIRRORS: "/venetian_mirrors/",
   FLOOR_MIRRORS: "/floor_mirrors/",

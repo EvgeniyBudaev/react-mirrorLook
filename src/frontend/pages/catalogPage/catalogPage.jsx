@@ -1,16 +1,14 @@
 import React from 'react'
 import Breadcrumbs from '@/frontend/components/breadcrumbs'
-import About from '@/frontend/components/about'
+import Catalog from '@/frontend/components/catalog'
 
-const AboutPage = () => {
+const CatalogPage = () => {
   return (
     <>
       <Breadcrumbs />
-      <About />
+      <Catalog />
     </>
   )
 }
 
-export default AboutPage
-
-
+export default CatalogPage
