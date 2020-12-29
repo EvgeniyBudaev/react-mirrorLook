@@ -12,3 +12,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 950px) {
+  .inner {
+    flex-direction: column;
+  }
+}

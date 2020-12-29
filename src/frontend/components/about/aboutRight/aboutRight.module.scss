@@ -2,3 +2,16 @@
   max-width: 312px;
   width: 100%;
 }
+
+@media (max-width: 950px) {
+  .aboutRight {
+    position: static;
+    top: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .aboutRight {
+    margin: 0 auto;
+  }
+}
