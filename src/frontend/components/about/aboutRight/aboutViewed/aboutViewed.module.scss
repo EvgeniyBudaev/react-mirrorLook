@@ -1,0 +1,10 @@
+.aboutViewed {
+  border: 1px solid var(--beige);
+  padding: 20px;
+  & .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+}
+

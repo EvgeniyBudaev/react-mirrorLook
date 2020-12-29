@@ -190,7 +190,9 @@ module.exports = {
       // Loading images
       {
         test: /\.jpe?g$|\.gif$|\.png|\.ico|\.svg$/,
-        use: ['file-loader'],
+        use: {
+          loader: 'url-loader',
+        },
       },
       // Loading fonts
       {

@@ -1,0 +1,17 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.contentTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: var(--beige);
+  margin-bottom: 10px;
+}
+
+.contentPrice {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
