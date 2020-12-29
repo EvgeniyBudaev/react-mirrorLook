@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './aboutRight.module.scss'
+import styles from '@/frontend/components/about/aboutRight/aboutRight.module.scss'
 import AboutBasket from '@/frontend/components/about/aboutRight/aboutBasket'
 
 const AboutRight = () => {

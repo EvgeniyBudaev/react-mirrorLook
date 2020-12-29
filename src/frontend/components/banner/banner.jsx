@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './banner.module.scss'
+import styles from '@/frontend/components/banner/banner.module.scss'
 
-import banner1 from '../../../assets/images/content/banner-1.png'
-import banner2 from '../../../assets/images/content/banner-2.png'
+import banner1 from '@/assets/images/content/banner-1.png'
+import banner2 from '@/assets/images/content/banner-2.png'
 
 const Banner = () => {
   return (

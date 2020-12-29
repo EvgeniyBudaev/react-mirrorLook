@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './card.module.scss'
+import styles from '@/frontend/components/card/card.module.scss'
 
 import product1 from '@/assets/images/content/product-1.jpg'
 

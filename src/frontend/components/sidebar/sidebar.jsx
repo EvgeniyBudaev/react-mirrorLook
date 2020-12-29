@@ -2,7 +2,7 @@ import React from 'react'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import styles from './sidebar.module.scss'
+import styles from '@/frontend/components/sidebar/sidebar.module.scss'
 import SidebarItem from '@/frontend/components/sidebar/sidebarItem'
 
 const Sidebar = () => {

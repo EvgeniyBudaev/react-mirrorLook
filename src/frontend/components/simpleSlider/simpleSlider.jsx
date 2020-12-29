@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Slider from "react-slick";
-import './simpleSlider.scss'
+import '@/frontend/components/simpleSlider/simpleSlider.scss'
 import Card from '@/frontend/components/card'
 
 class SimpleSlider extends Component{

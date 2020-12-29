@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './footerLogoAndSocial.module.scss'
+import styles from '@/frontend/components/footer/footerLogoAndSocial/footerLogoAndSocial.module.scss'
 import FooterLogo from '@/frontend/components/footer/footerLogoAndSocial/footerLogo'
 import Facebook from '@/frontend/components/footer/footerLogoAndSocial/facebook'
 import VK from '@/frontend/components/footer/footerLogoAndSocial/vk'

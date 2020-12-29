@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import styles from './headerMenuTop.module.scss'
+import styles from '@/frontend/components/header/headerMenuTop/headerMenuTop.module.scss'
 import {ROUTES} from '@/frontend/routes'
 import IconBasket from '@/frontend/components/UI/icons/iconBasket'
 import IconHeart from '@/frontend/components/UI/icons/iconHeart'

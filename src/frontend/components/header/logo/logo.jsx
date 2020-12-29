@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {ROUTES} from '@/frontend/routes'
-import styles from './logo.module.scss'
-import './logo.scss'
+import styles from '@/frontend/components/header/logo/logo.module.scss'
+import '@/frontend/components/header/logo/logo.scss'
 
 const Logo = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './hamburger.module.scss'
+import styles from '@/frontend/components/hamburger/hamburger.module.scss'
 import classNames from 'classnames'
 
 const Hamburger = () => {

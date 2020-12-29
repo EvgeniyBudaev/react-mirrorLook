@@ -2,7 +2,7 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import {ROUTES} from '@/frontend/routes'
 import classNames from 'classnames'
-import styles from './headerMenuBottom.module.scss'
+import styles from '@/frontend/components/header/headerMenuBottom/headerMenuBottom.module.scss'
 
 const HeaderMenuBottom = () => {
   const red = classNames(styles.red)

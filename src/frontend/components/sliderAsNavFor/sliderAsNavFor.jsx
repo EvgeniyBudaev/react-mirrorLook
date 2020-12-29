@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import Slider from "react-slick"
 import {Link} from 'react-router-dom'
-import styles from './sliderAsNavFor.module.scss'
-import './sliderAsNavFor.scss'
+import styles from '@/frontend/components/sliderAsNavFor/sliderAsNavFor.module.scss'
+import '@/frontend/components/sliderAsNavFor/sliderAsNavFor.scss'
 import {ROUTES} from '@/frontend/routes'
 
 import slider01 from '@/assets/images/content/slider-1.jpg'

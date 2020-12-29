@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './footer.module.scss'
+import classNames from 'classnames'
+import styles from '@/frontend/components/footer/footer.module.scss'
 import FooterLogoAndSocial from '@/frontend/components/footer/footerLogoAndSocial/footerLogoAndSocial'
 import FooterForm from '@/frontend/components/footer/footerForm'
 import FooterPolitics from '@/frontend/components/footer/footerPolitics'
-import classNames from 'classnames'
 
 const Footer = () => {
   const footerLogoAndSocial = classNames(styles.innerItem, styles.footerLogoAndSocial)

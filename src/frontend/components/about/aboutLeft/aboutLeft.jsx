@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './aboutLeft.module.scss'
+import styles from '@/frontend/components/about/aboutLeft/aboutLeft.module.scss'
 
 const AboutLeft = () => {
   return (

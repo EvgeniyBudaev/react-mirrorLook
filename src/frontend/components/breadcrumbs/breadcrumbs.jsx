@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import ClassNames from 'classnames'
-import styles from './breadcrumbs.module.scss'
+import styles from '@/frontend/components/breadcrumbs/breadcrumbs.module.scss'
 import {ROUTES} from '@/frontend/routes'
 
 const Breadcrumbs = () => {

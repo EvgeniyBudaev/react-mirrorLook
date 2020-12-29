@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './about.module.scss'
+import styles from '@/frontend/components/about/about.module.scss'
 import AboutLeft from '@/frontend/components/about/aboutLeft'
 import AboutRight from '@/frontend/components/about/aboutRight'
 
