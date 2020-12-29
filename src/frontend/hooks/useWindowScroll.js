@@ -1,10 +1,9 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 
 const useWindowScroll = ({ timerLength }) => {
-  //console.log("useWindowResize");
 
   const [isOffset, setIsOffset] = useState(false);
-  const timer = useRef();
+  const timer = useRef(0);
 
 
   const handleScrollEvent = useCallback(() => {

@@ -17,7 +17,7 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const isOffset = useWindowScroll({timerLength: offset});
-  console.log('isOffset', isOffset)
+  //console.log('isOffset', isOffset)
 
   useEffect(() => {
     dispatch(handleWindowScroll(isOffset))

@@ -1,0 +1,81 @@
+.container {
+  /*ширина контейнера чистая 1170px*/
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.breadcrumbs {
+  margin-bottom: 50px;
+}
+
+.list {
+  background-color: var(--white);
+  display: inline-block;
+  padding: 2px 8px;
+  position: relative;
+}
+
+.list::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 98%;
+  background-color: var(--beige);
+  bottom: -20px;
+}
+
+.listItem {
+  display: inline-block;
+  padding-right: 16px;
+  margin-right: 10px;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: var(--black);
+  text-transform: none;
+}
+
+.listItem a {
+  text-transform: none;
+  transition: all .3s;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+}
+
+.listItem a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  transition: all .3s;
+}
+
+.listItem:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.listItem::after {
+  content: '/';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+}
+
+.listItem:last-child::after {
+  display: none;
+}
+
+.listItem a:hover {
+  &::before {
+    width: 100%;
+  }
+}

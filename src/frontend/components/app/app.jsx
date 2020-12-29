@@ -1,36 +1,19 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
-import Header from "@/frontend/components/header";
-import styles from './app.module.scss'
 import {ROUTES} from '@/frontend/routes'
-import SliderAsNavFor from '@/frontend/components/sliderAsNavFor'
-import SliderNewProducts from '@/frontend/components/sliderNewProducts'
-import Banner from '@/frontend/components/banner'
-import SliderPopularProducts from '@/frontend/components/sliderPopularProducts'
-import Footer from '@/frontend/components/footer'
-import Sidebar from '@/frontend/components/sidebar'
-import Bar from '@/frontend/components/proSidebar'
+import MainLayout from '@/frontend/layouts/mainLayout'
+import HomePage from '@/frontend/pages/homePage'
+import AboutPage from '@/frontend/pages/aboutPage'
 
 
 const App = () => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>
-        <Header />
-        <SliderAsNavFor />
-        <SliderNewProducts />
-        <Banner />
-        <SliderPopularProducts />
-        {/*<Switch>*/}
-        {/*  <Route path={ROUTES.HOME} component={() => <h1>Главная страница</h1>} exact  />*/}
-        {/*</Switch>*/}
-      </div>
-      <div className={styles.footer}>
-        <Footer />
-        <Sidebar />
-        <Bar />
-      </div>
-    </div>
+    <MainLayout>
+      <Switch>
+        <Route path={ROUTES.HOME} component={HomePage} exact  />
+        <Route path={ROUTES.ABOUT} component={AboutPage} exact  />
+      </Switch>
+    </MainLayout>
   )
 }
 
