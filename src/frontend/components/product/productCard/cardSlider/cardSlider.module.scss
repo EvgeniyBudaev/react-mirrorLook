@@ -1,0 +1,32 @@
+.cardSlider {
+  max-width: 315px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cardSliderProduct {
+  & .slick-arrow {
+    border: none;
+    width: 35px;
+    height: 52px;
+    font-size: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+  }
+  & .slick-next {
+    background-image: url('../../../../../assets/images/icon-arrow-gray-right.svg');
+    background-repeat: no-repeat;
+    right: -50px;
+  }
+  & .slick-prev {
+    background-image: url('../../../../../assets/images/icon-arrow-gray-left.svg');
+    background-repeat: no-repeat;
+    left: -40px;
+  }
+}
