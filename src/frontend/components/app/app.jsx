@@ -7,6 +7,7 @@ import AboutPage from '@/frontend/pages/aboutPage'
 import CategoriesPage from '@/frontend/pages/categoriesPage'
 import Catalog from '@/frontend/components/catalog'
 import Basket from '@/frontend/components/basket/basket'
+import ProductPage from '@/frontend/pages/productPage/productPage'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path={ROUTES.CATEGORIES} component={CategoriesPage} exact  />
         <Route path={ROUTES.CATALOG} component={Catalog} exact  />
         <Route path={ROUTES.BASKET} component={Basket} exact  />
+        <Route path={ROUTES.PRODUCT} component={ProductPage} exact  />
       </Switch>
     </MainLayout>
   )

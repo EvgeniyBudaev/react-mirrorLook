@@ -8,6 +8,7 @@ export const ROUTES = {
   BASKET: "/basket/",
   CATALOG: "/catalog/",
   ORDER: "/order/",
+  PRODUCT: "/product/",
 
   VENETIAN_MIRRORS: "/venetian_mirrors/",
   FLOOR_MIRRORS: "/floor_mirrors/",

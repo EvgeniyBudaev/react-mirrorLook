@@ -8,6 +8,7 @@ import {ROUTES} from '@/frontend/routes'
 import slider01 from '@/assets/images/content/slider-1.jpg'
 import slider02 from '@/assets/images/content/slider-2.jpg'
 import slider03 from '@/assets/images/content/slider-3.jpg'
+import slider04 from '@/assets/images/content/slider-4.jpg'
 
 import slide01 from '@/assets/images/content/slide-1.png'
 import slide02 from '@/assets/images/content/slide-2.png'
@@ -83,6 +84,9 @@ class SliderAsNavFor extends Component {
             </div>
             <div className={styles.item}>
               <img src={slider03} alt="images" />
+            </div>
+            <div className={styles.item}>
+              <img src={slider04} alt="images" />
             </div>
           </Slider>
 

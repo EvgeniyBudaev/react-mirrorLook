@@ -1,7 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import {ROUTES} from '@/frontend/routes'
 import styles from '@/frontend/components/card/card.module.scss'
 
 import product1 from '@/assets/images/content/product-1.jpg'
+
 
 const Card = () => {
   return (
@@ -16,7 +19,9 @@ const Card = () => {
             </svg>
           </button>
           <div className={styles.contentImg}>
-            <img src={product1} alt="images" />
+            <Link to={ROUTES.PRODUCT}>
+              <img src={product1} alt="images" />
+            </Link>
           </div>
           <p className={styles.contentTitle}>Венецианское зеркало Laura (Лаура)</p>
         </div>
