@@ -4,9 +4,10 @@ export const ROUTES = {
   CATEGORIES: "/categories/",
   CONTACTS: "/contacts/",
   CLEARANCE_SALE: "/clearance_sale/",
-  DELIVERY: "/delivery",
+  DELIVERY: "/delivery/",
   BASKET: "/basket/",
-  CATALOG: "/catalog",
+  CATALOG: "/catalog/",
+  ORDER: "/order/",
 
   VENETIAN_MIRRORS: "/venetian_mirrors/",
   FLOOR_MIRRORS: "/floor_mirrors/",
