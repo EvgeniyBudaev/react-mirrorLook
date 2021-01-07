@@ -9,6 +9,7 @@ export const ROUTES = {
   CATALOG: "/catalog/",
   ORDER: "/order/",
   PRODUCT: "/product/",
+  CHECKOUT: "/checkout/",
 
   VENETIAN_MIRRORS: "/venetian_mirrors/",
   FLOOR_MIRRORS: "/floor_mirrors/",
@@ -17,3 +18,4 @@ export const ROUTES = {
   MIRRORS_SUN: "/mirrors_sun/",
   CONSOLES: "/consoles/",
 };
+
