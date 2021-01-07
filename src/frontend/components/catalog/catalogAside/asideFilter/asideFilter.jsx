@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from '@/frontend/components/catalog/catalogAside/asideFilter/asideFilter.module.scss'
-import AsideFilterItem from '@/frontend/components/catalog/catalogAside/asideFilter/asideFilterItem'
+import styles from './asideFilter.module.scss'
+import AsideFilterItem from './asideFilterItem'
+
 
 const AsideFilter = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import SimpleSlider from '@/frontend/components/simpleSlider'
-import '@/frontend/components/sliderNewProducts/sliderNewProducts.scss'
+import './sliderNewProducts.scss'
+import SimpleSlider from '../simpleSlider'
 
 const SliderNewProducts = () => {
   return (

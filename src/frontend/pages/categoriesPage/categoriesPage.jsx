@@ -1,6 +1,6 @@
 import React from 'react'
-import Breadcrumbs from '@/frontend/components/breadcrumbs'
-import Categories from '@/frontend/components/categories/categories'
+import Breadcrumbs from '../../components/breadcrumbs'
+import Categories from '../../components/categories/categories'
 
 const CategoriesPage = () => {
   return (

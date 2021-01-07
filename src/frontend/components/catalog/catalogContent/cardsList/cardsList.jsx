@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '@/frontend/components/catalog/catalogContent/cardsList/cardsList.module.scss'
-import Card from '@/frontend/components/card'
+import styles from './cardsList.module.scss'
+import Card from '../../../card'
 
 
 const CardsList = () => {

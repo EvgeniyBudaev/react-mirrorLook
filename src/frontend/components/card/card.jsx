@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {ROUTES} from '@/frontend/routes'
-import styles from '@/frontend/components/card/card.module.scss'
+import styles from './card.module.scss'
+import {ROUTES} from '../../routes'
 
-import product1 from '@/assets/images/content/product-1.jpg'
+import product1 from '../../../assets/images/content/product-1.jpg'
 
 
 const Card = () => {

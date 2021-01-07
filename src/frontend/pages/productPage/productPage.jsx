@@ -1,7 +1,7 @@
 import React from 'react'
-import Breadcrumbs from '@/frontend/components/breadcrumbs'
-import Product from '@/frontend/components/product'
-import SliderSimilarProducts from '@/frontend/components/sliderSimilarProducts'
+import Breadcrumbs from '../../components/breadcrumbs'
+import Product from '../../components/product'
+import SliderSimilarProducts from '../../components/sliderSimilarProducts'
 
 const ProductPage = () => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react'
-import Breadcrumbs from '@/frontend/components/breadcrumbs'
-import Catalog from '@/frontend/components/catalog'
+import Breadcrumbs from '../../components/breadcrumbs'
+import Catalog from '../../components/catalog'
+
 
 const CatalogPage = () => {
   return (

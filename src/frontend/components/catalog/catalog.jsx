@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from '@/frontend/components/catalog/catalog.module.scss'
-import CatalogTop from '@/frontend/components/catalog/catalogTop/catalogTop'
-import CatalogAside from '@/frontend/components/catalog/catalogAside'
-import CatalogContent from '@/frontend/components/catalog/catalogContent'
+import styles from './catalog.module.scss'
+import CatalogTop from './catalogTop/catalogTop'
+import CatalogAside from './catalogAside'
+import CatalogContent from './catalogContent'
 
 const Catalog = () => {
   return (

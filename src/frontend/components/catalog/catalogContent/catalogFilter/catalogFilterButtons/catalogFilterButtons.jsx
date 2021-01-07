@@ -1,6 +1,6 @@
 import React from 'react'
 import ClassNames from 'classnames'
-import styles from '@/frontend/components/catalog/catalogContent/catalogFilter/catalogFilterButtons/catalogFilterButtons.module.scss'
+import styles from './catalogFilterButtons.module.scss'
 
 const CatalogFilterButtons = () => {
   const btnLine = ClassNames(styles.btnLine, styles.button)

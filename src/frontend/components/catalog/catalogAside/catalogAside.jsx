@@ -1,7 +1,8 @@
 import React from 'react'
 import ClassNames from 'classnames'
-import styles from '@/frontend/components/catalog/catalogAside/catalogAside.module.scss'
-import AsideFilter from '@/frontend/components/catalog/catalogAside/asideFilter'
+import styles from './catalogAside.module.scss'
+import AsideFilter from './asideFilter'
+
 
 
 const CatalogAside = () => {

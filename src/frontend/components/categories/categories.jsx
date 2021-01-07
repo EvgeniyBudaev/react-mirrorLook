@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from '@/frontend/components/categories/categories.module.scss'
-import CategoriesCard from '@/frontend/components/categories/categoriesCard'
-import LineInfo from '@/frontend/components/lineInfo'
+import styles from './categories.module.scss'
+import CategoriesCard from './categoriesCard'
+import LineInfo from '../lineInfo'
+
 
 const Categories = () => {
   return (

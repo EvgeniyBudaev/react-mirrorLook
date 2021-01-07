@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import Slider from "react-slick";
-import '@/frontend/components/simpleSlider/simpleSlider.scss'
-import CardSlider from '@/frontend/components/cardSlider'
+import './simpleSlider.scss'
+import CardSlider from '../cardSlider'
+
 
 class SimpleSlider extends Component{
   render() {

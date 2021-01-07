@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from '@/frontend/components/about/aboutRight/aboutViewed/aboutViewedItem/aboutViewedItem.module.scss'
+import styles from './aboutViewedItem.module.scss'
 
-import images1 from '@/assets/images/content/about-1.png'
+import images1 from '../../../../../../assets/images/content/about-1.png'
 
 
 const AboutViewedItem = () => {

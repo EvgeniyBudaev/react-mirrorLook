@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from '@/frontend/components/catalog/catalogContent/catalogContent.module.scss'
-import CatalogFilter from '@/frontend/components/catalog/catalogContent/catalogFilter/catalogFilter'
-import CardsList from '@/frontend/components/catalog/catalogContent/cardsList'
-import PaginationUI from '@/frontend/components/paginationUI'
+import styles from './catalogContent.module.scss'
+import CatalogFilter from './catalogFilter/catalogFilter'
+import CardsList from './cardsList'
+import PaginationUI from '../../paginationUI'
+
 
 const CatalogContent = () => {
   return (

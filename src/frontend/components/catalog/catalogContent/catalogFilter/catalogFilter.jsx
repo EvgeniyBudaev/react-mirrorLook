@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from '@/frontend/components/catalog/catalogContent/catalogFilter/catalogFilter.module.scss'
-import CatalogFilterButtons from '@/frontend/components/catalog/catalogContent/catalogFilter/catalogFilterButtons'
+import styles from './catalogFilter.module.scss'
+import CatalogFilterButtons from './catalogFilterButtons'
+
 
 const CatalogFilter = () => {
   return (

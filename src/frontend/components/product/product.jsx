@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from '@/frontend/components/product/product.module.scss'
-import ProductCard from '@/frontend/components/product/productCard'
+import styles from './product.module.scss'
+import ProductCard from './productCard'
+
 
 const Product = () => {
   return (

@@ -1,11 +1,12 @@
 import React from 'react'
-import styles from '@/frontend/components/product/productCard/productCard.module.scss'
+import styles from './productCard.module.scss'
 
-import iconFavorite from '@/assets/images/icon-favorite.svg'
-import wallet from '@/assets/images/wallet.png'
-import visa from '@/assets/images/visa.png'
-import master from '@/assets/images/master.png'
-import CardSlider from '@/frontend/components/product/productCard/cardSlider'
+import iconFavorite from '../../../../assets/images/icon-favorite.svg'
+import wallet from '../../../../assets/images/wallet.png'
+import visa from '../../../../assets/images/visa.png'
+import master from '../../../../assets/images/master.png'
+import CardSlider from '../../cardSlider'
+
 
 const ProductCard = () => {
   return (

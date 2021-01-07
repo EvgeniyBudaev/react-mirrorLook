@@ -1,10 +1,11 @@
 import React from 'react'
-import styles from '@/frontend/components/footer/footerLogoAndSocial/footerLogoAndSocial.module.scss'
-import FooterLogo from '@/frontend/components/footer/footerLogoAndSocial/footerLogo'
-import Facebook from '@/frontend/components/footer/footerLogoAndSocial/facebook'
-import VK from '@/frontend/components/footer/footerLogoAndSocial/vk'
-import Instagram from '@/frontend/components/footer/footerLogoAndSocial/instagram'
-import Twitter from '@/frontend/components/footer/footerLogoAndSocial/twitter'
+import styles from './footerLogoAndSocial.module.scss'
+import FooterLogo from './footerLogo'
+import Facebook from './facebook'
+import VK from './vk'
+import Instagram from './instagram'
+import Twitter from './twitter'
+
 
 const FooterLogoAndSocial = () => {
   return (

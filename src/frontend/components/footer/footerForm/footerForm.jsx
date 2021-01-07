@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '@/frontend/components/footer/footerForm/footerForm.module.scss'
-import FooterInput from '@/frontend/components/footer/footerForm/footerInput'
+import styles from './footerForm.module.scss'
+import FooterInput from './footerInput'
 
 
 const FooterForm = () => {

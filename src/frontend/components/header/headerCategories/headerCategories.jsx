@@ -1,7 +1,8 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import styles from '@/frontend/components/header/headerCategories/headerCategories.module.scss'
-import {ROUTES} from '@/frontend/routes'
+import styles from './headerCategories.module.scss'
+import {ROUTES} from '../../../routes'
+
 
 const HeaderCategories = () => {
   return (

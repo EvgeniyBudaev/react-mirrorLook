@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/frontend/components/footer/footerPolitics/footerPolitics.module.scss'
+import styles from './footerPolitics.module.scss'
 
 const FooterPolitics = () => {
   return (

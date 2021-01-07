@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {ROUTES} from '@/frontend/routes'
-import styles from '@/frontend/components/categories/categoriesCard/categoriesCard.module.scss'
+import styles from './categoriesCard.module.scss'
+import {ROUTES} from '../../../routes'
 
-import images1 from '@/assets/images/content/catalog-1.jpg'
+import images1 from '../../../../assets/images/content/catalog-1.jpg'
+
 
 const CategoriesCard = () => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from '@/frontend/components/product/productCard/cardSlider/cardSlider.module.scss'
-import SliderAsNavFor from '@/frontend/components/sliderAsNavFor'
+import styles from './cardSlider.module.scss'
+import SliderAsNavFor from '../../../sliderAsNavFor'
+
 
 const CardSlider = () => {
   return (

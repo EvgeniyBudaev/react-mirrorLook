@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/frontend/components/catalog/catalogTop/catalogTop.module.scss'
+import styles from './catalogTop.module.scss'
 
 const CatalogTop = () => {
   return (

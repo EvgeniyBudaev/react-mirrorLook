@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/frontend/components/lineInfo/lineInfo.module.scss'
+import styles from './lineInfo.module.scss'
 
 const LineInfo = () => {
   return (

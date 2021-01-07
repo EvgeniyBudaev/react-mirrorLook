@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 import Slider from "react-slick"
 import {Link} from 'react-router-dom'
-import styles from '@/frontend/components/sliderAsNavFor/sliderAsNavFor.module.scss'
-import '@/frontend/components/sliderAsNavFor/sliderAsNavFor.scss'
-import {ROUTES} from '@/frontend/routes'
+import styles from './sliderAsNavFor.module.scss'
+import './sliderAsNavFor.scss'
+import {ROUTES} from '../../routes'
 
-import slider01 from '@/assets/images/content/slider-1.jpg'
-import slider02 from '@/assets/images/content/slider-2.jpg'
-import slider03 from '@/assets/images/content/slider-3.jpg'
-import slider04 from '@/assets/images/content/slider-4.jpg'
+import slider01 from '../../../assets/images/content/slider-1.jpg'
+import slider02 from '../../../assets/images/content/slider-2.jpg'
+import slider03 from '../../../assets/images/content/slider-3.jpg'
+import slider04 from '../../../assets/images/content/slider-4.jpg'
 
-import slide01 from '@/assets/images/content/slide-1.png'
-import slide02 from '@/assets/images/content/slide-2.png'
-import slide03 from '@/assets/images/content/slide-3.png'
+import slide01 from '../../../assets/images/content/slide-1.png'
+import slide02 from '../../../assets/images/content/slide-2.png'
+import slide03 from '../../../assets/images/content/slide-3.png'
 
 
 class SliderAsNavFor extends Component {

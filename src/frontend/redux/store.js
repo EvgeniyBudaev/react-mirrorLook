@@ -3,8 +3,9 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {routerMiddleware} from 'connected-react-router'
 
-import rootReducer from '@/frontend/redux/reducers'
+
 import history from '../../history.js'
+import rootReducer from './reducers'
 
 const enhancer = applyMiddleware(
   thunk,

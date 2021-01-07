@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/frontend/components/UI/button/button.module.scss'
+import styles from './button.module.scss'
 
 const Button = (props) => {
   const {text} = props

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './aboutBasket.module.scss'
-import IconBasket from '@/frontend/components/UI/icons/iconBasket'
+import IconBasket from '../../../UI/icons/iconBasket'
+
 
 const AboutBasket = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '@/frontend/components/about/aboutRight/aboutViewed/aboutViewed.module.scss'
-import AboutViewedItem from '@/frontend/components/about/aboutRight/aboutViewed/aboutViewedItem'
+import styles from './aboutViewed.module.scss'
+import AboutViewedItem from './aboutViewedItem'
 
 
 const AboutViewed = () => {

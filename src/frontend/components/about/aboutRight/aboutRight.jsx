@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from '@/frontend/components/about/aboutRight/aboutRight.module.scss'
-import AboutBasket from '@/frontend/components/about/aboutRight/aboutBasket'
-import AboutViewed from '@/frontend/components/about/aboutRight/aboutViewed'
+import styles from './aboutRight.module.scss'
+import AboutBasket from './aboutBasket'
+import AboutViewed from './aboutViewed'
+
 
 const AboutRight = () => {
   return (

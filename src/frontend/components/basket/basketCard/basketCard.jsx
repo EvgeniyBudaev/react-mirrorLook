@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from '@/frontend/components/basket/basketCard/basketCard.module.scss'
+import styles from './basketCard.module.scss'
 
-import images1 from '@/assets/images/content/venetianMirrors-1.jpg'
+import images1 from '../../../../assets/images/content/venetianMirrors-1.jpg'
+
 
 const BasketCard = () => {
   return (

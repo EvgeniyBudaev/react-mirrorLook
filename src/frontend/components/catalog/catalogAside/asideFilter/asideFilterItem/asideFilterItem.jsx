@@ -1,8 +1,8 @@
 import React from 'react'
 import ClassNames from 'classnames'
-import styles from '@/frontend/components/catalog/catalogAside/asideFilter/asideFilterItem/asideFilterItem.module.scss'
-import AsideFilterItemContentBox
-  from '@/frontend/components/catalog/catalogAside/asideFilter/asideFilterItem/asideFilterItemContentBox'
+import styles from './asideFilterItem.module.scss'
+import AsideFilterItemContentBox from './asideFilterItemContentBox'
+
 
 const AsideFilterItem = () => {
   const headerItem = ClassNames(styles.header, styles.filterItem, styles.active)

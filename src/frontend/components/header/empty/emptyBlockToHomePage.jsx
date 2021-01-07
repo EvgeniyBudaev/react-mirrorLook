@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/frontend/components/header/empty/emptyBlockToHomePage.module.scss'
+import styles from './emptyBlockToHomePage.module.scss'
 
 const EmptyBlockToHomePage = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from '@/frontend/components/basket/basket.module.scss'
-import BasketCard from '@/frontend/components/basket/basketCard'
-import BasketBottom from '@/frontend/components/basket/basketBottom'
+import styles from './basket.module.scss'
+import BasketCard from './basketCard'
+import BasketBottom from './basketBottom'
 
 
 const Basket = () => {

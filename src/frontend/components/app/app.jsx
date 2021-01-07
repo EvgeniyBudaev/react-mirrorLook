@@ -1,13 +1,14 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
-import {ROUTES} from '@/frontend/routes'
-import MainLayout from '@/frontend/layouts/mainLayout'
-import HomePage from '@/frontend/pages/homePage'
-import AboutPage from '@/frontend/pages/aboutPage'
-import CategoriesPage from '@/frontend/pages/categoriesPage'
-import Catalog from '@/frontend/components/catalog'
-import Basket from '@/frontend/components/basket/basket'
-import ProductPage from '@/frontend/pages/productPage/productPage'
+import {ROUTES} from '../../routes'
+import MainLayout from '../../layouts/mainLayout'
+import HomePage from '../../pages/homePage'
+import AboutPage from '../../pages/aboutPage'
+import CategoriesPage from '../../pages/categoriesPage'
+import Catalog from '../catalog'
+import Basket from '../basket/basket'
+import ProductPage from '../../pages/productPage/productPage'
+
 
 
 const App = () => {

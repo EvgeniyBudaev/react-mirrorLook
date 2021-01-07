@@ -1,4 +1,5 @@
-import {IS_WINDOW_SCROLL} from '@/frontend/redux/constants'
+import {IS_WINDOW_SCROLL} from '../constants'
+
 
 export const handleWindowScroll = (isOffset) => ({
   type: IS_WINDOW_SCROLL,

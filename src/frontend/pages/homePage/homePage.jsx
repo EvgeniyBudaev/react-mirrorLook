@@ -1,8 +1,9 @@
 import React from 'react'
-import SliderAsNavFor from '@/frontend/components/sliderAsNavFor'
-import SliderNewProducts from '@/frontend/components/sliderNewProducts'
-import Banner from '@/frontend/components/banner'
-import SliderPopularProducts from '@/frontend/components/sliderPopularProducts'
+import SliderAsNavFor from '../../components/sliderAsNavFor'
+import SliderNewProducts from '../../components/sliderNewProducts'
+import Banner from '../../components/banner'
+import SliderPopularProducts from '../../components/sliderPopularProducts'
+
 
 const HomePage = () => {
   return (

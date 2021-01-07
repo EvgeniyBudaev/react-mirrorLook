@@ -1,8 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import styles from '@/frontend/components/basket/basketBottom/basketBottom.module.scss'
-import {ROUTES} from '@/frontend/routes'
-import Button from '@/frontend/components/UI/button'
+import styles from './basketBottom.module.scss'
+import {ROUTES} from '../../../routes'
+import Button from '../../UI/button'
+
 
 const BasketBottom = () => {
   return (

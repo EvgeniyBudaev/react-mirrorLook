@@ -2,14 +2,15 @@ import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import Classnames from 'classnames'
 import styles from './header.module.scss'
-import Hamburger from '@/frontend/components/hamburger'
-import Logo from '@/frontend/components/header/logo'
-import HeaderMenuTop from '@/frontend/components/header/headerMenuTop'
-import HeaderMenuBottom from '@/frontend/components/header/headerMenuBottom'
-import HeaderCategories from '@/frontend/components/header/headerCategories'
-import EmptyBlockToHomePage from '@/frontend/components/header/empty'
-import useWindowScroll from '@/frontend/hooks/useWindowScroll'
-import {handleWindowScroll} from '@/frontend/redux/actions/actions'
+import useWindowScroll from '../../hooks/useWindowScroll'
+import {handleWindowScroll} from '../../redux/actions/actions'
+import Hamburger from '../hamburger'
+import Logo from './logo'
+import HeaderMenuTop from './headerMenuTop'
+import HeaderMenuBottom from './headerMenuBottom'
+import HeaderCategories from './headerCategories'
+import EmptyBlockToHomePage from './empty'
+
 
 
 const Header = () => {

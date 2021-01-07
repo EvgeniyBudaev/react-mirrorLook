@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/frontend/components/header/headerMenuTop/menuTopCity/menuTopCity.module.scss'
+import styles from './menuTopCity.module.scss'
 
 const MenuTopCity = () => {
   return (

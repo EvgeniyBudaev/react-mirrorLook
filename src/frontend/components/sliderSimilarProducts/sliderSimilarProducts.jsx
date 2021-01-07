@@ -1,5 +1,6 @@
 import React from 'react'
-import SimpleSlider from '@/frontend/components/simpleSlider'
+import SimpleSlider from '../simpleSlider'
+
 
 const SliderSimilarProducts = () => {
   return (

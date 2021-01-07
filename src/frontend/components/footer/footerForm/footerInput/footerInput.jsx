@@ -1,7 +1,7 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import {withStyles} from '@material-ui/core/styles';
-import styles from '@/frontend/components/footer/footerForm/footerInput/footerInput.module.scss'
+import styles from './footerInput.module.scss'
 
 const CssTextField = withStyles({
   root: {

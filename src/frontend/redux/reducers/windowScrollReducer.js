@@ -1,4 +1,5 @@
-import {IS_WINDOW_SCROLL} from '@/frontend/redux/constants'
+import {IS_WINDOW_SCROLL} from '../constants'
+
 
 const initialState = {
   offset: 100,

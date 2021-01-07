@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './mainLayout.module.scss'
-import Header from '@/frontend/components/header'
-import Footer from '@/frontend/components/footer'
-import Sidebar from '@/frontend/components/sidebar'
-import Bar from '@/frontend/components/proSidebar'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+import Sidebar from '../../components/sidebar'
+import Bar from '../../components/proSidebar'
+
 
 const MainLayout = (props) => {
   return (
