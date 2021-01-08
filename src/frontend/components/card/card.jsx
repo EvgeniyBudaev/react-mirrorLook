@@ -41,7 +41,7 @@ const Card = (props) => {
           <div className={styles.footerBottom}>
             <div className={styles.footerBottomNum}>{product.price} ₽</div>
             <div className={styles.footerBottomStatus}>В наличии</div>
-            <div>{amount}</div>
+            <div>{amount || 0}</div>
           </div>
         </div>
       </div>
