@@ -44,8 +44,8 @@ const mapStateToProps = state => ({
     category: state.categoryReducer
 })
 
-const mapDispatchToProps = (dispatch) => ({
-    currentCategory: (currentContent) => dispatch(currentCategory(currentContent))
+const mapDispatchToProps = ({
+    currentCategory
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tabs)

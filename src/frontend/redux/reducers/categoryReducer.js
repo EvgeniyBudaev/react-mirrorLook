@@ -1,5 +1,6 @@
 import {CURRENT_CATEGORY} from "../constants";
 
+
 const categoryReducer = (state = {}, action) => {
     const {type, payload} = action
     //console.log('[categoryReducer][action]', action)
@@ -7,7 +8,7 @@ const categoryReducer = (state = {}, action) => {
 
     switch (type) {
         case CURRENT_CATEGORY:
-            return {...state, payload}
+            return {...state, currentCategory: payload.category}
         default:
             return state
     }

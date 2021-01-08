@@ -10,14 +10,14 @@ const CardsList = (props) => {
 
   return (
     <ul className={styles.cardsList}>
-      {category.payload && category.payload.category.products.map(id => <Card key={id} id={id} />)}
+      {category && category.products.map(id => <Card key={id} id={id} />)}
     </ul>
   )
 }
 
 
 const mapStateToProps = state => ({
-  category: state.categoryReducer
+  category: state.categoryReducer.currentCategory
 })
 
 export default connect(mapStateToProps)(CardsList)
