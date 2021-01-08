@@ -1,19 +1,23 @@
 import React from 'react'
 import styles from './cardsList.module.scss'
 import Card from '../../../card'
+import {connect} from "react-redux";
 
 
-const CardsList = () => {
+const CardsList = (props) => {
+  console.log('[CardsList][props]', props)
+  const {category} = props
+
   return (
     <ul className={styles.cardsList}>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {category.payload && category.payload.category.products.map(product => <Card key={product.id} product={product} />)}
     </ul>
   )
 }
 
-export default CardsList
+
+const mapStateToProps = state => ({
+  category: state.categoryReducer
+})
+
+export default connect(mapStateToProps)(CardsList)
