@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from './basketCard.module.scss'
-
-import images1 from '../../../../assets/images/content/venetianMirrors-1.jpg'
 import {connect} from "react-redux";
 import {decrement, increment, remove} from "../../../redux/actions/actions";
 

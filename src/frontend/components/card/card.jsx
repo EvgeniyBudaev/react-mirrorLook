@@ -50,7 +50,8 @@ const Card = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  amount: state.orderReducer[ownProps.product.id]
+  amount: state.orderReducer[ownProps.id],
+  product: state.productsReducer[ownProps.id],
 })
 
 const mapDispatchToProps = ({

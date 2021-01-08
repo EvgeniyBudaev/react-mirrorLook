@@ -1,9 +1,9 @@
 import {CURRENT_CATEGORY} from "../constants";
 
 const categoryReducer = (state = {}, action) => {
-    console.log('[categoryReducer][action]', action)
     const {type, payload} = action
-    console.log('[categoryReducer][payload]', payload)
+    //console.log('[categoryReducer][action]', action)
+    //console.log('[categoryReducer][payload]', payload)
 
     switch (type) {
         case CURRENT_CATEGORY:

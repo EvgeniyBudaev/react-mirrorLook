@@ -5,6 +5,7 @@ import windowScrollReducer from './windowScrollReducer'
 import orderReducer from "./orderReducer";
 import categoriesReducer from "./categoriesReducer";
 import categoryReducer from "./categoryReducer";
+import productsReducer from "./productsReducer";
 
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   orderReducer,
   categoriesReducer,
   categoryReducer,
+  productsReducer,
 })
 
 export default rootReducer

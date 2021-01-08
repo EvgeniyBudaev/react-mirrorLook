@@ -1,16 +1,16 @@
 import {createSelector} from 'reselect'
 
-const categoriesSelector = state => state.categoriesReducer
+//const categoriesSelector = state => state.categoriesReducer
 const orderSelector = state => state.orderReducer
+const productsSelector = (state) => state.productsReducer
 
 export const orderProductsSelector = createSelector(
-    categoriesSelector,
+    productsSelector,
     orderSelector,
-    (categories, order) => {
-        const AllProducts = categories.flatMap(category => category.products)
+    (products, order) => {
         return Object.keys(order)
             .filter((productId) => order[productId] > 0)
-            .map((productId) => AllProducts.find(product => product.id === productId))
+            .map((productId) => products[productId])
             .map((product) => ({
                 product,
                 amount: order[product.id],

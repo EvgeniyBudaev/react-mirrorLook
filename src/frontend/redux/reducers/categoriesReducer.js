@@ -1,4 +1,4 @@
-import {categories as defaultCategories} from '../../../api/mockapi'
+import {normalizedCategories as defaultCategories} from '../../../api/mockapi'
 
 const categoriesReducer = (categories = defaultCategories, action) => {
     const {type} = action
@@ -10,3 +10,4 @@ const categoriesReducer = (categories = defaultCategories, action) => {
 }
 
 export default categoriesReducer
+
