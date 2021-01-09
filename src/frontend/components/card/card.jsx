@@ -51,6 +51,7 @@ const Card = (props) => {
   )
 }
 
+
 const mapStateToProps = createStructuredSelector({
   amount: productAmountSelector,
   product: productSelector,

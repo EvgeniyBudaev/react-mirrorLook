@@ -8,6 +8,7 @@ import CardsList from "../../catalog/catalogContent/cardsList";
 import {categoriesListSelector, categoriesLoadedSelector, categoriesLoadingSelector} from "../../../redux/selectors";
 import {loadCategories} from "../../../redux/actions/actions";
 import Loader from "../../loader";
+import {createStructuredSelector} from "reselect";
 
 
 const HeaderCategories = (props) => {
@@ -33,12 +34,12 @@ const HeaderCategories = (props) => {
   )
 }
 
-const mapStateToProps = (state, props) => ({
-    categories: categoriesListSelector(state),
-    loading: categoriesLoadingSelector(state, props),
-    loaded: categoriesLoadedSelector(state, props)
-})
 
-export default connect(mapStateToProps, {loadCategories})(HeaderCategories)
+export default connect(  createStructuredSelector({
+        categories: categoriesListSelector,
+        loading: categoriesLoadingSelector,
+        loaded: categoriesLoadedSelector
+    }),
+    { loadCategories })(HeaderCategories)
 
 
