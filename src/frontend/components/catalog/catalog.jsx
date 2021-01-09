@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import styles from './catalog.module.scss'
 import CatalogTop from './catalogTop/catalogTop'
 import CatalogAside from './catalogAside'
@@ -7,7 +7,7 @@ import {connect} from "react-redux"
 import {addMatchParams} from "../../redux/actions/actions"
 
 const Catalog = (props) => {
-    console.log('[Catalog][props]', props)
+    //console.log('[Catalog][props]', props)
     const {match, addMatchParams} = props
     const {restId} = match.params
 

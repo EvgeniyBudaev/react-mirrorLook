@@ -3,7 +3,7 @@ import styles from './cardsList.module.scss'
 import Card from '../../../card'
 import {connect} from "react-redux";
 import {createStructuredSelector} from "reselect";
-import {categorySelector, productsLoadedSelector, productsLoadingSelector} from "../../../../redux/selectors";
+import {categorySelector, productsLoadedSelector, productsLoadingSelector, routingSelector} from "../../../../redux/selectors";
 import {loadProducts} from "../../../../redux/actions/actions";
 import Loader from "../../../loader";
 
@@ -12,8 +12,10 @@ class CardsList extends Component {
   state = { error: null };
 
   loadProductsIfNeeded = () => {
-    console.log('[cardsList][props]', this.props)
-    const { loadProducts, categoryId, loading, loaded } = this.props;
+    const { loadProducts, category, loading, loaded } = this.props;
+    console.log('category', category)
+    const categoryId = category;
+
     if (!loading && !loaded) {
       loadProducts(categoryId);
     }
@@ -34,6 +36,7 @@ class CardsList extends Component {
   }
 
 render() {
+  console.log('[cardsList][props]', this.props)
   const { category, loading } = this.props;
 
   if (loading) {
@@ -43,6 +46,7 @@ render() {
   if (this.state.error) {
     return <p>В этом ресторане меню не доступно</p>;
   }
+
   return (
       <ul className={styles.cardsList}>
         {category && category.products.map(id => <Card key={id} id={id} />)}
@@ -62,7 +66,8 @@ export default connect(
     createStructuredSelector({
       loading: productsLoadingSelector,
       loaded: productsLoadedSelector,
-      categoryId: categorySelector,
+      category: categorySelector,
+      restId: routingSelector,
     }),
     { loadProducts }
 )(CardsList);
