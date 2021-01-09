@@ -1,4 +1,13 @@
-import {INCREMENT, IS_WINDOW_SCROLL, CURRENT_CATEGORY, DECREMENT, REMOVE, LOAD_CATEGORIES, LOAD_PRODUCTS} from '../constants'
+import {
+  INCREMENT,
+  IS_WINDOW_SCROLL,
+  CURRENT_CATEGORY,
+  DECREMENT,
+  REMOVE,
+  LOAD_CATEGORIES,
+  LOAD_PRODUCTS,
+  ADD_MATCH_PARAMS
+} from '../constants'
 
 
 export const handleWindowScroll = (isOffset) => ({
@@ -22,3 +31,6 @@ export const loadProducts = (categoryId) => ({
   CallAPI: `/api/products?id=${categoryId}`,
   categoryId,
 });
+
+
+export const addMatchParams = (restId) => ({type: ADD_MATCH_PARAMS, payload: {restId} });

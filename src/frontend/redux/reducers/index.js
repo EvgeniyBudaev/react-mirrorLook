@@ -6,6 +6,7 @@ import orderReducer from "./orderReducer";
 import categoriesReducer from "./categoriesReducer";
 import categoryReducer from "./categoryReducer";
 import productsReducer from "./productsReducer";
+import routingReducer from "./routingReducer";
 
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   categoriesReducer,
   categoryReducer,
   productsReducer,
+  routingReducer,
 })
 
 export default rootReducer

@@ -12,3 +12,5 @@ export const SUCCESS = '_SUCCESS'
 export const FAILURE = '_FAILURE'
 
 export const CURRENT_CATEGORY = 'CURRENT_CATEGORY'
+
+export const ADD_MATCH_PARAMS = 'ADD_MATCH_PARAMS'

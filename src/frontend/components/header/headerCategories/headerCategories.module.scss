@@ -12,6 +12,11 @@
   transition: all .5s;
 }
 
+.item.active {
+  background-color: var(--beige);
+  color: var(--white);
+}
+
 .item:hover {
   background-color: var(--lightBeige);
   color: var(--black);

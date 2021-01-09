@@ -8,7 +8,9 @@ import {connect} from "react-redux";
 import {currentCategory} from "../../redux/actions/actions";
 
 
-const Tabs = ({tabs, currentCategory}) => {
+const Tabs = (props) => {
+    console.log('[Tabs][props]', props)
+    const {tabs, currentCategory} = props
     const [activeTab, setActiveTab] = useState(0)
     const [currentContent, setCurrentContent] = useState(null)
 

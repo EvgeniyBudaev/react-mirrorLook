@@ -16,11 +16,11 @@ const App = () => {
     <MainLayout>
       <Switch>
         <Route path={ROUTES.HOME} component={HomePage} exact  />
-        <Route path={ROUTES.ABOUT} component={AboutPage} exact  />
-        <Route path={ROUTES.CATEGORIES} component={CategoriesPage} exact  />
-        <Route path={ROUTES.CATALOG} component={Catalog} exact  />
-        <Route path={ROUTES.BASKET} component={Basket} exact  />
-        <Route path={ROUTES.PRODUCT} component={ProductPage} exact  />
+        <Route path={ROUTES.ABOUT} component={AboutPage} />
+        <Route path={ROUTES.CATEGORIES} component={CategoriesPage} />
+        <Route path="/catalog/:restId" component={Catalog} />
+        <Route path={ROUTES.BASKET} component={Basket} />
+        <Route path={ROUTES.PRODUCT} component={ProductPage} />
       </Switch>
     </MainLayout>
   )
