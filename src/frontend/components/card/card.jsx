@@ -4,6 +4,8 @@ import styles from './card.module.scss'
 import {ROUTES} from '../../routes'
 import {connect} from "react-redux";
 import {increment} from "../../redux/actions/actions";
+import {createStructuredSelector} from "reselect";
+import {productAmountSelector, productSelector} from "../../redux/selectors";
 
 
 const Card = (props) => {
@@ -49,10 +51,11 @@ const Card = (props) => {
   )
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  amount: state.orderReducer[ownProps.id],
-  product: state.productsReducer[ownProps.id],
+const mapStateToProps = createStructuredSelector({
+  amount: productAmountSelector,
+  product: productSelector,
 })
+
 
 const mapDispatchToProps = ({
   increment

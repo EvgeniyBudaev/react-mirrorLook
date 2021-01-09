@@ -5,6 +5,7 @@ import {ROUTES} from '../../../routes'
 import {connect} from "react-redux";
 import Tabs from "../../tabs";
 import CardsList from "../../catalog/catalogContent/cardsList";
+import {categoriesListSelector} from "../../../redux/selectors";
 
 
 const HeaderCategories = (props) => {
@@ -25,7 +26,7 @@ const HeaderCategories = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    categories: state.categoriesReducer,
+    categories: categoriesListSelector(state),
 })
 
 export default connect(mapStateToProps)(HeaderCategories)

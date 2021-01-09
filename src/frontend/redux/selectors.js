@@ -1,6 +1,7 @@
 import {createSelector} from 'reselect'
+import {getById} from './utils'
 
-//const categoriesSelector = state => state.categoriesReducer
+const categoriesSelector = state => state.categoriesReducer
 const orderSelector = state => state.orderReducer
 const productsSelector = (state) => state.productsReducer
 
@@ -24,3 +25,11 @@ export const totalSelector = createSelector(
     (orderProducts) =>
         orderProducts.reduce((acc, {subtotal}) => acc + subtotal, 0)
 );
+
+export const categoriesListSelector = createSelector(
+    categoriesSelector,
+    Object.values
+);
+
+export const productAmountSelector = getById(orderSelector, 0);
+export const productSelector = getById(productsSelector);
