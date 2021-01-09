@@ -10,7 +10,6 @@ const Catalog = (props) => {
     console.log('[Catalog][props]', props)
     const {match, addMatchParams} = props
     const {restId} = match.params
-    console.log('[Catalog][restId]', restId)
 
     useEffect(() => {
         addMatchParams(restId)

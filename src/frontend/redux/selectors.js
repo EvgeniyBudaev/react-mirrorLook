@@ -5,7 +5,7 @@ const categoriesSelector = state => state.categoriesReducer.entities
 const orderSelector = state => state.orderReducer
 const productsSelector = (state) => state.productsReducer.entities
 
-export const categorySelector = state => state.categoryReducer.currentCategory.id
+export const categorySelector = state => state.categoryReducer.currentCategory
 
 export const categoriesLoadingSelector = state => state.categoriesReducer.loading
 export const categoriesLoadedSelector = state => state.categoriesReducer.loaded
