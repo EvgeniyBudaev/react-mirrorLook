@@ -8,7 +8,7 @@ const categoryReducer = (state = {}, action) => {
 
     switch (type) {
         case CURRENT_CATEGORY:
-            return {...state, currentCategory: payload.category}
+            return {...state, currentCategory: payload.category, categoryId: payload.category.id}
         default:
             return state
     }

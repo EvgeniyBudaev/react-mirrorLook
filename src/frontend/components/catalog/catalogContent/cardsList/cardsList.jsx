@@ -17,11 +17,11 @@ class CardsList extends Component {
   state = { error: null };
 
   loadProductsIfNeeded = () => {
-    const { loadProducts, categoryId, category, loading, loaded } = this.props;
-    //console.log('category', category)
-    if (!loading && !loaded) {
-      loadProducts(categoryId);
-    }
+    const { loadProducts, categoryId, loading, loaded } = this.props;
+    console.log('[cardsList][categoryId]', categoryId)
+      if (!loading && !loaded) {
+        loadProducts(categoryId);
+      }
   };
 
   componentDidMount() {

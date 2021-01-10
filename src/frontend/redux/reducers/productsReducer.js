@@ -14,6 +14,7 @@ const productsReducer = (state = initialState, action) =>
     produce(state, (draft) => {
         const {type, response, error, categoryId} = action;
         console.log('[productsReducer][action]', action)
+        console.log('[productsReducer][categoryId]', categoryId)
 
         switch (type) {
             case LOAD_PRODUCTS + REQUEST: {

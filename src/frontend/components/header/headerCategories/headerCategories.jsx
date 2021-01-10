@@ -19,14 +19,11 @@ import cn from "classnames";
 
 
 const HeaderCategories = (props) => {
-    //console.log('[HeaderCategories][props]', props)
+    console.log('[HeaderCategories][props]', props)
     const {categories, loadCategories, loading, loaded, currentCategory, routing} = props
-
-
     const {restId} = routing
-    //console.log('restId', restId)
     const category = categories.find(category => category.id === restId)
-    console.log('category', category)
+    console.log('[HeaderCategories][category]', category)
 
     useEffect(() => {
         if (!loading && !loaded) loadCategories()
