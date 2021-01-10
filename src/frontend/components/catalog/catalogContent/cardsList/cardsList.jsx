@@ -3,7 +3,12 @@ import styles from './cardsList.module.scss'
 import Card from '../../../card'
 import {connect} from "react-redux";
 import {createStructuredSelector} from "reselect";
-import {categorySelector, productsLoadedSelector, productsLoadingSelector, routingSelector} from "../../../../redux/selectors";
+import {
+  categoryIdSelector,
+  categorySelector,
+  productsLoadedSelector,
+  productsLoadingSelector
+} from "../../../../redux/selectors";
 import {loadProducts} from "../../../../redux/actions/actions";
 import Loader from "../../../loader";
 
@@ -12,10 +17,8 @@ class CardsList extends Component {
   state = { error: null };
 
   loadProductsIfNeeded = () => {
-    const { loadProducts, category, loading, loaded } = this.props;
-    console.log('category', category)
-    const categoryId = category;
-
+    const { loadProducts, categoryId, category, loading, loaded } = this.props;
+    //console.log('category', category)
     if (!loading && !loaded) {
       loadProducts(categoryId);
     }
@@ -52,22 +55,16 @@ render() {
         {category && category.products.map(id => <Card key={id} id={id} />)}
       </ul>
   )
-}
+ }
 }
 
-
-// const mapStateToProps = state => ({
-//   category: state.categoryReducer.currentCategory
-// })
-//
-// export default connect(mapStateToProps)(CardsList)
 
 export default connect(
     createStructuredSelector({
       loading: productsLoadingSelector,
       loaded: productsLoadedSelector,
       category: categorySelector,
-      restId: routingSelector,
+      categoryId: categoryIdSelector,
     }),
     { loadProducts }
 )(CardsList);
