@@ -9,7 +9,7 @@ import {productAmountSelector, productSelector} from "../../redux/selectors";
 
 
 const Card = (props) => {
-  console.log('[Card][props]', props)
+  //console.log('[Card][props]', props)
   const {product, amount, increment} = props
 
   if (!product) return null;

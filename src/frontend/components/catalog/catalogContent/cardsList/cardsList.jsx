@@ -13,83 +13,80 @@ import {loadProducts} from "../../../../redux/actions/actions";
 import Loader from "../../../loader";
 
 
-class CardsList extends Component {
-  state = { error: null };
-
-  loadProductsIfNeeded = () => {
-    const { loadProducts, categoryId, loading, loaded } = this.props;
-    //console.log('[cardsList][categoryId]', categoryId)
-      if (!loading && !loaded && categoryId) {
-        loadProducts(categoryId);
-      }
-  };
-
-  componentDidMount() {
-     this.loadProductsIfNeeded();
-  };
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.categoryId !== this.props.categoryId) {
-      this.loadProductsIfNeeded();
-    }
-  }
-
-  componentDidCatch(error) {
-    this.setState({ error });
-  }
-
-render() {
-  console.log('[cardsList][props]', this.props)
-  const { category, loading } = this.props;
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  if (this.state.error) {
-    return <p>В этом ресторане меню не доступно</p>;
-  }
-
-  return (
-      <ul className={styles.cardsList}>
-        {category && category.products.map(id => <Card key={id} id={id} />)}
-      </ul>
-  )
- }
-}
-
-// const CardsList = (props) => {
-//   console.log('[CardsList][props]', props)
-//   const { loadProducts, category, loading, loaded } = props;
+// class CardsList extends Component {
+//   state = { error: null };
 //
+//   loadProductsIfNeeded = () => {
+//     const { loadProducts, categoryId, loading, loaded } = this.props;
+//     //console.log('[cardsList][categoryId]', categoryId)
+//       if (!loading && !loaded && categoryId) {
+//         loadProducts(categoryId);
+//       }
+//   };
 //
-//   useEffect(() => {
-//     if (!loading && !loaded && category) {
-//       const categoryId = category.id
-//       loadProducts(categoryId);
+//   componentDidMount() {
+//      this.loadProductsIfNeeded();
+//   };
+//
+//   componentDidUpdate(prevProps, prevState) {
+//     if (prevProps.categoryId !== this.props.categoryId) {
+//       this.loadProductsIfNeeded();
 //     }
-//   }, [loadProducts, category, loading, loaded])
+//   }
 //
+//   componentDidCatch(error) {
+//     this.setState({ error });
+//   }
 //
-//     if (loading && !category) {
-//       return <Loader />;
-//     }
+// render() {
+//   console.log('[cardsList][props]', this.props)
+//   const { category, loading } = this.props;
 //
-//     return (
+//   if (loading) {
+//     return <Loader />;
+//   }
+//
+//   if (this.state.error) {
+//     return <p>В этом ресторане меню не доступно</p>;
+//   }
+//
+//   return (
 //       <ul className={styles.cardsList}>
 //         {category && category.products.map(id => <Card key={id} id={id} />)}
 //       </ul>
-//     )
-//
+//   )
+//  }
 // }
+
+const CardsList = (props) => {
+  console.log('[CardsList][props]', props)
+  const { loadProducts, categoryId, products, loading, loaded } = props;
+
+
+  useEffect(() => {
+    if (!loading && !loaded) {
+      loadProducts(categoryId);
+    }
+  }, [loadProducts, loading, loaded])
+
+
+    if (loading) {
+      return <Loader />;
+    }
+
+    return (
+      <ul className={styles.cardsList}>
+        {products.map(id => <Card key={id} id={id} />)}
+      </ul>
+    )
+
+}
 
 
 export default connect(
     createStructuredSelector({
       loading: productsLoadingSelector,
       loaded: productsLoadedSelector,
-      category: categorySelector,
-      categoryId: categoryIdSelector,
     }),
     { loadProducts }
 )(CardsList);
