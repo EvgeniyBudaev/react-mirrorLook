@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import {NavLink} from 'react-router-dom'
-import {withRouter} from "react-router"
+import {withRouter} from 'react-router'
 import styles from './headerCategories.module.scss'
 import {ROUTES} from '../../../routes'
 import {connect} from "react-redux";
-import Tabs from "../../tabs";
-import CardsList from "../../catalog/catalogContent/cardsList";
 import {
     categoriesListSelector,
     categoriesLoadedSelector,
@@ -15,7 +13,7 @@ import {
 import {currentCategory, loadCategories} from "../../../redux/actions/actions";
 import Loader from "../../loader";
 import {createStructuredSelector} from "reselect";
-import cn from "classnames";
+
 
 
 const HeaderCategories = (props) => {
