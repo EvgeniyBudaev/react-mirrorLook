@@ -1,19 +1,19 @@
 import React, {useEffect} from 'react'
+import {useDispatch} from "react-redux"
+import {useParams} from 'react-router-dom'
 import styles from './catalog.module.scss'
 import CatalogTop from './catalogTop/catalogTop'
 import CatalogAside from './catalogAside'
 import CatalogContent from './catalogContent'
-import {connect} from "react-redux"
 import {addMatchParams} from "../../redux/actions/actions"
-import {withRouter} from 'react-router'
 
-const Catalog = (props) => {
-    console.log('[Catalog][props]', props)
-    const {match, addMatchParams} = props
-    const {restId} = match.params
+const Catalog = () => {
+    // console.log('[Catalog][props]', props)
+    const dispatch = useDispatch()
+    const {restId} = useParams()
 
     useEffect(() => {
-        addMatchParams(restId)
+      dispatch(addMatchParams(restId))
     }, [addMatchParams, restId])
 
   return (
@@ -29,15 +29,10 @@ const Catalog = (props) => {
   )
 }
 
-const mapStateToProps = state => ({
-    stateRouting: state.routingReducer,
-})
+export default Catalog
 
-const mapDispatchToProps = ({
-    addMatchParams
-})
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Catalog))
+
 
 
 

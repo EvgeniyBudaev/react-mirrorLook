@@ -1,19 +1,20 @@
 import React from 'react'
+import {useSelector} from 'react-redux'
 import styles from './catalogContent.module.scss'
 import CatalogFilter from './catalogFilter/catalogFilter'
 import CardsList from './cardsList'
 import PaginationUI from '../../paginationUI'
-import {connect} from 'react-redux'
-import {createStructuredSelector} from 'reselect'
+
 import {
   categorySelector,
 } from '../../../redux/selectors'
 import Loader from '../../loader'
 
 
-const CatalogContent = (props) => {
-  console.log('[CatalogContent][props]', props)
-  const {category} = props
+const CatalogContent = () => {
+  //console.log('[CatalogContent][props]', props)
+  const category = useSelector(categorySelector)
+
   if (!category) return <Loader />
 
   const {id, products} = category
@@ -26,12 +27,6 @@ const CatalogContent = (props) => {
   )
 }
 
-export default connect(
-  createStructuredSelector({
-    category: categorySelector,
-  })
-)(CatalogContent);
-
-
+export default CatalogContent
 
 

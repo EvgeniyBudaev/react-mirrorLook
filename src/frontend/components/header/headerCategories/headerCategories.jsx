@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {NavLink} from 'react-router-dom'
-import {withRouter, useParams} from 'react-router'
 import styles from './headerCategories.module.scss'
 import {ROUTES} from '../../../routes'
 import {connect} from "react-redux";
@@ -35,7 +34,7 @@ const HeaderCategories = (props) => {
       <>
               <ul className={styles.headerCategories}>
                   {categories.map(({id, name}) => (
-                      <NavLink to={`/catalog/${id}`} key={id}>
+                      <NavLink to={ROUTES.CATALOG + id} key={id}>
                       <li
                           key={id}
                           className={styles.item}
@@ -51,12 +50,12 @@ const HeaderCategories = (props) => {
 }
 
 
-export default withRouter(connect(  createStructuredSelector({
+export default connect(  createStructuredSelector({
         categories: categoriesListSelector,
         loading: categoriesLoadingSelector,
         loaded: categoriesLoadedSelector,
         routing: routingSelector
     }),
-    { loadCategories, currentCategory })(HeaderCategories))
+    { loadCategories, currentCategory })(HeaderCategories)
 
 
