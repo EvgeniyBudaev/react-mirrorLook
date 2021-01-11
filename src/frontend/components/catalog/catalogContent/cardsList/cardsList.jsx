@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, useEffect} from 'react'
 import styles from './cardsList.module.scss'
 import Card from '../../../card'
 import {connect} from "react-redux";
@@ -18,14 +18,14 @@ class CardsList extends Component {
 
   loadProductsIfNeeded = () => {
     const { loadProducts, categoryId, loading, loaded } = this.props;
-    console.log('[cardsList][categoryId]', categoryId)
-      if (!loading && !loaded) {
+    //console.log('[cardsList][categoryId]', categoryId)
+      if (!loading && !loaded && categoryId) {
         loadProducts(categoryId);
       }
   };
 
   componentDidMount() {
-    this.loadProductsIfNeeded();
+     this.loadProductsIfNeeded();
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -57,6 +57,31 @@ render() {
   )
  }
 }
+
+// const CardsList = (props) => {
+//   console.log('[CardsList][props]', props)
+//   const { loadProducts, category, loading, loaded } = props;
+//
+//
+//   useEffect(() => {
+//     if (!loading && !loaded && category) {
+//       const categoryId = category.id
+//       loadProducts(categoryId);
+//     }
+//   }, [loadProducts, category, loading, loaded])
+//
+//
+//     if (loading && !category) {
+//       return <Loader />;
+//     }
+//
+//     return (
+//       <ul className={styles.cardsList}>
+//         {category && category.products.map(id => <Card key={id} id={id} />)}
+//       </ul>
+//     )
+//
+// }
 
 
 export default connect(

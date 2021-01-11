@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {NavLink} from 'react-router-dom'
-import {withRouter} from 'react-router'
+import {withRouter, useParams} from 'react-router'
 import styles from './headerCategories.module.scss'
 import {ROUTES} from '../../../routes'
 import {connect} from "react-redux";
@@ -15,18 +15,18 @@ import Loader from "../../loader";
 import {createStructuredSelector} from "reselect";
 
 
-
 const HeaderCategories = (props) => {
-    console.log('[HeaderCategories][props]', props)
+   // console.log('[HeaderCategories][props]', props)
     const {categories, loadCategories, loading, loaded, currentCategory, routing} = props
+
     const {restId} = routing
     const category = categories.find(category => category.id === restId)
-    console.log('[HeaderCategories][category]', category)
+    //console.log('[HeaderCategories][category]', category)
 
     useEffect(() => {
         if (!loading && !loaded) loadCategories()
         if (category) currentCategory(category)
-    }, [category, currentCategory])
+    }, [category, currentCategory, loadCategories, loading, loaded])
 
     if (loading || !loaded) return <Loader />
 

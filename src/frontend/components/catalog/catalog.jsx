@@ -5,9 +5,10 @@ import CatalogAside from './catalogAside'
 import CatalogContent from './catalogContent'
 import {connect} from "react-redux"
 import {addMatchParams} from "../../redux/actions/actions"
+import {withRouter} from 'react-router'
 
 const Catalog = (props) => {
-    //console.log('[Catalog][props]', props)
+    console.log('[Catalog][props]', props)
     const {match, addMatchParams} = props
     const {restId} = match.params
 
@@ -29,14 +30,14 @@ const Catalog = (props) => {
 }
 
 const mapStateToProps = state => ({
-    stateRouting: state.routingReducer
+    stateRouting: state.routingReducer,
 })
 
 const mapDispatchToProps = ({
     addMatchParams
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Catalog)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Catalog))
 
 
 
