@@ -1,5 +1,4 @@
 import React from 'react'
-import { MemoryRouter, Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import Pagination from '@material-ui/lab/Pagination'
 import PaginationItem from '@material-ui/lab/PaginationItem'
@@ -42,21 +41,14 @@ const PaginationUI = (props) => {
   return (
     <div className={styles.pagination}>
       <div className={classes.root}>
-
-
-
-
-                  <Pagination
-                      count={pagesCount}
-                      renderItem={(item) => (
-                        <Link to={`/catalog/${categoryId}${item.page === 1 ? '' : `?page=${item.page}`}`} >
-                          <PaginationItem {...item} />
-                        </Link>
-                      )}
-                  />
-
-
-
+        <Pagination
+          count={pagesCount}
+          renderItem={(item) => (
+            <Link to={`/catalog/${categoryId}${item.page === 1 ? '' : `?page=${item.page}`}`} >
+              <PaginationItem {...item} />
+            </Link>
+          )}
+        />
       </div>
     </div>
   )

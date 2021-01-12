@@ -7,11 +7,12 @@ import {
   categoriesListSelector,
   categoriesLoadedSelector,
   categoriesLoadingSelector,
-  routingSelector,
 } from '../../../redux/selectors'
 import {currentCategory, loadCategories} from '../../../redux/actions/actions'
 import Loader from '../../loader'
 import {createStructuredSelector} from 'reselect'
+import {useLocation} from 'react-router'
+import { matchPath } from "react-router"
 
 const HeaderCategories = (props) => {
   //console.log('[HeaderCategories][props]', props)
@@ -21,18 +22,25 @@ const HeaderCategories = (props) => {
     loading,
     loaded,
     currentCategory,
-    routing,
   } = props
 
-  const {restId} = routing
-  // console.log('restId', restId)
-  const category = categories.find((category) => category.id === restId)
-  //console.log('[HeaderCategories][category]', category)
+  const location = useLocation()
+  const match = matchPath(location.pathname, {
+    path: ROUTES.CATALOG + ":restId",
+    exact: true,
+    strict: false
+  })
+
 
   useEffect(() => {
     if (!loading && !loaded) loadCategories()
-    if (category) currentCategory(category)
-  }, [category, currentCategory, loadCategories, loading, loaded])
+    if (match) {
+      const {restId} = match.params
+      const category = categories.find((category) => category.id === restId)
+      currentCategory(category)
+    }
+
+  }, [match, currentCategory, loadCategories, categories, loading, loaded])
 
   if (loading || !loaded) return <Loader />
 
@@ -60,7 +68,6 @@ export default connect(
     categories: categoriesListSelector,
     loading: categoriesLoadingSelector,
     loaded: categoriesLoadedSelector,
-    routing: routingSelector,
   }),
   {loadCategories, currentCategory}
 )(HeaderCategories)

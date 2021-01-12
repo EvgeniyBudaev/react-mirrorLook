@@ -6,7 +6,6 @@ import {
   REMOVE,
   LOAD_CATEGORIES,
   LOAD_PRODUCTS,
-  ADD_MATCH_PARAMS,
 } from '../constants'
 
 export const handleWindowScroll = (isOffset) => ({
@@ -34,7 +33,4 @@ export const loadProducts = (categoryId) => ({
   categoryId,
 })
 
-export const addMatchParams = (restId) => ({
-  type: ADD_MATCH_PARAMS,
-  payload: {restId},
-})
+
