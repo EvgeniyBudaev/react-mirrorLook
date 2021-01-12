@@ -43,28 +43,20 @@ const PaginationUI = (props) => {
     <div className={styles.pagination}>
       <div className={classes.root}>
 
-        <MemoryRouter initialEntries={[`/catalog/${categoryId}`]} initialIndex={0}>
-          <Route>
-            {({ location }) => {
-              const query = new URLSearchParams(location.search);
-              console.log('query', query)
-              const page = parseInt(query.get('page') || '1', 10);
-              return (
+
+
+
                   <Pagination
-                      page={page}
                       count={pagesCount}
                       renderItem={(item) => (
-                          <PaginationItem
-                              component={Link}
-                              to={`/catalog/${categoryId}${item.page === 1 ? '' : `?page=${item.page}`}`}
-                              {...item}
-                          />
+                        <Link to={`/catalog/${categoryId}${item.page === 1 ? '' : `?page=${item.page}`}`} >
+                          <PaginationItem {...item} />
+                        </Link>
                       )}
                   />
-              );
-            }}
-          </Route>
-        </MemoryRouter>
+
+
+
       </div>
     </div>
   )
