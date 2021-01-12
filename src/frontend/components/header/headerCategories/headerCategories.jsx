@@ -41,8 +41,8 @@ const HeaderCategories = (props) => {
   return (
     <>
       <ul className={styles.headerCategories}>
-        {categories.map(({id, name}) => (
-          <NavLink to={ROUTES.CATALOG + id} key={id}>
+        {categories.map(({id, name, urlCategoryName}) => (
+          <NavLink to={ROUTES.CATALOG + urlCategoryName} key={id}>
             <li
               className={styles.item}
               activeclassname={styles.active}

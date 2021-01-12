@@ -15,7 +15,7 @@ const CatalogContent = (props) => {
   const {location, match} = props
   const categories = useSelector(categoriesListSelector)
   const {restId} = match.params
-  const category = categories.find((category) => category.id === restId)
+  const category = categories.find((category) => category.urlCategoryName === restId)
 
 
   const {currentPage, offset} = getPaginator(location.search)
