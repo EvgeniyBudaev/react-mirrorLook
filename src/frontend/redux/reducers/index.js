@@ -4,7 +4,6 @@ import history from '../../../history'
 import windowScrollReducer from './windowScrollReducer'
 import orderReducer from './orderReducer'
 import categoriesReducer from './categoriesReducer'
-import categoryReducer from './categoryReducer'
 import productsReducer from './productsReducer'
 
 
@@ -13,7 +12,6 @@ const rootReducer = combineReducers({
   windowScrollReducer,
   orderReducer,
   categoriesReducer,
-  categoryReducer,
   productsReducer,
 })
 
