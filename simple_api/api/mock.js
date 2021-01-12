@@ -25,6 +25,7 @@ const normalizedCategories = [
   {
     id: 'ed24fdeb-84c4-4cc5-9518-e768e1e35cb6',
     name: 'Венецианские зеркала',
+    urlName: 'venetian-mirrors',
     products: [
       '87ef588c-c539-45f8-b3bd-bc3b6f63cd20',
       'ba64fb8a-d5e3-4cca-8c19-c1424e8c9a47',
@@ -43,6 +44,7 @@ const normalizedCategories = [
   {
     id: 'cde28e4f-9a85-45a4-8509-cc2b60843775',
     name: 'Напольные зеркала',
+    urlName: 'floor-mirrors',
     products: [
       '2149ef1c-990f-4940-91d6-aa26a0c0277e',
       '9918a242-1bf5-4a4c-b167-9dfb6c5910f8',
