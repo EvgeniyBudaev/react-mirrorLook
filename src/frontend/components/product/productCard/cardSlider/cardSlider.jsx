@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './cardSlider.module.scss'
 import SliderAsNavFor from '../../../sliderAsNavFor'
 
-
 const CardSlider = () => {
   return (
     <div className={styles.cardSlider}>

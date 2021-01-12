@@ -7,7 +7,7 @@
   & a {
     color: var(--beige);
     position: relative;
-    transition: all .3s;
+    transition: all 0.3s;
   }
   & a::before {
     content: '';
@@ -16,7 +16,7 @@
     width: 0;
     height: 1px;
     background-color: var(--beige);
-    transition: all .3s;
+    transition: all 0.3s;
   }
   & a:hover {
     color: var(--lightBeige);
@@ -53,7 +53,7 @@
 .rightInfo a {
   color: var(--beige);
   position: relative;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .rightInfo a::before {
@@ -63,7 +63,7 @@
   width: 100%;
   height: 1px;
   background-color: var(--beige);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .rightInfo a:hover {
@@ -73,7 +73,3 @@
 .rightInfo a:hover::before {
   background-color: var(--lightBeige);
 }
-
-
-
-

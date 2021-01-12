@@ -48,25 +48,22 @@
   margin-right: -50px;
 }
 
-
 // В слайдере элементы выравниваем по равномерно центру
 .sliderInner .slick-slide {
   text-align: center;
 }
 
-
 // В карточках картинки выравниваем по центру
 .sliderInner .slick-slide {
   padding: 4px !important;
 }
-.sliderInner .slick-slide img{
+.sliderInner .slick-slide img {
   margin: 0 auto !important;
 }
 
 //.sliderInner .slick-initialized .slick-slide {
 //  margin-right: 25px !important;
 //}
-
 
 @media (max-width: 1100px) {
   .sliderContainer {
@@ -76,7 +73,12 @@
 
 @media (max-width: 760px) {
   .sliderTitle,
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 16px;
   }
 }
@@ -86,4 +88,3 @@
     text-align: center;
   }
 }
-

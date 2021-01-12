@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './aboutBasket.module.scss'
 import IconBasket from '../../../UI/icons/iconBasket'
 
-
 const AboutBasket = () => {
   return (
     <div className={styles.aboutBasket}>

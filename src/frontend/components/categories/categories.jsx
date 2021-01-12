@@ -3,7 +3,6 @@ import styles from './categories.module.scss'
 import CategoriesCard from './categoriesCard'
 import LineInfo from '../lineInfo'
 
-
 const Categories = () => {
   return (
     <section className={styles.categories}>
@@ -23,7 +22,3 @@ const Categories = () => {
 }
 
 export default Categories
-
-
-
-

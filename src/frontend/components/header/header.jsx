@@ -11,20 +11,21 @@ import HeaderMenuBottom from './headerMenuBottom'
 import HeaderCategories from './headerCategories'
 import EmptyBlockToHomePage from './empty'
 
-
-
 const Header = () => {
-  const offset = useSelector(state => state.windowScrollReducer.offset)
+  const offset = useSelector((state) => state.windowScrollReducer.offset)
   const dispatch = useDispatch()
 
-  const isOffset = useWindowScroll({timerLength: offset});
+  const isOffset = useWindowScroll({timerLength: offset})
   //console.log('isOffset', isOffset)
 
   useEffect(() => {
     dispatch(handleWindowScroll(isOffset))
   }, [isOffset, dispatch])
 
-const headerStyles = Classnames(styles.header, isOffset ? styles.sticky : null)
+  const headerStyles = Classnames(
+    styles.header,
+    isOffset ? styles.sticky : null
+  )
 
   return (
     <>
@@ -49,4 +50,3 @@ const headerStyles = Classnames(styles.header, isOffset ? styles.sticky : null)
 }
 
 export default Header
-

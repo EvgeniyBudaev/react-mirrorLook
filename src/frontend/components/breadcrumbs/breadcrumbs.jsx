@@ -4,7 +4,6 @@ import ClassNames from 'classnames'
 import styles from './breadcrumbs.module.scss'
 import {ROUTES} from '../../routes'
 
-
 const Breadcrumbs = () => {
   const list = ClassNames(styles.list, styles.mobileOverflow)
 

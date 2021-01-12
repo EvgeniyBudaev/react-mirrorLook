@@ -1,7 +1,6 @@
 import React from 'react'
 import SimpleSlider from '../simpleSlider'
 
-
 const SliderPopularProducts = () => {
   return (
     <section className="slider">

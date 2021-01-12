@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .menuTopCity:hover {
@@ -14,7 +14,7 @@
 
 .menuTopCity svg path.icon0 {
   fill: var(--black);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .menuTopCity:hover svg path.icon0 {

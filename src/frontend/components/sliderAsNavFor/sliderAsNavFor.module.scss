@@ -4,7 +4,7 @@
 
 .slider {
   margin: 0 0 20px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .container {
@@ -37,7 +37,13 @@
   padding: 18px 30px;
   cursor: pointer;
   background-color: var(--white);
-  background: linear-gradient(270deg, rgba(233,190,106,1), rgba(146,111,52,1), rgba(255,255,255,1), rgba(255,255,255,1));
+  background: linear-gradient(
+    270deg,
+    rgba(233, 190, 106, 1),
+    rgba(146, 111, 52, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1)
+  );
   background-position: 1% 50%;
   background-size: 300% 300%;
   transition: all 0.7s ease-in-out;
@@ -59,25 +65,3 @@
     padding: 18px 10px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,7 +5,6 @@ import Footer from '../../components/footer'
 import Sidebar from '../../components/sidebar'
 import Bar from '../../components/proSidebar'
 
-
 const MainLayout = (props) => {
   return (
     <>

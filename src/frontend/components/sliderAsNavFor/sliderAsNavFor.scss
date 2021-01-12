@@ -29,7 +29,6 @@
   margin-right: 15px;
 }
 
-
 // Резиновая главная картинка в слайдере
 .slick-slide img {
   max-width: 100%;
@@ -61,7 +60,8 @@
 }
 
 // Общие свойства для всех слайдеров
-.slick-list, .slick-track {
+.slick-list,
+.slick-track {
   touch-action: pan-y;
 }
 
@@ -76,4 +76,3 @@
     justify-content: center;
   }
 }
-

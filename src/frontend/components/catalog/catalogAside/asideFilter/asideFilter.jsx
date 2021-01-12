@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './asideFilter.module.scss'
 import AsideFilterItem from './asideFilterItem'
 
-
 const AsideFilter = () => {
   return (
     <div className={styles.asideFilter}>
@@ -20,5 +19,3 @@ const AsideFilter = () => {
 }
 
 export default AsideFilter
-
-

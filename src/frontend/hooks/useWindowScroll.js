@@ -1,33 +1,30 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import {useState, useCallback, useRef, useEffect} from 'react'
 
-const useWindowScroll = ({ timerLength }) => {
-
-  const [isOffset, setIsOffset] = useState(false);
-  const timer = useRef(0);
-
+const useWindowScroll = ({timerLength}) => {
+  const [isOffset, setIsOffset] = useState(false)
+  const timer = useRef(0)
 
   const handleScrollEvent = useCallback(() => {
-    const offset = window.pageYOffset;
-    setIsOffset(offset > 100);
-  }, []);
+    const offset = window.pageYOffset
+    setIsOffset(offset > 100)
+  }, [])
 
   const handleScroll = useCallback(() => {
-    if (timer.current) clearTimeout(timer.current);
-      timer.current = setTimeout(handleScrollEvent, timerLength);
-  }, [handleScrollEvent, timerLength]);
+    if (timer.current) clearTimeout(timer.current)
+    timer.current = setTimeout(handleScrollEvent, timerLength)
+  }, [handleScrollEvent, timerLength])
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll, timerLength]);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll, timerLength])
 
-  return isOffset;
-};
+  return isOffset
+}
 
 export default useWindowScroll
-
 
 // Вариант №2 с использованием lodash
 

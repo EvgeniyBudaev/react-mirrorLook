@@ -1,6 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Pagination from '@material-ui/lab/Pagination';
+import React from 'react'
+import {makeStyles} from '@material-ui/core/styles'
+import Pagination from '@material-ui/lab/Pagination'
 import styles from './paginationUI.module.scss'
 
 const useStyles = makeStyles((theme) => ({
@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#dfd5c3',
     },
   },
-}));
+}))
 
 const PaginationUI = () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={styles.pagination}>
@@ -40,7 +40,7 @@ const PaginationUI = () => {
         <Pagination count={10} variant="outlined" shape="rounded" />
       </div>
     </div>
-  );
+  )
 }
 
 export default PaginationUI

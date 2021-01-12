@@ -6,31 +6,35 @@ import {
   REMOVE,
   LOAD_CATEGORIES,
   LOAD_PRODUCTS,
-  ADD_MATCH_PARAMS
+  ADD_MATCH_PARAMS,
 } from '../constants'
-
 
 export const handleWindowScroll = (isOffset) => ({
   type: IS_WINDOW_SCROLL,
-  payload: {isOffset}
+  payload: {isOffset},
 })
 
-export const increment = (id) => ({type: INCREMENT, payload: {id} })
-export const decrement = (id) => ({type: DECREMENT, payload: {id} })
+export const increment = (id) => ({type: INCREMENT, payload: {id}})
+export const decrement = (id) => ({type: DECREMENT, payload: {id}})
 export const remove = (id) => ({type: REMOVE, payload: {id}})
 
-export const currentCategory = (category) => ({type: CURRENT_CATEGORY, payload: {category}})
+export const currentCategory = (category) => ({
+  type: CURRENT_CATEGORY,
+  payload: {category},
+})
 
 export const loadCategories = () => ({
   type: LOAD_CATEGORIES,
-  CallAPI: '/api/categories'
-});
+  CallAPI: '/api/categories',
+})
 
 export const loadProducts = (categoryId) => ({
   type: LOAD_PRODUCTS,
   CallAPI: `/api/products?id=${categoryId}`,
   categoryId,
-});
+})
 
-
-export const addMatchParams = (restId) => ({type: ADD_MATCH_PARAMS, payload: {restId} });
+export const addMatchParams = (restId) => ({
+  type: ADD_MATCH_PARAMS,
+  payload: {restId},
+})

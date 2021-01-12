@@ -42,22 +42,21 @@ const categories = [
   },
   {
     id: 'bcc898dc-8e11-4270-9184-d1366823c54e',
-    name: 'Зеркала в рамах'
+    name: 'Зеркала в рамах',
   },
   {
     id: 'a456ccf5-f940-45b7-81ac-427c86d7996e',
-    name: 'зеркальное панно'
+    name: 'зеркальное панно',
   },
   {
     id: '07d12d0d-5ad8-46d7-9596-42b3e2923a1a',
-    name: 'Зеркало-солнце'
+    name: 'Зеркало-солнце',
   },
   {
     id: 'b6283df7-a4d9-4357-a7c3-e29d50220f5a',
-    name: 'Консоли'
+    name: 'Консоли',
   },
 ]
-
 
 const normalizedCategories = [
   {
@@ -66,7 +65,7 @@ const normalizedCategories = [
     products: [
       '87ef588c-c539-45f8-b3bd-bc3b6f63cd20',
       'ba64fb8a-d5e3-4cca-8c19-c1424e8c9a47',
-    ]
+    ],
   },
   {
     id: 'cde28e4f-9a85-45a4-8509-cc2b60843775',
@@ -74,10 +73,9 @@ const normalizedCategories = [
     products: [
       '2149ef1c-990f-4940-91d6-aa26a0c0277e',
       '9918a242-1bf5-4a4c-b167-9dfb6c5910f8',
-    ]
+    ],
   },
-];
-
+]
 
 const normalizedProducts = [
   {
@@ -104,10 +102,6 @@ const normalizedProducts = [
     price: 35000,
     images: productFloor2,
   },
-];
-
+]
 
 export {categories, normalizedCategories, normalizedProducts}
-
-
-

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Slider from "react-slick"
+import Slider from 'react-slick'
 import {Link} from 'react-router-dom'
 import styles from './sliderAsNavFor.module.scss'
 import './sliderAsNavFor.scss'
@@ -14,21 +14,20 @@ import slide01 from '../../../assets/images/content/slide-1.png'
 import slide02 from '../../../assets/images/content/slide-2.png'
 import slide03 from '../../../assets/images/content/slide-3.png'
 
-
 class SliderAsNavFor extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       nav1: null,
       nav2: null,
-    };
+    }
   }
 
   componentDidMount() {
     this.setState({
       nav1: this.slider1,
-      nav2: this.slider2
-    });
+      nav2: this.slider2,
+    })
   }
 
   render() {
@@ -40,7 +39,7 @@ class SliderAsNavFor extends Component {
       slidesToScroll: 1,
       swipeToSlide: true,
       focusOnSelect: true,
-    };
+    }
 
     const settingsNav = {
       slidesToShow: 3,
@@ -50,29 +49,30 @@ class SliderAsNavFor extends Component {
       variableWidth: false,
       swipeToSlide: true,
       focusOnSelect: true,
-      responsive: [{
-        breakpoint: 1150,
-        settings: {
-          slidesToShow: 2,
-          centerMode: true,
-        }
-      },
+      responsive: [
+        {
+          breakpoint: 1150,
+          settings: {
+            slidesToShow: 2,
+            centerMode: true,
+          },
+        },
         {
           breakpoint: 500,
           settings: {
             slidesToShow: 1,
             centerMode: true,
-          }
-        },]
-    };
+          },
+        },
+      ],
+    }
 
     return (
       <section className={styles.slider} data-slider="" id="slider">
         <div className={styles.container}>
-
           <Slider
             asNavFor={this.state.nav2}
-            ref={slider => (this.slider1 = slider)}
+            ref={(slider) => (this.slider1 = slider)}
             className="for"
             {...settingsFor}
           >
@@ -92,7 +92,7 @@ class SliderAsNavFor extends Component {
 
           <Slider
             asNavFor={this.state.nav1}
-            ref={slider => (this.slider2 = slider)}
+            ref={(slider) => (this.slider2 = slider)}
             className="nav"
             {...settingsNav}
           >
@@ -118,17 +118,13 @@ class SliderAsNavFor extends Component {
 
           <div className={styles.btn}>
             <div className={styles.btnLink}>
-              <Link to={ROUTES.CATEGORIES} >Смотреть весь каталог</Link>
+              <Link to={ROUTES.CATEGORIES}>Смотреть весь каталог</Link>
             </div>
           </div>
-
         </div>
       </section>
-    );
-
+    )
   }
-
-
 }
 
 export default SliderAsNavFor

@@ -1,68 +1,68 @@
 import React, {Component} from 'react'
 import styles from './cardsList.module.scss'
 import Card from '../../../card'
-import {connect} from "react-redux";
-import {createStructuredSelector} from "reselect";
+import {connect} from 'react-redux'
+import {createStructuredSelector} from 'reselect'
 import {
   productsLoadedSelector,
-  productsLoadingSelector
-} from "../../../../redux/selectors";
-import {loadProducts} from "../../../../redux/actions/actions";
-import Loader from "../../../loader";
-
+  productsLoadingSelector,
+} from '../../../../redux/selectors'
+import {loadProducts} from '../../../../redux/actions/actions'
+import Loader from '../../../loader'
 
 class CardsList extends Component {
-  state = { error: null };
+  state = {error: null}
 
   loadProductsIfNeeded = () => {
-    const { loadProducts, categoryId, loading, loaded } = this.props;
-      if (!loading && !loaded) {
-        loadProducts(categoryId);
-      }
-  };
+    const {loadProducts, categoryId, loading, loaded} = this.props
+    if (!loading && !loaded) {
+      loadProducts(categoryId)
+    }
+  }
 
   componentDidMount() {
-     this.loadProductsIfNeeded();
-  };
+    this.loadProductsIfNeeded()
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.categoryId !== this.props.categoryId) {
-      this.loadProductsIfNeeded();
+      this.loadProductsIfNeeded()
     }
   }
 
   componentDidCatch(error) {
-    this.setState({ error });
+    this.setState({error})
   }
 
-render() {
-  //console.log('[cardsList][props]', this.props)
-  const { products, loading } = this.props;
+  render() {
+    //console.log('[cardsList][props]', this.props)
+    const {products, loading} = this.props
 
-  if (loading) {
-    return <Loader />;
-  }
+    if (loading) {
+      return <Loader />
+    }
 
-  if (this.state.error) {
-    return <p>В этом ресторане меню не доступно</p>;
-  }
+    if (this.state.error) {
+      return <p>В этом ресторане меню не доступно</p>
+    }
 
-  return (
+    return (
       <ul className={styles.cardsList}>
-        {products.map(id => <Card key={id} id={id} />)}
+        {products.map((id) => (
+          <Card key={id} id={id} />
+        ))}
       </ul>
-  )
- }
+    )
+  }
 }
 
-
 export default connect(
-    createStructuredSelector({
-      loading: productsLoadingSelector,
-      loaded: productsLoadedSelector,
-    }),
-    { loadProducts }
-)(CardsList);
+  createStructuredSelector({
+    loading: productsLoadingSelector,
+    loaded: productsLoadedSelector,
+  }),
+  {loadProducts}
+)(CardsList)
 
 // const CardsList = (props) => {
 //   console.log('[CardsList][props]', props)

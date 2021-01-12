@@ -5,9 +5,11 @@ import FooterLogoAndSocial from './footerLogoAndSocial/footerLogoAndSocial'
 import FooterForm from './footerForm'
 import FooterPolitics from './footerPolitics'
 
-
 const Footer = () => {
-  const footerLogoAndSocial = classNames(styles.innerItem, styles.footerLogoAndSocial)
+  const footerLogoAndSocial = classNames(
+    styles.innerItem,
+    styles.footerLogoAndSocial
+  )
   const footerContacts = classNames(styles.innerItem, styles.footerContacts)
 
   return (
@@ -17,38 +19,72 @@ const Footer = () => {
           <div className={styles.innerItem}>
             <h4>Каталог</h4>
             <ul>
-              <li><a href="#">Венецианские зеркала</a></li>
-              <li><a href="#">Напольные зеркала</a></li>
-              <li><a href="#">Зеркала в рамах</a></li>
-              <li><a href="#">Зеркальные панно</a></li>
-              <li><a href="#">Зеркало-солнце</a></li>
-              <li><a href="#">Консоли</a></li>
+              <li>
+                <a href="#">Венецианские зеркала</a>
+              </li>
+              <li>
+                <a href="#">Напольные зеркала</a>
+              </li>
+              <li>
+                <a href="#">Зеркала в рамах</a>
+              </li>
+              <li>
+                <a href="#">Зеркальные панно</a>
+              </li>
+              <li>
+                <a href="#">Зеркало-солнце</a>
+              </li>
+              <li>
+                <a href="#">Консоли</a>
+              </li>
             </ul>
           </div>
           <div className={styles.innerItem}>
             <h4>Информация</h4>
             <ul>
-              <li><a href="#">О магазине</a></li>
-              <li><a href="#">Каталог</a></li>
-              <li><a href="#">Распродажа</a></li>
-              <li><a href="#">Доставка и оплата</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li>
+                <a href="#">О магазине</a>
+              </li>
+              <li>
+                <a href="#">Каталог</a>
+              </li>
+              <li>
+                <a href="#">Распродажа</a>
+              </li>
+              <li>
+                <a href="#">Доставка и оплата</a>
+              </li>
+              <li>
+                <a href="#">Контакты</a>
+              </li>
             </ul>
           </div>
           <div className={styles.innerItem}>
             <h4>Подборки</h4>
             <ul>
-              <li><a href="#">Скидки</a></li>
-              <li><a href="#">Лидеры продаж</a></li>
-              <li><a href="#">Новинки</a></li>
+              <li>
+                <a href="#">Скидки</a>
+              </li>
+              <li>
+                <a href="#">Лидеры продаж</a>
+              </li>
+              <li>
+                <a href="#">Новинки</a>
+              </li>
             </ul>
           </div>
           <div className={footerContacts}>
             <h4>Контакты</h4>
             <ul>
-              <li><a href="tel:89261113968">+7 (926) 111-39-68</a></li>
-              <li><a href="mailto:mirror-look@mail.ru">mirror-look@mail.ru</a></li>
-              <li><p>г. Москва, ул. Рябиновая, 43 корпус 2</p></li>
+              <li>
+                <a href="tel:89261113968">+7 (926) 111-39-68</a>
+              </li>
+              <li>
+                <a href="mailto:mirror-look@mail.ru">mirror-look@mail.ru</a>
+              </li>
+              <li>
+                <p>г. Москва, ул. Рябиновая, 43 корпус 2</p>
+              </li>
             </ul>
           </div>
           <div className={footerLogoAndSocial}>

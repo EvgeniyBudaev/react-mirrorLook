@@ -5,17 +5,13 @@ import {ROUTES} from '../../../routes'
 
 import images1 from '../../../../assets/images/content/catalog-1.jpg'
 
-
 const CategoriesCard = () => {
   return (
     <Link to={ROUTES.CATALOG}>
       <div className={styles.categoriesCard}>
         <div className={styles.wrapper}>
           <div className={styles.header}>
-            <h2 className={styles.categoriesCard}>
-              Венецианские
-              зеркала
-            </h2>
+            <h2 className={styles.categoriesCard}>Венецианские зеркала</h2>
           </div>
           <div className={styles.content}>
             <img src={images1} alt="categories-images" />

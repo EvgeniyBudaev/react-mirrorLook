@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './aboutViewed.module.scss'
 import AboutViewedItem from './aboutViewedItem'
 
-
 const AboutViewed = () => {
   return (
     <div className={styles.aboutViewed}>
@@ -13,5 +12,3 @@ const AboutViewed = () => {
 }
 
 export default AboutViewed
-
-

@@ -6,7 +6,6 @@ import VK from './vk'
 import Instagram from './instagram'
 import Twitter from './twitter'
 
-
 const FooterLogoAndSocial = () => {
   return (
     <>
@@ -32,7 +31,3 @@ const FooterLogoAndSocial = () => {
 }
 
 export default FooterLogoAndSocial
-
-
-
-

@@ -51,7 +51,8 @@
   }
 }
 
-.descriptionInfo {}
+.descriptionInfo {
+}
 
 .descriptionInfoFavorites {
   a {
@@ -80,7 +81,7 @@
   .descriptionPay {
     display: flex;
     align-items: center;
-    a+a {
+    a + a {
       margin-left: 15px;
     }
   }

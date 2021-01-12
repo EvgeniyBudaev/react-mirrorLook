@@ -5,11 +5,8 @@ import CatalogFilter from './catalogFilter/catalogFilter'
 import CardsList from './cardsList'
 import PaginationUI from '../../paginationUI'
 
-import {
-  categorySelector,
-} from '../../../redux/selectors'
+import {categorySelector} from '../../../redux/selectors'
 import Loader from '../../loader'
-
 
 const CatalogContent = () => {
   //console.log('[CatalogContent][props]', props)
@@ -18,15 +15,15 @@ const CatalogContent = () => {
   if (!category) return <Loader />
 
   const {id, products} = category
+  const productsCount = products.length
+
   return (
     <div className={styles.catalogContent}>
       <CatalogFilter />
       <CardsList products={products} categoryId={id} />
-      <PaginationUI />
+      <PaginationUI total={productsCount} />
     </div>
   )
 }
 
 export default CatalogContent
-
-

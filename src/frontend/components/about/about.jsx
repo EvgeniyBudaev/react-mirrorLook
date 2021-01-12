@@ -3,7 +3,6 @@ import styles from './about.module.scss'
 import AboutLeft from './aboutLeft'
 import AboutRight from './aboutRight'
 
-
 const About = () => {
   return (
     <section className={styles.about}>

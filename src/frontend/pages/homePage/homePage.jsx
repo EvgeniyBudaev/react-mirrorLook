@@ -4,7 +4,6 @@ import SliderNewProducts from '../../components/sliderNewProducts'
 import Banner from '../../components/banner'
 import SliderPopularProducts from '../../components/sliderPopularProducts'
 
-
 const HomePage = () => {
   return (
     <>
@@ -12,9 +11,8 @@ const HomePage = () => {
       <SliderNewProducts />
       <Banner />
       <SliderPopularProducts />
-      </>
+    </>
   )
 }
 
 export default HomePage
-

@@ -5,7 +5,7 @@ svg {
 svg,
 svg path.icon0 {
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .icon0 {
@@ -15,4 +15,3 @@ svg path.icon0 {
 svg:hover path.icon0 {
   fill: var(--beige);
 }
-

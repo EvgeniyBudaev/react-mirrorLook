@@ -4,8 +4,7 @@ import styles from './footerPolitics.module.scss'
 const FooterPolitics = () => {
   return (
     <div className={styles.footerPolitics}>
-      Политика конфиденциальности
-      2021
+      Политика конфиденциальности 2021
     </div>
   )
 }

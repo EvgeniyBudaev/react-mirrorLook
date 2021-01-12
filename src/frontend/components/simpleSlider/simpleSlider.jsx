@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
-import Slider from "react-slick";
+import Slider from 'react-slick'
 import './simpleSlider.scss'
 import CardSlider from '../cardSlider'
 
-
-class SimpleSlider extends Component{
+class SimpleSlider extends Component {
   render() {
     const settings = {
       dots: false,
@@ -17,39 +16,38 @@ class SimpleSlider extends Component{
           breakpoint: 1100,
           settings: {
             slidesToShow: 3,
-          }
+          },
         },
         {
           breakpoint: 1000,
           settings: {
             slidesToShow: 2,
-          }
+          },
         },
         {
           breakpoint: 600,
           settings: {
             slidesToShow: 1,
-          }
+          },
         },
-      ]
-    };
+      ],
+    }
 
     return (
       <>
-          <Slider {...settings}>
-              <CardSlider />
-              <CardSlider />
-              <CardSlider />
-              <CardSlider />
-              <CardSlider />
-              <CardSlider />
-              <CardSlider />
-              <CardSlider />
-          </Slider>
+        <Slider {...settings}>
+          <CardSlider />
+          <CardSlider />
+          <CardSlider />
+          <CardSlider />
+          <CardSlider />
+          <CardSlider />
+          <CardSlider />
+          <CardSlider />
+        </Slider>
       </>
     )
   }
 }
 
 export default SimpleSlider
-

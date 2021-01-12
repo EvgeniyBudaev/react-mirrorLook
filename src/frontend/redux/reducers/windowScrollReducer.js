@@ -1,9 +1,8 @@
 import {IS_WINDOW_SCROLL} from '../constants'
 
-
 const initialState = {
   offset: 100,
-  isOffset: false
+  isOffset: false,
 }
 
 const windowScrollReducer = (state = initialState, action) => {

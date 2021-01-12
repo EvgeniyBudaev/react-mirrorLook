@@ -1,6 +1,6 @@
 .headerMenuBottom {
   margin-top: 39px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .headerMenuBottom nav ul {
@@ -18,7 +18,7 @@ a {
 }
 
 a:not(.active) {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .active {
@@ -27,7 +27,6 @@ a:not(.active) {
   pointer-events: none;
   cursor: default;
 }
-
 
 .red {
   color: var(--red);

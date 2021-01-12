@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
-import {withStyles} from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles'
 import styles from './footerInput.module.scss'
 
 const CssTextField = withStyles({
@@ -25,15 +25,20 @@ const CssTextField = withStyles({
       },
     },
   },
-})(TextField);
-
+})(TextField)
 
 const FooterInput = (props) => {
   const {id, label} = props
 
   return (
     <div className={styles.formInputAndLabel}>
-        <CssTextField className={styles.input} id={id} label={label} variant="outlined" required />
+      <CssTextField
+        className={styles.input}
+        id={id}
+        label={label}
+        variant="outlined"
+        required
+      />
     </div>
   )
 }

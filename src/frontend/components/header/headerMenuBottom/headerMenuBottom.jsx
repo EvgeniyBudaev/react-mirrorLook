@@ -12,19 +12,47 @@ const HeaderMenuBottom = () => {
     fontFamily: 'Montserrat',
     fontWeight: 500,
     pointerEvents: 'none',
-    cursor: 'default'
+    cursor: 'default',
   }
 
   return (
     <div className={styles.headerMenuBottom}>
       <nav>
         <ul>
-          <li><NavLink to={ROUTES.HOME} exact activeStyle={activeLink}>Главная</NavLink></li>
-          <li><NavLink to={ROUTES.ABOUT} activeStyle={activeLink}>О магазине</NavLink></li>
-          <li><NavLink to={ROUTES.CATEGORIES} activeStyle={activeLink}>Каталог</NavLink></li>
-          <li><NavLink to={ROUTES.CLEARANCE_SALE} activeStyle={activeLink} className={red}>Распродажа</NavLink></li>
-          <li><NavLink to={ROUTES.DELIVERY} activeStyle={activeLink}>Доставка и оплата</NavLink></li>
-          <li><NavLink to={ROUTES.CONTACTS} activeStyle={activeLink}>Контакты</NavLink></li>
+          <li>
+            <NavLink to={ROUTES.HOME} exact activeStyle={activeLink}>
+              Главная
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.ABOUT} activeStyle={activeLink}>
+              О магазине
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.CATEGORIES} activeStyle={activeLink}>
+              Каталог
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={ROUTES.CLEARANCE_SALE}
+              activeStyle={activeLink}
+              className={red}
+            >
+              Распродажа
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.DELIVERY} activeStyle={activeLink}>
+              Доставка и оплата
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={ROUTES.CONTACTS} activeStyle={activeLink}>
+              Контакты
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

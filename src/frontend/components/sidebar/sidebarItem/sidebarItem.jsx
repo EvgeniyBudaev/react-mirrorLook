@@ -3,11 +3,11 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 
-const SidebarItem = ({ label, items, depthStep = 10, depth = 0, ...rest }) => {
+const SidebarItem = ({label, items, depthStep = 10, depth = 0, ...rest}) => {
   return (
     <>
       <ListItem button dense {...rest}>
-        <ListItemText style={{ paddingLeft: depth * depthStep }}>
+        <ListItemText style={{paddingLeft: depth * depthStep}}>
           <span>{label}</span>
         </ListItemText>
       </ListItem>
