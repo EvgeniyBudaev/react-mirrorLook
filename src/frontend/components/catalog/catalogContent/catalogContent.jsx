@@ -36,7 +36,6 @@ const CatalogContent = (props) => {
       <CatalogFilter />
       <CardsList products={products} categoryId={id} />
       <PaginationUI total={productsCount} limit={limit} url={url} currentPage={currentPage} />
-      <Link to={ROUTES.CATALOG + id + "?took"}>go to</Link>
     </div>
   )
 }
