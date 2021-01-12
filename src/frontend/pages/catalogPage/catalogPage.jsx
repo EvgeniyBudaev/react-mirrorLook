@@ -9,9 +9,7 @@ import {categoriesListSelector} from '../../redux/selectors'
 import {loadCategories} from '../../redux/actions/actions'
 
 
-const CatalogPage = (props) => {
-  const {categories, match} = props
-
+const CatalogPage = () => {
   return (
     <>
       <Breadcrumbs />

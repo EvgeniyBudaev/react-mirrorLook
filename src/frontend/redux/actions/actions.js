@@ -27,9 +27,9 @@ export const loadCategories = () => ({
   CallAPI: '/api/categories',
 })
 
-export const loadProducts = (categoryId) => ({
+export const loadProducts = (categoryId, stringifiedParams) => ({
   type: LOAD_PRODUCTS,
-  CallAPI: `/api/products?id=${categoryId}`,
+  CallAPI: `/api/products?id=${categoryId}?${stringifiedParams}`,
   categoryId,
 })
 

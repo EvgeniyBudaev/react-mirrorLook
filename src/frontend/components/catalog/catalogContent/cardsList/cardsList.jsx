@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, useEffect} from 'react'
 import styles from './cardsList.module.scss'
 import Card from '../../../card'
 import {connect} from 'react-redux'
@@ -9,80 +9,98 @@ import {
 } from '../../../../redux/selectors'
 import {loadProducts} from '../../../../redux/actions/actions'
 import Loader from '../../../loader'
+import {useLocation, withRouter} from 'react-router'
+import {getPaginator, limit} from '../../../../utilities/utils'
+import {stringify} from 'query-string'
 
-class CardsList extends Component {
-  state = {error: null}
+// class CardsList extends Component {
+//   state = {error: null}
+//
+//   loadProductsIfNeeded = () => {
+//     const {loadProducts, categoryId, loading, loaded} = this.props
+//     if (!loading && !loaded) {
+//       loadProducts(categoryId)
+//     }
+//   }
+//
+//   componentDidMount() {
+//     this.loadProductsIfNeeded()
+//   }
+//
+//   componentDidUpdate(prevProps, prevState) {
+//     if (prevProps.categoryId !== this.props.categoryId) {
+//       this.loadProductsIfNeeded()
+//     }
+//   }
+//
+//   componentDidCatch(error) {
+//     this.setState({error})
+//   }
+//
+//   render() {
+//     console.log('[cardsList][props]', this.props)
+//     const {products, loading, location} = this.props
+//     const {currentPage, offset} = getPaginator(location.search)
+//     console.log('ff', offset, currentPage)
+//     const stringifiedParams = stringify({
+//       limit,
+//       offset
+//     })
+//
+//     if (loading) {
+//       return <Loader />
+//     }
+//
+//     if (this.state.error) {
+//       return <p>В этом ресторане меню не доступно</p>
+//     }
+//
+//     return (
+//       <ul className={styles.cardsList}>
+//         {products.map((id) => (
+//           <Card key={id} id={id} />
+//         ))}
+//       </ul>
+//     )
+//   }
+// }
 
-  loadProductsIfNeeded = () => {
-    const {loadProducts, categoryId, loading, loaded} = this.props
+const CardsList = (props) => {
+  console.log('[CardsList][props]', props)
+  const { loadProducts, categoryId, products, loading, loaded, location } = props;
+
+    const {currentPage, offset} = getPaginator(location.search)
+    console.log('[CardsList][offset, currentPage]', offset, currentPage)
+    const stringifiedParams = stringify({
+      limit,
+      offset
+    })
+
+
+  useEffect(() => {
     if (!loading && !loaded) {
-      loadProducts(categoryId)
+      loadProducts(categoryId, stringifiedParams);
     }
-  }
+  }, [loadProducts, loading, loaded, categoryId, currentPage, stringifiedParams])
 
-  componentDidMount() {
-    this.loadProductsIfNeeded()
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.categoryId !== this.props.categoryId) {
-      this.loadProductsIfNeeded()
-    }
-  }
-
-  componentDidCatch(error) {
-    this.setState({error})
-  }
-
-  render() {
-    //console.log('[cardsList][props]', this.props)
-    const {products, loading} = this.props
 
     if (loading) {
-      return <Loader />
-    }
-
-    if (this.state.error) {
-      return <p>В этом ресторане меню не доступно</p>
+      return <Loader />;
     }
 
     return (
       <ul className={styles.cardsList}>
-        {products.map((id) => (
-          <Card key={id} id={id} />
-        ))}
+        {products.map(id => <Card key={id} id={id} />)}
       </ul>
     )
-  }
 }
 
-export default connect(
+export default withRouter(connect(
   createStructuredSelector({
     loading: productsLoadingSelector,
     loaded: productsLoadedSelector,
   }),
   {loadProducts}
-)(CardsList)
+)(CardsList))
 
-// const CardsList = (props) => {
-//   console.log('[CardsList][props]', props)
-//   const { loadProducts, categoryId, products, loading, loaded } = props;
-//
-//
-//   useEffect(() => {
-//     if (!loading && !loaded) {
-//       loadProducts(categoryId);
-//     }
-//   }, [loadProducts, loading, loaded])
-//
-//
-//     if (loading) {
-//       return <Loader />;
-//     }
-//
-//     return (
-//       <ul className={styles.cardsList}>
-//         {products.map(id => <Card key={id} id={id} />)}
-//       </ul>
-//     )
-// }
+

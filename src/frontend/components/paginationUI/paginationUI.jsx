@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const PaginationUI = (props) => {
-  const {total, limit, url, currentPage, categoryId} = props
+  const {total, limit, url, currentPage} = props
   const pagesCount = Math.ceil(total / limit)
   const classes = useStyles()
 
@@ -44,7 +44,7 @@ const PaginationUI = (props) => {
         <Pagination
           count={pagesCount}
           renderItem={(item) => (
-            <Link to={`/catalog/${categoryId}${item.page === 1 ? '' : `?page=${item.page}`}`} >
+            <Link to={`${url}${item.page === currentPage ? '' : `?page=${item.page}`}`} >
               <PaginationItem {...item} />
             </Link>
           )}
