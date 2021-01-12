@@ -3,7 +3,7 @@ import { MemoryRouter, Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import Pagination from '@material-ui/lab/Pagination'
 import PaginationItem from '@material-ui/lab/PaginationItem'
-import {makeStyles} from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import styles from './paginationUI.module.scss'
 
 const useStyles = makeStyles((theme) => ({

@@ -7,6 +7,8 @@ import PaginationUI from '../../paginationUI'
 
 import {categorySelector} from '../../../redux/selectors'
 import Loader from '../../loader'
+import {ROUTES} from "../../../routes";
+import {Link} from "react-router-dom";
 
 const CatalogContent = (props) => {
   //console.log('[CatalogContent][props]', props)
@@ -22,6 +24,7 @@ const CatalogContent = (props) => {
       <CatalogFilter />
       <CardsList products={products} categoryId={id} />
       <PaginationUI total={productsCount} limit={1} url="/catalog/" currentPage={1} categoryId={id} />
+      <Link to={ROUTES.CATALOG + id + "?took"}>go to</Link>
     </div>
   )
 }
