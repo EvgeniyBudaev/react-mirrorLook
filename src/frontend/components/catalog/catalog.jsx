@@ -8,8 +8,8 @@ import CatalogContent from './catalogContent'
 import {addMatchParams} from '../../redux/actions/actions'
 import useMatchParams from '../../hooks/useMatchParams'
 
-const Catalog = () => {
-  // console.log('[Catalog][props]', props)
+const Catalog = (props) => {
+  console.log('[Catalog][props]', props)
   const dispatch = useDispatch()
   const {restId} = useParams()
 

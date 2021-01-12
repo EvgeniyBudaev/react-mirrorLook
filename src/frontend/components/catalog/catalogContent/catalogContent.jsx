@@ -8,7 +8,7 @@ import PaginationUI from '../../paginationUI'
 import {categorySelector} from '../../../redux/selectors'
 import Loader from '../../loader'
 
-const CatalogContent = () => {
+const CatalogContent = (props) => {
   //console.log('[CatalogContent][props]', props)
   const category = useSelector(categorySelector)
 
@@ -21,7 +21,7 @@ const CatalogContent = () => {
     <div className={styles.catalogContent}>
       <CatalogFilter />
       <CardsList products={products} categoryId={id} />
-      <PaginationUI total={productsCount} />
+      <PaginationUI total={productsCount} limit={1} url="/catalog/" currentPage={1} categoryId={id} />
     </div>
   )
 }
