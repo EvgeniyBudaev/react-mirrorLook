@@ -30,6 +30,7 @@ const HeaderCategories = (props) => {
     exact: true,
     strict: false
   })
+  console.log('[HeaderCategories][match]', match)
 
 
   useEffect(() => {
