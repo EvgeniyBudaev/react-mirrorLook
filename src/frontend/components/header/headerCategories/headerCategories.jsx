@@ -44,7 +44,6 @@ const HeaderCategories = (props) => {
         {categories.map(({id, name}) => (
           <NavLink to={ROUTES.CATALOG + id} key={id}>
             <li
-              key={id}
               className={styles.item}
               activeclassname={styles.active}
             >

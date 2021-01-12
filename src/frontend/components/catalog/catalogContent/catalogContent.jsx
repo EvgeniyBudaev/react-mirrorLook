@@ -1,13 +1,11 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
-import {Link} from "react-router-dom"
 import styles from './catalogContent.module.scss'
 import CatalogFilter from './catalogFilter/catalogFilter'
 import CardsList from './cardsList'
 import PaginationUI from '../../paginationUI'
 import {categoriesListSelector} from '../../../redux/selectors'
 import Loader from '../../loader'
-import {ROUTES} from "../../../routes"
 import {getPaginator, limit} from '../../../utilities/utils'
 import {withRouter} from 'react-router'
 
