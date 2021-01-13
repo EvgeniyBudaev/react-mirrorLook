@@ -34,7 +34,7 @@ const Card = (props) => {
             </svg>
           </button>
           <div className={styles.contentImg}>
-            <Link to={ROUTES.PRODUCT}>
+            <Link to={ROUTES.PRODUCT + product.id}>
               <img src={product.images} alt="images" />
             </Link>
           </div>

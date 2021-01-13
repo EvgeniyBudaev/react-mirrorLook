@@ -7,7 +7,9 @@ import visa from '../../../../assets/images/visa.png'
 import master from '../../../../assets/images/master.png'
 import CardSlider from '../../cardSlider'
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+  const {name, description} = props.product
+
   return (
     <section className={styles.productCard}>
       <div className={styles.container}>
@@ -17,18 +19,11 @@ const ProductCard = () => {
             <img src={iconFavorite} alt="favorite" />
           </a>
         </h2>
-        <h2 className={styles.productName}>Nikole (Николь)</h2>
+        <h2 className={styles.productName}>{name}</h2>
         <div className={styles.inner}>
           <div className={styles.description}>
             <div className={styles.descriptionText}>
-              <p>
-                Влагостойкое серебряное зеркало в венецианском стиле Nikole
-                (Николь), 80*110 см
-              </p>
-              <p>
-                Зеркала в венецианском стиле никогда не выходят из моды, являясь
-                примером высокого мастерства и предметом роскоши.
-              </p>
+              {description.map((info, index) => <p key={index}>{info}</p>)}
             </div>
             <div className={styles.descriptionInfo}>
               <div className={styles.descriptionInfoFavorites}>
