@@ -4,9 +4,8 @@ import CatalogTop from './catalogTop/catalogTop'
 import CatalogAside from './catalogAside'
 import CatalogContent from './catalogContent'
 
-const Catalog = (props) => {
-  console.log('[Catalog][props]', props)
-
+const Catalog = () => {
+  //console.log('[Catalog][props]', props)
   return (
     <section className={styles.catalog}>
       <div className={styles.container}>

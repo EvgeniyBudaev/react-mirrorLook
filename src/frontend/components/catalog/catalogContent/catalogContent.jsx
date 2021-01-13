@@ -22,9 +22,6 @@ const CatalogContent = (props) => {
   const url = match.url
 
   if (!category) return <Loader />
-  console.log('[CatalogContent][category]', category)
-
-
 
   const {id, products} = category
   const productsCount = products.length
