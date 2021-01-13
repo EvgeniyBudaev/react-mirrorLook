@@ -4,7 +4,12 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import rootReducer from './reducers'
 import generateId from './middleware/generateId'
 import api from './middleware/api'
+import {routerMiddleware} from 'connected-react-router'
+import {createBrowserHistory} from 'history'
 
-const enhancer = applyMiddleware(thunk, api, generateId)
+const history = createBrowserHistory()
+const middlewares = [thunk, routerMiddleware(history), api, generateId]
+const enhancer = applyMiddleware(...middlewares)
+const store = createStore(rootReducer(history), composeWithDevTools(enhancer))
 
-export default createStore(rootReducer, composeWithDevTools(enhancer))
+export default store

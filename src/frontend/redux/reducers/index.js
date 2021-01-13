@@ -1,13 +1,12 @@
 import {combineReducers} from 'redux'
 import {connectRouter} from 'connected-react-router'
-import history from '../../../history'
 import windowScrollReducer from './windowScrollReducer'
 import orderReducer from './orderReducer'
 import categoriesReducer from './categoriesReducer'
 import productsReducer from './productsReducer'
 
 
-const rootReducer = combineReducers({
+ const rootReducer = history => combineReducers({
   router: connectRouter(history),
   windowScrollReducer,
   orderReducer,
@@ -16,3 +15,5 @@ const rootReducer = combineReducers({
 })
 
 export default rootReducer
+
+
