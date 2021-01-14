@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom'
 import styles from './card.module.scss'
 import {ROUTES} from '../../routes'
 import {connect} from 'react-redux'
-import {increment} from '../../redux/actions/actions'
+import {productIncrement} from '../../redux/actions/actions'
 import {createStructuredSelector} from 'reselect'
 import {productAmountSelector, productSelector} from '../../redux/selectors'
 
 const Card = (props) => {
   //console.log('[Card][props]', props)
-  const {product, amount, increment} = props
+  const {product, amount, productIncrement} = props
 
   if (!product) return null
 
@@ -45,7 +45,7 @@ const Card = (props) => {
             <div className={styles.footerBottomLabel}>Цена:</div>
             <button
               className={styles.footerTopBasket}
-              onClick={() => increment(product.id)}
+              onClick={() => productIncrement(product.id)}
             >
               <svg
                 width="20"
@@ -82,7 +82,7 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = {
-  increment,
+  productIncrement,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)

@@ -1,9 +1,9 @@
 import {replace} from 'connected-react-router'
 import {
-  INCREMENT,
+  PRODUCT_INCREMENT,
   IS_WINDOW_SCROLL,
-  DECREMENT,
-  REMOVE,
+  PRODUCT_DECREMENT,
+  PRODUCT_REMOVE,
   LOAD_CATEGORIES,
   LOAD_PRODUCTS,
   LOAD_PRODUCT_BY_ID,
@@ -17,9 +17,9 @@ export const handleWindowScroll = (isOffset) => ({
   payload: {isOffset},
 })
 
-export const increment = (id) => ({type: INCREMENT, payload: {id}})
-export const decrement = (id) => ({type: DECREMENT, payload: {id}})
-export const remove = (id) => ({type: REMOVE, payload: {id}})
+export const productIncrement = (id) => ({type: PRODUCT_INCREMENT, payload: {id}})
+export const productDecrement = (id) => ({type: PRODUCT_DECREMENT, payload: {id}})
+export const productRemove = (id) => ({type: PRODUCT_REMOVE, payload: {id}})
 
 
 export const loadCategories = () => ({

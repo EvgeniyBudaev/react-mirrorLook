@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './basketCard.module.scss'
 import {connect} from 'react-redux'
-import {decrement, increment, remove} from '../../../redux/actions/actions'
+import {productDecrement, productIncrement, productRemove} from '../../../redux/actions/actions'
 
 const BasketCard = (props) => {
-  const {product, amount, subtotal, increment, decrement, remove} = props
+  const {product, amount, subtotal, productDecrement, productIncrement, productRemove} = props
   const {id, images, name, price} = product
   //console.log('[basketCard][props]', props)
 
@@ -21,12 +21,12 @@ const BasketCard = (props) => {
         <p className={styles.unitText}>Цена за ед.</p>
         <p className={styles.unitPrice}>{price} ₽</p>
       </div>
-      <button onClick={() => decrement(id)}>-</button>
+      <button onClick={() => productDecrement(id)}>-</button>
       <div className={styles.amount}>
         <p className={styles.amountText}>Кол-во</p>
         <div className={styles.amountNumber}>{amount}</div>
       </div>
-      <button onClick={() => increment(id)}>+</button>
+      <button onClick={() => productIncrement(id)}>+</button>
       <div className={styles.total}>
         <p className={styles.totalPrice}>{subtotal} ₽</p>
         <button className={styles.totalButton}>
@@ -61,11 +61,11 @@ const BasketCard = (props) => {
               </clipPath>
             </defs>
           </svg>
-          <p onClick={() => remove(id)}>Удалить</p>
+          <p onClick={() => productRemove(id)}>Удалить</p>
         </button>
       </div>
     </div>
   )
 }
 
-export default connect(null, {increment, decrement, remove})(BasketCard)
+export default connect(null, {productIncrement, productDecrement, productRemove})(BasketCard)

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './productCard.module.scss'
-import iconFavorite from '../../../../assets/images/icon-favorite.svg'
 import ProductCardDescription from './productCardDescription'
 import ProductCardData from './productCardData'
 import ProductCardDetailed from './productCardDetailed'
