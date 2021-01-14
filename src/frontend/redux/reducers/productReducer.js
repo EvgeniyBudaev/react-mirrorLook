@@ -12,7 +12,7 @@ const initialState = {
 
 const productReducer = (state = initialState, action) =>
   produce(state, (draft) => {
-    console.log('[productReducer][action]', action)
+    //console.log('[productReducer][action]', action)
     const {type, productId, product, error} = action
 
     switch(type) {

@@ -1,20 +1,18 @@
 import React, {Component} from 'react'
 import Slider from 'react-slick'
-import {Link} from 'react-router-dom'
-import styles from './sliderAsNavFor.module.scss'
-import './sliderAsNavFor.scss'
-import {ROUTES} from '../../routes'
+import styles from './productCardSlider.module.scss'
 
-import slider01 from '../../../assets/images/content/slider-1.jpg'
-import slider02 from '../../../assets/images/content/slider-2.jpg'
-import slider03 from '../../../assets/images/content/slider-3.jpg'
-import slider04 from '../../../assets/images/content/slider-4.jpg'
+import slider01 from '../../../../../assets/images/content/venetianMirrors-1.jpg'
+import slider02 from '../../../../../assets/images/content/venetianMirrors-2.jpg'
+import slider03 from '../../../../../assets/images/content/venetianMirrors-1.jpg'
+import slider04 from '../../../../../assets/images/content/venetianMirrors-2.jpg'
 
-import slide01 from '../../../assets/images/content/slide-1.png'
-import slide02 from '../../../assets/images/content/slide-2.png'
-import slide03 from '../../../assets/images/content/slide-3.png'
+import slide01 from '../../../../../assets/images/content/slide-1.png'
+import slide02 from '../../../../../assets/images/content/slide-2.png'
+import slide03 from '../../../../../assets/images/content/slide-3.png'
 
-class SliderAsNavFor extends Component {
+
+class ProductCardSlider extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -31,8 +29,10 @@ class SliderAsNavFor extends Component {
   }
 
   render() {
+    const {images} = this.props.product
+
     const settingsFor = {
-      arrows: true,
+      arrows: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -42,7 +42,7 @@ class SliderAsNavFor extends Component {
     }
 
     const settingsNav = {
-      slidesToShow: 3,
+      slidesToShow: 2,
       arrows: false,
       dots: true,
       centerMode: true,
@@ -68,8 +68,8 @@ class SliderAsNavFor extends Component {
     }
 
     return (
-      <section className={styles.slider}>
-        <div className={styles.container}>
+      <div className={styles.cardSlider}>
+        <div>
           <Slider
             asNavFor={this.state.nav2}
             ref={(slider) => (this.slider1 = slider)}
@@ -77,16 +77,10 @@ class SliderAsNavFor extends Component {
             {...settingsFor}
           >
             <div className={styles.item}>
-              <img src={slider01} alt="images" />
+              <img src={images} alt="images" />
             </div>
             <div className={styles.item}>
               <img src={slider02} alt="images" />
-            </div>
-            <div className={styles.item}>
-              <img src={slider03} alt="images" />
-            </div>
-            <div className={styles.item}>
-              <img src={slider04} alt="images" />
             </div>
           </Slider>
 
@@ -105,26 +99,11 @@ class SliderAsNavFor extends Component {
             <div className={styles.navItem}>
               <img src={slide03} alt="images" className={styles.navItemImg} />
             </div>
-            <div className={styles.navItem}>
-              <img src={slide01} alt="images" className={styles.navItemImg} />
-            </div>
-            <div className={styles.navItem}>
-              <img src={slide02} alt="images" className={styles.navItemImg} />
-            </div>
-            <div className={styles.navItem}>
-              <img src={slide03} alt="images" className={styles.navItemImg} />
-            </div>
           </Slider>
-
-          <div className={styles.btn}>
-            <div className={styles.btnLink}>
-              <Link to={ROUTES.CATEGORIES}>Смотреть весь каталог</Link>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
     )
   }
 }
 
-export default SliderAsNavFor
+export default ProductCardSlider

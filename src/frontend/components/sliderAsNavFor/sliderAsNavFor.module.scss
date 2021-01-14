@@ -17,7 +17,8 @@
 
 .item {
   filter: drop-shadow(2px 6px 4px rgba(0, 0, 0, 0.25));
-  height: 780px;
+  //height: 780px;
+  height: auto;
 }
 
 .navItemImg {
@@ -59,6 +60,7 @@
   max-width: 333px;
   width: 100%;
 }
+
 
 @media (max-width: 500px) {
   .btnLink {
