@@ -7,7 +7,8 @@ import ProductCardSlider from './productCardSlider'
 
 
 const ProductCard = (props) => {
-  const {name, description} = props.product
+  const {product} = props
+  const {name, description} = product
 
   return (
     <>
@@ -17,8 +18,8 @@ const ProductCard = (props) => {
           <h2 className={styles.productName}>{name}</h2>
           <div className={styles.inner}>
             <ProductCardDescription description={description} />
-            <ProductCardSlider product={props.product} />
-            {/*<ProductCardData />*/}
+            <ProductCardSlider product={product} />
+            <ProductCardData product={product} />
           </div>
         </div>
       </section>

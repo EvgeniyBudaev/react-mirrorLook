@@ -1,8 +1,13 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from './productCardData.module.scss'
+import {connect} from 'react-redux'
+import {productDecrement, productIncrement, productRemove} from '../../../../redux/actions/actions'
 
-const ProductCardData = () => {
+const ProductCardData = (props) => {
+  console.log('[ProductCardData][props]', props)
+  const {id, code, baseColor, height, width, weight, typeOfInstallation} = props.product
+
   const dataListItem1 = (classNames(styles.dataListItem, styles.item1))
   const dataListItem2 = (classNames(styles.dataListItem, styles.item2))
   const quantityBtnDecrement = (classNames(styles.quantityBtn, styles.quantityLeft))
@@ -10,7 +15,7 @@ const ProductCardData = () => {
   return (
     <div className={styles.data}>
       <div className={styles.dataArticle}>
-        Артикул: <span>VZ232SL</span>
+        Артикул: <span>{code}</span>
       </div>
       <div className={styles.dataList}>
         <ul className={dataListItem1}>
@@ -21,11 +26,11 @@ const ProductCardData = () => {
           <li>Тип установки</li>
         </ul>
         <ul className={dataListItem2}>
-          <li>черный</li>
-          <li>110 см</li>
-          <li>80 см</li>
-          <li>13 кг</li>
-          <li>настенное</li>
+          <li>{baseColor}</li>
+          <li>{height} см</li>
+          <li>{width} см</li>
+          <li>{weight} кг</li>
+          <li>{typeOfInstallation}</li>
         </ul>
       </div>
       <div className={styles.dataAvailability}>
@@ -36,9 +41,9 @@ const ProductCardData = () => {
         <div className={styles.dataOrderQuantity}>
           <span>Кол-во:</span>
           <div className={styles.quantityNum}>
-            <button className={quantityBtnDecrement}>-</button>
+            <button className={quantityBtnDecrement} onClick={() => productDecrement(id)}>-</button>
             <input type="text" value="1" />
-            <button className={quantityBtnIncrement}>+</button>
+            <button className={quantityBtnIncrement} onClick={() => productIncrement(id)}>+</button>
           </div>
         </div>
         <div className={styles.dataOrderBtn}>
@@ -49,4 +54,6 @@ const ProductCardData = () => {
   )
 }
 
-export default ProductCardData
+export default connect(null, {productIncrement, productDecrement, productRemove})(ProductCardData)
+
+
