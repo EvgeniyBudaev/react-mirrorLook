@@ -2,16 +2,6 @@ import React, {Component} from 'react'
 import Slider from 'react-slick'
 import styles from './productCardSlider.module.scss'
 
-import slider01 from '../../../../../assets/images/content/venetianMirrors-1.jpg'
-import slider02 from '../../../../../assets/images/content/venetianMirrors-2.jpg'
-import slider03 from '../../../../../assets/images/content/venetianMirrors-1.jpg'
-import slider04 from '../../../../../assets/images/content/venetianMirrors-2.jpg'
-
-import slide01 from '../../../../../assets/images/content/slide-1.png'
-import slide02 from '../../../../../assets/images/content/slide-2.png'
-import slide03 from '../../../../../assets/images/content/slide-3.png'
-
-
 class ProductCardSlider extends Component {
   constructor(props) {
     super(props)
@@ -29,7 +19,7 @@ class ProductCardSlider extends Component {
   }
 
   render() {
-    const {images} = this.props.product
+    const {images, images2, images3, images4, images5} = this.props.product
 
     const settingsFor = {
       arrows: false,
@@ -80,7 +70,7 @@ class ProductCardSlider extends Component {
               <img src={images} alt="images" />
             </div>
             <div className={styles.item}>
-              <img src={slider02} alt="images" />
+              <img src={images2} alt="images" />
             </div>
           </Slider>
 
@@ -91,13 +81,13 @@ class ProductCardSlider extends Component {
             {...settingsNav}
           >
             <div className={styles.navItem}>
-              <img src={slide01} alt="images" className={styles.navItemImg} />
+              <img src={images3} alt="images" className={styles.navItemImg} />
             </div>
             <div className={styles.navItem}>
-              <img src={slide02} alt="images" className={styles.navItemImg} />
+              <img src={images4} alt="images" className={styles.navItemImg} />
             </div>
             <div className={styles.navItem}>
-              <img src={slide03} alt="images" className={styles.navItemImg} />
+              <img src={images5} alt="images" className={styles.navItemImg} />
             </div>
           </Slider>
         </div>

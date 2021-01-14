@@ -19,7 +19,7 @@ const ProductCard = (props) => {
           <div className={styles.inner}>
             <ProductCardDescription description={description} />
             <ProductCardSlider product={props.product} />
-            <ProductCardData />
+            {/*<ProductCardData />*/}
           </div>
         </div>
       </section>
