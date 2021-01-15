@@ -4,7 +4,24 @@ import styles from './specifications.module.scss'
 const Specifications = (props) => {
   console.log('[Specifications][props]', props)
   const {product} = props
-  const {height, width, heightWithoutFrame, weightWithoutFrame} = product
+  const {
+    height,
+    width,
+    heightWithoutFrame,
+    weightWithoutFrame,
+    weight,
+    typeOfMounting,
+    typeOfInstallation,
+    facet,
+    form,
+    appointment,
+    materialMirror,
+    materialFrame,
+    colorMirror,
+    baseColor,
+    countryBrand,
+    countryManufacturer
+  } = product
 
   return (
     <div className={styles.specifications}>
@@ -33,7 +50,7 @@ const Specifications = (props) => {
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Вес</span></div>
-          <div className={styles.date}><span>13 кг</span></div>
+          <div className={styles.date}><span>{weight} кг</span></div>
         </div>
       </div>
       <div className={styles.items}>
@@ -41,27 +58,27 @@ const Specifications = (props) => {
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Тип навески</span></div>
-          <div className={styles.date}><span>Вертикальное/горизонтальное</span></div>
+          <div className={styles.date}><span>{typeOfMounting}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Тип установки</span></div>
-          <div className={styles.date}><span>Настенное</span></div>
+          <div className={styles.date}><span>{typeOfInstallation}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Наличие фацета</span></div>
-          <div className={styles.date}><span>Да</span></div>
+          <div className={styles.date}><span>{facet ? 'Да' : ' Нет'}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Форма</span></div>
-          <div className={styles.date}><span>Фигурное</span></div>
+          <div className={styles.date}><span>{form}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Назначение</span></div>
-          <div className={styles.date}><span>Ванная, гостинная, спальня, прихожая, холл, над камином</span></div>
+          <div className={styles.date}><span>{appointment}</span></div>
         </div>
       </div>
       <div className={styles.items}>
@@ -69,22 +86,22 @@ const Specifications = (props) => {
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Материал зеркала</span></div>
-          <div className={styles.date}><span>Влагостойкое серебряное зеркало</span></div>
+          <div className={styles.date}><span>{materialMirror}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Материал рамы</span></div>
-          <div className={styles.date}><span>Основа МДФ</span></div>
+          <div className={styles.date}><span>{materialFrame}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Цвет зеркала</span></div>
-          <div className={styles.date}><span>Серебро</span></div>
+          <div className={styles.date}><span>{colorMirror}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Цвет основы</span></div>
-          <div className={styles.date}><span>Черный</span></div>
+          <div className={styles.date}><span>{baseColor}</span></div>
         </div>
       </div>
       <div className={styles.items}>
@@ -92,12 +109,12 @@ const Specifications = (props) => {
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Страна бренда</span></div>
-          <div className={styles.date}><span>Россия</span></div>
+          <div className={styles.date}><span>{countryBrand}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Страна производства</span></div>
-          <div className={styles.date}><span>Россия</span></div>
+          <div className={styles.date}><span>{countryManufacturer}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
