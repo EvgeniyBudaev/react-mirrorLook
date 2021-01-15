@@ -83,7 +83,7 @@ export default function SimpleTabs({product}) {
         <Specifications product={product} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Reviews product={product} productId={product.id} />
+        <Reviews productId={product.id} reviews={product.reviews} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ProductCardDelivery />
