@@ -20,7 +20,8 @@ const Specifications = (props) => {
     colorMirror,
     baseColor,
     countryBrand,
-    countryManufacturer
+    countryManufacturer,
+    manufacturer
   } = product
 
   return (
@@ -81,6 +82,7 @@ const Specifications = (props) => {
           <div className={styles.date}><span>{appointment}</span></div>
         </div>
       </div>
+
       <div className={styles.items}>
         <div className={styles.title}>Материалы и цвет</div>
         <div className={styles.item}>
@@ -104,6 +106,7 @@ const Specifications = (props) => {
           <div className={styles.date}><span>{baseColor}</span></div>
         </div>
       </div>
+
       <div className={styles.items}>
         <div className={styles.title}>О производителе</div>
         <div className={styles.item}>
@@ -119,7 +122,7 @@ const Specifications = (props) => {
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Производитель</span></div>
-          <div className={styles.date}><span>MirrorLook</span></div>
+          <div className={styles.date}><span>{manufacturer}</span></div>
         </div>
         <div className={styles.item}>
           <div className={styles.line}></div>
@@ -127,6 +130,7 @@ const Specifications = (props) => {
           <div className={styles.date}><a href="#"><span>Гарантийные условия</span></a></div>
         </div>
       </div>
+
     </div>
   )
 }
