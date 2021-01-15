@@ -17,7 +17,7 @@ import reviewsReducer from './reviewsReducer'
   productsReducer,
   productReducer,
   usersReducer,
-  reviewsReducer
+  reviewsReducer,
 })
 
 export default rootReducer

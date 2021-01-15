@@ -72,6 +72,7 @@ export const loadReviews = (productId) => async (dispatch, getState) => {
 
 export const loadUsers = () => async (dispatch, getState) => {
   const state = getState()
+  //console.log('[actions][loadUsers][state]', state)
   const loading = usersLoadingSelector(state)
   const loaded = usersLoadedSelector(state)
 

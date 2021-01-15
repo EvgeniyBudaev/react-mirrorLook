@@ -4,8 +4,8 @@ import {getById} from './utils'
 const categoriesSelector = (state) => state.categoriesReducer.entities
 const orderSelector = (state) => state.orderReducer
 const productsSelector = (state) => state.productsReducer.entities
-const reviewsSelector = (state) => state.reviews.entities
-const usersSelector = (state) => state.users.entities
+const reviewsSelector = (state) => state.reviewsReducer.entities
+const usersSelector = (state) => state.usersReducer.entities
 
 export const categoriesLoadingSelector = (state) =>
   state.categoriesReducer.loading
@@ -23,12 +23,12 @@ export const productLoadedSelector = (state, props) =>
   state.productReducer.loaded[props.productId]
 
 export const reviewsLoadingSelector = (state, props) =>
-  state.reviews.loading[props.productId]
+  state.reviewsReducer.loading[props.productId]
 export const reviewsLoadedSelector = (state, props) =>
-  state.reviews.loaded[props.productId]
+  state.reviewsReducer.loaded[props.productId]
 
-export const usersLoadingSelector = (state) => state.users.loading
-export const usersLoadedSelector = (state) => state.users.loaded
+export const usersLoadingSelector = (state) => state.usersReducer.loading
+export const usersLoadedSelector = (state) => state.usersReducer.loaded
 
 export const orderProductsSelector = createSelector(
   productsSelector,

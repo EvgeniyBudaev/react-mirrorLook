@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './specifications.module.scss'
 
 const Specifications = (props) => {
-  console.log('[Specifications][props]', props)
+  //console.log('[Specifications][props]', props)
   const {product} = props
   const {
     height,
