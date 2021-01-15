@@ -8,6 +8,7 @@ import Loader from '../../../../../loader'
 import Review from './review'
 import styles from './reviews.module.scss'
 import animationStyles from './reviews-animation.module.scss'
+import ReviewForm from './reviewForm'
 
 
 const Reviews = (props) => {
@@ -37,6 +38,7 @@ const Reviews = (props) => {
           </CSSTransition>
         ))}
       </TransitionGroup>
+      <ReviewForm productId={productId} />
     </div>
   )
 }
