@@ -23,7 +23,7 @@ const ProductCard = (props) => {
           </div>
         </div>
       </section>
-      <ProductCardDetailed />
+      <ProductCardDetailed product={product} />
     </>
   )
 }

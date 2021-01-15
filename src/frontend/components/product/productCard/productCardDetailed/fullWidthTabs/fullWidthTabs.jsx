@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Specifications from './specifications'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -14,8 +15,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`wrapped-tabpanel-${index}`}
-      aria-labelledby={`wrapped-tab-${index}`}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -35,8 +36,8 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `wrapped-tab-${index}`,
-    'aria-controls': `wrapped-tabpanel-${index}`,
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
@@ -44,12 +45,24 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+    '& .Mui-selected': {
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      color: 'rgba(176, 151, 106, 1)',
+    },
+    '& .MuiAppBar-colorPrimary': {
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      color: 'rgba(0, 0, 0, 1)',
+    },
+    '& .PrivateTabIndicator-colorSecondary-9': {
+      backgroundColor: 'rgba(176, 151, 106, 1)',
+    },
   },
 }));
 
-export default function TabsWrappedLabel() {
+export default function SimpleTabs({product}) {
+
   const classes = useStyles();
-  const [value, setValue] = React.useState('one');
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -58,26 +71,22 @@ export default function TabsWrappedLabel() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} defaultValue='po' aria-label="wrapped label tabs example">
-          <Tab
-            value="one"
-            label="New Arrivals in the Longest Text of Nonfiction"
-            wrapped
-            {...a11yProps('one')}
-          />
-          <Tab value="two" label="Item Two" {...a11yProps('two')} />
-          <Tab value="three" label="Item Three" {...a11yProps('three')} />
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+          <Tab label="Характеристики" {...a11yProps(0)} />
+          <Tab label="Отзывы (0)" {...a11yProps(1)} />
+          <Tab label="Доставка и оплата" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index="one">
-        Item One
+      <TabPanel value={value} index={0}>
+        <Specifications product={product} />
       </TabPanel>
-      <TabPanel value={value} index="two">
+      <TabPanel value={value} index={1}>
         Item Two
       </TabPanel>
-      <TabPanel value={value} index="three">
+      <TabPanel value={value} index={2}>
         Item Three
       </TabPanel>
     </div>
   );
 }
+
