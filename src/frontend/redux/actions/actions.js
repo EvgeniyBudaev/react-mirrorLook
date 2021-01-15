@@ -11,7 +11,7 @@ import {
   LOAD_USERS,
   REQUEST,
   SUCCESS,
-  FAILURE,
+  FAILURE, ADD_REVIEW
 } from '../constants'
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
 
@@ -80,5 +80,11 @@ export const loadUsers = () => async (dispatch, getState) => {
 
   dispatch({type: LOAD_USERS, CallAPI: '/api/users'})
 }
+
+export const addReview = (review, productId) => ({
+  type: ADD_REVIEW,
+  payload: {review, productId},
+  generateId: ['reviewId', 'userId'],
+})
 
 

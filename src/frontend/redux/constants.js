@@ -10,6 +10,8 @@ export const LOAD_PRODUCT_BY_ID = 'LOAD_PRODUCT_BY_ID'
 export const LOAD_REVIEWS = 'LOAD_REVIEWS'
 export const LOAD_USERS = 'LOAD_USERS'
 
+export const ADD_REVIEW = 'ADD_REVIEW'
+
 export const REQUEST = '_REQUEST'
 export const SUCCESS = '_SUCCESS'
 export const FAILURE = '_FAILURE'
