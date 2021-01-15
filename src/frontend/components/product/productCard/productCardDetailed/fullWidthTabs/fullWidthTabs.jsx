@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'rgba(255, 255, 255, 1)',
       color: 'rgba(0, 0, 0, 1)',
     },
-    '& .PrivateTabIndicator-colorSecondary-9': {
+    '& .MuiTabs-indicator': {
       backgroundColor: 'rgba(176, 151, 106, 1)',
     },
   },
