@@ -4,7 +4,7 @@ import {getById} from './utils'
 const categoriesSelector = (state) => state.categoriesReducer.entities
 const orderSelector = (state) => state.orderReducer
 const productsSelector = (state) => state.productsReducer.entities
-const reviewsSelector = (state) => state.reviewsReducer.entities
+export const reviewsSelector = (state) => state.reviewsReducer.entities
 const usersSelector = (state) => state.usersReducer.entities
 
 export const categoriesLoadingSelector = (state) =>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +10,14 @@ import Box from '@material-ui/core/Box';
 import Specifications from './specifications'
 import ProductCardDelivery from './productCardDelivery'
 import Reviews from './reviews'
+import {createStructuredSelector} from 'reselect'
+import {
+  reviewSelector,
+  reviewsLoadedSelector,
+  reviewsSelector,
+  usersLoadedSelector
+} from '../../../../../redux/selectors'
+import Loader from '../../../../loader'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,9 +70,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleTabs(props) {
+function SimpleTabs(props) {
   console.log('[SimpleTabs][props]', props)
-  const {product} = props
+  const {product, reviewsAll} = props
 
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -71,6 +80,10 @@ export default function SimpleTabs(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  let reviewsArrayId
+  if (reviewsAll) reviewsArrayId = Object.keys(reviewsAll)
+  console.log('RES', reviewsArrayId)
 
   return (
     <div className={classes.root}>
@@ -85,7 +98,7 @@ export default function SimpleTabs(props) {
         <Specifications product={product} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Reviews productId={product.id} reviews={product.reviews} />
+        {reviewsArrayId && <Reviews productId={product.id} reviews={product.reviews} reviewsArrayId={reviewsArrayId} />}
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ProductCardDelivery />
@@ -93,6 +106,12 @@ export default function SimpleTabs(props) {
     </div>
   );
 }
+
+const mapStateToProps = createStructuredSelector({
+  reviewsAll: reviewsSelector,
+})
+
+export default connect(mapStateToProps )(SimpleTabs)
 
 
 

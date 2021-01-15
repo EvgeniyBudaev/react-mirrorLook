@@ -127,6 +127,7 @@ const normalizedProducts = [
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
       '429dea85-11dd-4054-a31e-c60c92e17255',
+      '53b642d7-5e86-4717-a466-0640a1dee076',
     ],
   },
   {
@@ -161,7 +162,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -196,7 +196,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -231,7 +230,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -266,7 +264,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -301,7 +298,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -336,7 +332,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -371,7 +366,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -406,7 +400,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -441,7 +434,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -476,7 +468,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -511,7 +502,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
   {
@@ -546,7 +536,6 @@ const normalizedProducts = [
     inStock: true,
     reviews: [
       '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
     ],
   },
 ]

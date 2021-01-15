@@ -20,7 +20,10 @@ const Reviews = (props) => {
     loadUsers,
     usersLoaded,
     reviewsLoaded,
+    reviewsArrayId
   } = props
+
+  const nodeRef = React.useRef(null)
 
   useEffect(() => {
     loadUsers()
@@ -33,8 +36,11 @@ const Reviews = (props) => {
     <div className={styles.reviews}>
       <TransitionGroup>
         {reviews.map((id) => (
-          <CSSTransition key={id} timeout={500} classNames={animationStyles}>
-            <Review id={id} />
+          <CSSTransition key={id} timeout={500} classNames={animationStyles} nodeRef={nodeRef}>
+            <div ref={nodeRef}>
+              <Review id={id} />
+            </div>
+
           </CSSTransition>
         ))}
       </TransitionGroup>
