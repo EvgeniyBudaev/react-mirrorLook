@@ -5,6 +5,8 @@ import orderReducer from './orderReducer'
 import categoriesReducer from './categoriesReducer'
 import productsReducer from './productsReducer'
 import productReducer from './productReducer'
+import usersReducer from './usersReducer'
+import reviewsReducer from './reviewsReducer'
 
 
  const rootReducer = history => combineReducers({
@@ -14,6 +16,8 @@ import productReducer from './productReducer'
   categoriesReducer,
   productsReducer,
   productReducer,
+  usersReducer,
+  reviewsReducer
 })
 
 export default rootReducer

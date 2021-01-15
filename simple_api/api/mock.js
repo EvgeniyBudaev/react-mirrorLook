@@ -89,6 +89,10 @@ const normalizedProducts = [
     description: ['Влагостойкое серебряное зеркало в венецианском стиле Nikole (Николь), 80*110 см. ',
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
+    reviews: [
+      '5909796d-5030-4e36-adec-68b8f9ec2d96',
+      '429dea85-11dd-4054-a31e-c60c92e17255',
+    ],
   },
   {
     id: 'ba64fb8a-d5e3-4cca-8c19-c1424e8c9a47',
@@ -495,7 +499,57 @@ const normalizedProducts = [
   },
 ]
 
+const normalizedReviews = [
+  {
+    id: '5909796d-5030-4e36-adec-68b8f9ec2d96',
+    userId: 'a304959a-76c0-4b34-954a-b38dbf310360',
+    text: 'Not bad',
+    rating: 5,
+  },
+  {
+    id: '429dea85-11dd-4054-a31e-c60c92e17255',
+    userId: 'dfb982e9-b432-4b7d-aec6-7f6ff2e6af54',
+    text: 'No burgers',
+    rating: 3,
+  },
+  {
+    id: '53b642d7-5e86-4717-a466-0640a1dee076',
+    userId: '20bed9b5-9c7b-4771-8221-75b74ed1904a',
+    text: 'Perfect Margarita',
+    rating: 4,
+  },
+]
+
+const normalizedUsers = [
+  {
+    id: 'a304959a-76c0-4b34-954a-b38dbf310360',
+    name: 'Евгений',
+  },
+  {
+    id: '20bed9b5-9c7b-4771-8221-75b74ed1904a',
+    name: 'Ольга',
+  },
+  {
+    id: 'c3d4abd4-c3ef-46e1-8719-eb17db1d6e99',
+    name: 'Максим',
+  },
+  {
+    id: '52a63cc0-5a6f-41f3-9774-0161ea4c9b0c',
+    name: 'Наталья',
+  },
+  {
+    id: '1547335a-ea18-4547-a73d-32bd6e9f651c',
+    name: 'Константин',
+  },
+  {
+    id: 'dfb982e9-b432-4b7d-aec6-7f6ff2e6af54',
+    name: 'Юстина',
+  },
+]
+
 module.exports = {
   products: normalizedProducts,
   categories: normalizedCategories,
+  reviews: normalizedReviews,
+  users: normalizedUsers,
 }

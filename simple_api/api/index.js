@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {categories, products} = require('./mock')
+const {categories, products, reviews, users} = require('./mock')
 const {reply, getById} = require('./utils')
 
 router.get('/categories', (req, res, next) => {
@@ -16,6 +16,22 @@ router.get('/products', (req, res, next) => {
     }
   }
   reply(res, result)
+})
+
+router.get('/reviews', (req, res, next) => {
+  const {id} = req.query
+  let result = reviews
+  if (id) {
+    const product = getById(products)(id)
+    if (product) {
+      result = product.reviews.map(getById(result))
+    }
+  }
+  reply(res, result)
+})
+
+router.get('/users', (req, res, next) => {
+  reply(res, users)
 })
 
 module.exports = router
