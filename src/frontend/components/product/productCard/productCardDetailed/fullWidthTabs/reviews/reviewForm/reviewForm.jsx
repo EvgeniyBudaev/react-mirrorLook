@@ -4,6 +4,7 @@ import {addReview} from '../../../../../../../redux/actions/actions'
 import useForm from '../../../../../../../hooks/use-form'
 import styles from './reviewForm.module.scss'
 import Rate from '../../../../../../rate'
+import Button from '../../../../../../UI/button'
 
 const INITIAL_VALUES = {name: '', text: '', rating: 5}
 
@@ -19,32 +20,28 @@ const ReviewForm = (props) => {
   }
   return (
     <div className={styles.reviewForm}>
-      <h4 className={styles.addReviewTitle}>Leave your review</h4>
       <form onSubmit={handleSubmit}>
-        <div className={styles.reviewFormItem}>
-          <input
-            placeholder="Your name"
-            className={styles.message}
-            {...handlers.name}
-          />
-        </div>
-        <div className={styles.reviewFormItem}>
+        <div className={styles.inner}>
+          <div className={styles.rateWrap}>
+            <Rate {...handlers.rating} />
+          </div>
+          <div className={styles.reviewFormItem}>
+            <input
+              placeholder="Ваше имя"
+              className={styles.message}
+              {...handlers.name}
+            />
+          </div>
+          <div className={styles.reviewFormItem}>
 					<textarea
-            placeholder="Your review"
+            placeholder="Напишите ваш отзыв о товаре"
             className={styles.message}
             {...handlers.text}
           />
-        </div>
-        <div className={styles.rateWrap}>
-          <span>Rating: </span>
-          <span>
-						<Rate {...handlers.rating} />
-					</span>
-        </div>
-        <div className={styles.publish}>
-          <button>
-            PUBLISH REVIEW
-          </button>
+          </div>
+          <div className={styles.publish}>
+            <Button text="Оставить отзыв"></Button>
+          </div>
         </div>
       </form>
     </div>
