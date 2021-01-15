@@ -1,12 +1,18 @@
 import React from 'react'
-import classNames from 'classnames'
-import styles from './productCardData.module.scss'
+import {createStructuredSelector} from 'reselect'
 import {connect} from 'react-redux'
-import {productDecrement, productIncrement, productRemove} from '../../../../redux/actions/actions'
+import classNames from 'classnames'
+import {Link} from 'react-router-dom'
+import styles from './productCardData.module.scss'
+import {productDecrement, productIncrement} from '../../../../redux/actions/actions'
+import {productAmountByIdSelector, productSelector} from '../../../../redux/selectors'
+import {ROUTES} from '../../../../routes'
+
 
 const ProductCardData = (props) => {
-  console.log('[ProductCardData][props]', props)
-  const {id, code, baseColor, height, width, weight, typeOfInstallation} = props.product
+  //console.log('[ProductCardData][props]', props)
+  const {product, amount, productIncrement, productDecrement} = props
+  const {id, code, baseColor, height, width, weight, typeOfInstallation, inStock} = product
 
   const dataListItem1 = (classNames(styles.dataListItem, styles.item1))
   const dataListItem2 = (classNames(styles.dataListItem, styles.item2))
@@ -34,26 +40,37 @@ const ProductCardData = (props) => {
         </ul>
       </div>
       <div className={styles.dataAvailability}>
-        В наличии
+        {inStock ? 'В наличии' : 'Нет в наличии'}
       </div>
-      <div>
-        <div className={styles.dataOrderPrice}>30 000 ₽</div>
-        <div className={styles.dataOrderQuantity}>
-          <span>Кол-во:</span>
-          <div className={styles.quantityNum}>
-            <button className={quantityBtnDecrement} onClick={() => productDecrement(id)}>-</button>
-            <input type="text" value="1" />
-            <button className={quantityBtnIncrement} onClick={() => productIncrement(id)}>+</button>
+      {
+        inStock ? (
+        <div>
+          <div className={styles.dataOrderPrice}>30 000 ₽</div>
+          <div className={styles.dataOrderQuantity}>
+            <span>Кол-во:</span>
+            <div className={styles.quantityNum}>
+              <button className={quantityBtnDecrement} onClick={() => productDecrement(id)}>-</button>
+              <div>{amount || 0}</div>
+              <button className={quantityBtnIncrement} onClick={() => productIncrement(id)}>+</button>
+            </div>
+          </div>
+          <div className={styles.dataOrderBtn}>
+            <Link to={ROUTES.BASKET}>
+              <button>В корзину</button>
+            </Link>
           </div>
         </div>
-        <div className={styles.dataOrderBtn}>
-          <button>В корзину</button>
-        </div>
-      </div>
+      ) : null
+      }
     </div>
   )
 }
 
-export default connect(null, {productIncrement, productDecrement, productRemove})(ProductCardData)
+const mapStateToProps = createStructuredSelector({
+  amount: productAmountByIdSelector,
+  productAAA: productSelector,
+})
+
+export default connect(mapStateToProps, {productIncrement, productDecrement})(ProductCardData)
 
 

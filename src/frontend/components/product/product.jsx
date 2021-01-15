@@ -12,7 +12,7 @@ import {
 import Loader from '../loader'
 
 const Product = (props) => {
-  console.log('[Product][props]', props)
+  //console.log('[Product][props]', props)
   const {match, loadProductById, loading, loaded, product} = props
 
   useEffect(() => {

@@ -8,7 +8,7 @@ const orderReducer = (state = {}, action) => {
     case PRODUCT_INCREMENT:
       return {...state, [payload.id]: (state[payload.id] || 0) + 1}
     case PRODUCT_DECREMENT:
-      return {...state, [payload.id]: (state[payload.id] || 0) - 1}
+      return {...state, [payload.id]: (state[payload.id] > 0 ? state[payload.id] - 1 : 0  || 0)}
     case PRODUCT_REMOVE:
       return {...state, [payload.id]: 0}
     default:
