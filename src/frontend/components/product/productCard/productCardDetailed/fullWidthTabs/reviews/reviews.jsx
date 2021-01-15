@@ -18,8 +18,8 @@ const Reviews = (props) => {
     productId,
     loadReviews,
     loadUsers,
-    reviewsLoaded,
     usersLoaded,
+    reviewsLoaded,
   } = props
 
   useEffect(() => {
