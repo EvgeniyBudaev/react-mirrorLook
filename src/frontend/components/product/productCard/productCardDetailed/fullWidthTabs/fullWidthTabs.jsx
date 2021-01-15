@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Specifications from './specifications'
 import ProductCardDelivery from './productCardDelivery'
+import Reviews from './reviews'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -82,7 +83,7 @@ export default function SimpleTabs({product}) {
         <Specifications product={product} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Reviews product={product} productId={product.id} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ProductCardDelivery />

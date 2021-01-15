@@ -13,6 +13,7 @@ import {
   SUCCESS,
   FAILURE,
 } from '../constants'
+import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
 
 export const handleWindowScroll = (isOffset) => ({
   type: IS_WINDOW_SCROLL,
@@ -49,6 +50,34 @@ export const loadProductById = (productId) => async dispatch => {
     dispatch({type: LOAD_PRODUCT_BY_ID + FAILURE, error, productId})
     dispatch(replace('/error'))
   }
+}
+
+export const loadReviews = (productId) => async (dispatch, getState) => {
+  const state = getState()
+  const loading = reviewsLoadingSelector(state, {productId})
+  const loaded = reviewsLoadedSelector(state, {productId})
+
+  if (loading || loaded) return
+  dispatch({type: LOAD_REVIEWS + REQUEST, productId})
+  try {
+    const response = await fetch(
+      `/api/reviews?id=${productId}`
+    ).then((res) => res.json())
+    dispatch({type: LOAD_REVIEWS + SUCCESS, response, productId})
+  } catch (error) {
+    dispatch({type: LOAD_REVIEWS + FAILURE, error, productId})
+    dispatch(replace('/error'))
+  }
+}
+
+export const loadUsers = () => async (dispatch, getState) => {
+  const state = getState()
+  const loading = usersLoadingSelector(state)
+  const loaded = usersLoadedSelector(state)
+
+  if (loading || loaded) return
+
+  dispatch({type: LOAD_USERS, CallAPI: '/api/users'})
 }
 
 
