@@ -21,12 +21,14 @@ const BasketCard = (props) => {
         <p className={styles.unitText}>Цена за ед.</p>
         <p className={styles.unitPrice}>{price} ₽</p>
       </div>
-      <button onClick={() => productDecrement(id)}>-</button>
-      <div className={styles.amount}>
-        <p className={styles.amountText}>Кол-во</p>
-        <div className={styles.amountNumber}>{amount}</div>
+      <div className={styles.amountBox}>
+        <button className={styles.button}  onClick={() => productDecrement(id)}>-</button>
+        <div className={styles.amount}>
+          <p className={styles.amountText}>Кол-во</p>
+          <div className={styles.amountNumber}>{amount}</div>
+        </div>
+        <button className={styles.button} onClick={() => productIncrement(id)}>+</button>
       </div>
-      <button onClick={() => productIncrement(id)}>+</button>
       <div className={styles.total}>
         <p className={styles.totalPrice}>{subtotal} ₽</p>
         <button className={styles.totalButton}>

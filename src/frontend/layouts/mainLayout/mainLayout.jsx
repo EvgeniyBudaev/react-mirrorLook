@@ -15,8 +15,8 @@ const MainLayout = (props) => {
         </div>
         <div className={styles.footer}>
           <Footer />
-          <Sidebar />
-          <Bar />
+          {/*<Sidebar />*/}
+          {/*<Bar />*/}
         </div>
       </div>
     </>

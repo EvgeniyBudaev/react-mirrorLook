@@ -13,9 +13,13 @@ const Basket = (props) => {
 
   if (!total) {
     return (
-      <div className={styles.basket}>
-        <h4 className={styles.title}>В корзине нет выбранных товаров</h4>
-      </div>
+      <section className={styles.basket}>
+        <div className={styles.container}>
+          <div className={styles.basket}>
+            <h4 className={styles.title}>В корзине нет выбранных товаров</h4>
+          </div>
+        </div>
+      </section>
     )
   }
 
