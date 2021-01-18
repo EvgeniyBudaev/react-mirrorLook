@@ -10,7 +10,8 @@ const initialState = {
 }
 
 const reviewsReducer = produce((draft = initialState, action) => {
-  const {type, productId, response, payload, reviewId, userId} = action
+  const {type, payload, reviewId, userId, productId, response} = action
+  //console.log('[reviewsReducer][action]', action)
 
   switch (type) {
     case LOAD_REVIEWS + REQUEST: {

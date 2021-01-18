@@ -12,6 +12,8 @@ export const LOAD_USERS = 'LOAD_USERS'
 
 export const ADD_REVIEW = 'ADD_REVIEW'
 
+export const SEARCH_PRODUCT = 'SEARCH_PRODUCT'
+
 export const REQUEST = '_REQUEST'
 export const SUCCESS = '_SUCCESS'
 export const FAILURE = '_FAILURE'

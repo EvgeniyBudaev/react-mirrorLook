@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {addReview} from '../../../../../../../redux/actions/actions'
 import useForm from '../../../../../../../hooks/use-form'
@@ -9,7 +10,7 @@ import Button from '../../../../../../UI/button'
 const INITIAL_VALUES = {name: '', text: '', rating: 5}
 
 const ReviewForm = (props) => {
-  console.log('[ReviewForm][props]', props)
+  //console.log('[ReviewForm][props]', props)
   const {onSubmit} = props
   const {values, handlers, reset} = useForm(INITIAL_VALUES)
 
@@ -46,6 +47,11 @@ const ReviewForm = (props) => {
       </form>
     </div>
   )
+}
+
+ReviewForm.propTypes = {
+  restaurantId: PropTypes.string,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default connect(null, (dispatch, props) => ({

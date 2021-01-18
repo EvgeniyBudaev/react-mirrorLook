@@ -60,6 +60,7 @@ export const productAmountSelector = getById(orderSelector, 0)
 export const productSelector = getById(productsSelector)
 const reviewSelector = getById(reviewsSelector)
 
+
 export const productByIdSelector = (state, props) => state.productReducer.entities[props.productId]
 export const productAmountByIdSelector = (state, props) => state.orderReducer[props.product.id]
 

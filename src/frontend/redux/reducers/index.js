@@ -7,6 +7,7 @@ import productsReducer from './productsReducer'
 import productReducer from './productReducer'
 import usersReducer from './usersReducer'
 import reviewsReducer from './reviewsReducer'
+import searchReducer from './searchReducer'
 
 
  const rootReducer = history => combineReducers({
@@ -18,6 +19,7 @@ import reviewsReducer from './reviewsReducer'
   productReducer,
   usersReducer,
   reviewsReducer,
+  searchReducer
 })
 
 export default rootReducer

@@ -12,7 +12,6 @@ import ProductCardDelivery from './productCardDelivery'
 import Reviews from './reviews'
 import {createStructuredSelector} from 'reselect'
 import {
-  categoriesListSelector,
   reviewsSelector
 } from '../../../../../redux/selectors'
 
@@ -69,21 +68,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SimpleTabs(props) {
-  console.log('[SimpleTabs][props]', props)
+  //console.log('[SimpleTabs][props]', props)
   const {product, reviewsAll} = props
   const reviewsAllArray = Object.values(reviewsAll)
   const reviewsArray = reviewsAllArray.map(review => review.id)
-  console.log('reviewsArray', reviewsArray)
+  //console.log('reviewsArray', reviewsArray)
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  let reviewsArrayId
-  if (reviewsAll) reviewsArrayId = Object.keys(reviewsAll)
-  console.log('RES', reviewsArrayId)
 
   return (
     <div className={classes.root}>
@@ -98,7 +93,7 @@ function SimpleTabs(props) {
         <Specifications product={product} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {reviewsArrayId && <Reviews productId={product.id} reviews={reviewsArray} reviewsArrayId={reviewsArrayId} />}
+        {<Reviews productId={product.id} reviews={reviewsArray} />}
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ProductCardDelivery />

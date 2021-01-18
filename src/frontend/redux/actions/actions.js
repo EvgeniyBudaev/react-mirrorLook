@@ -11,7 +11,9 @@ import {
   LOAD_USERS,
   REQUEST,
   SUCCESS,
-  FAILURE, ADD_REVIEW
+  FAILURE,
+  ADD_REVIEW,
+  SEARCH_PRODUCT
 } from '../constants'
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
 
@@ -86,5 +88,19 @@ export const addReview = (review, productId) => ({
   payload: {review, productId},
   generateId: ['reviewId', 'userId'],
 })
+
+export const searchProduct = text => dispatch => {
+  dispatch({
+    type: SEARCH_PRODUCT,
+    payload: text
+  })
+}
+
+// export const searchProduct = (text) => ({
+//   type: SEARCH_PRODUCT,
+//   payload: text
+// })
+
+
 
 

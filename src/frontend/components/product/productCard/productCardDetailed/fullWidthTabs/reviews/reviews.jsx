@@ -12,7 +12,7 @@ import ReviewForm from './reviewForm'
 
 
 const Reviews = (props) => {
-  console.log('[Reviews][props]', props)
+  //console.log('[Reviews][props]', props)
   const {
     reviews,
     productId,
@@ -20,7 +20,6 @@ const Reviews = (props) => {
     loadUsers,
     usersLoaded,
     reviewsLoaded,
-    reviewsArrayId
   } = props
 
   const nodeRef = React.useRef(null)
