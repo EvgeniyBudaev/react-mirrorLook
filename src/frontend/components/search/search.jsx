@@ -32,10 +32,10 @@ class Search extends Component {
             type="text"
             onChange={this.handleChange}
           />
-        </form>
-        <span>
+          <span>
           <button>GO</button>
         </span>
+        </form>
       </div>
     )
   }

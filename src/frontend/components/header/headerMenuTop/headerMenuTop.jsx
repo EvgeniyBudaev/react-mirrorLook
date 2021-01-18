@@ -6,7 +6,7 @@ import MenuTopCity from './menuTopCity'
 import IconSearch from '../../UI/icons/iconSearch'
 import IconHeart from '../../UI/icons/iconHeart'
 import IconBasket from '../../UI/icons/iconBasket'
-import Search from '../../search'
+// import Search from '../../search'
 
 const HeaderMenuTop = () => {
   return (
@@ -17,8 +17,8 @@ const HeaderMenuTop = () => {
       </a>
       <ul className={styles.menuTopButtons}>
         <li>
+          {/*<Search />*/}
           <Link id="search" to={ROUTES.HOME}>
-            <Search />
             <IconSearch />
           </Link>
         </li>
