@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import styles from './product.module.scss'
 import ProductCard from './productCard'
 import {loadProductById} from '../../redux/actions/actions'
 import {createStructuredSelector} from 'reselect'
@@ -14,10 +13,11 @@ import Loader from '../loader'
 const Product = (props) => {
   //console.log('[Product][props]', props)
   const {match, loadProductById, loading, loaded, product} = props
+  const id = match.params.id
 
   useEffect(() => {
-    if (!loading && !loaded) loadProductById(match.params.id)
-  }, [loadProductById, loading, loaded])
+    if (!loading && !loaded) loadProductById(id)
+  }, [loadProductById, loading, loaded, id])
 
   if (loading || !loaded) return <Loader />
 

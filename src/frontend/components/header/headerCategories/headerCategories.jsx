@@ -11,7 +11,7 @@ import {
 import {loadCategories} from '../../../redux/actions/actions'
 import Loader from '../../loader'
 import {createStructuredSelector} from 'reselect'
-import { matchPath, useLocation} from 'react-router'
+// import { matchPath, useLocation} from 'react-router'
 
 
 const HeaderCategories = (props) => {

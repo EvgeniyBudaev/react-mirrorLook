@@ -1,9 +1,11 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import styles from './productCardDescription.module.scss'
 import iconFavorite from '../../../../../assets/images/icon-favorite.svg'
 import wallet from '../../../../../assets/images/wallet.png'
 import visa from '../../../../../assets/images/visa.png'
 import master from '../../../../../assets/images/master.png'
+import {ROUTES} from '../../../../routes'
 
 const ProductCardDescription = ({description}) => {
   return (
@@ -13,10 +15,10 @@ const ProductCardDescription = ({description}) => {
       </div>
       <div className={styles.descriptionInfo}>
         <div className={styles.descriptionInfoFavorites}>
-          <a href="#">
+          <Link to={ROUTES.HOME}>
             <img src={iconFavorite} alt="favorite" />
             <span>В избранное</span>
-          </a>
+          </Link>
         </div>
         <ul className={styles.descriptionInfoList}>
           <li>
@@ -30,15 +32,15 @@ const ProductCardDescription = ({description}) => {
             Оплата: <span>При получении</span>
           </li>
           <li className={styles.descriptionPay}>
-            <a href="#">
+            <Link to={ROUTES.HOME}>
               <img src={wallet} alt="pay" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to={ROUTES.HOME}>
               <img src={visa} alt="pay" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to={ROUTES.HOME}>
               <img src={master} alt="pay" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

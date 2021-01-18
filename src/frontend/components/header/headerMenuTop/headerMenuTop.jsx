@@ -16,14 +16,14 @@ const HeaderMenuTop = () => {
       </a>
       <ul className={styles.menuTopButtons}>
         <li>
-          <a id="search" href="#">
+          <Link id="search" to={ROUTES.HOME}>
             <IconSearch />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to={ROUTES.HOME}>
             <IconHeart />
-          </a>
+          </Link>
         </li>
         <li>
           <Link to={ROUTES.BASKET}>

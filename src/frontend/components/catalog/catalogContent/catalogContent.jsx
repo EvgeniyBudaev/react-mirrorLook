@@ -11,7 +11,7 @@ import {withRouter} from 'react-router'
 
 
 const CatalogContent = (props) => {
-  console.log('[CatalogContent][props]', props)
+  //console.log('[CatalogContent][props]', props)
   const {location, match} = props
   const categories = useSelector(categoriesListSelector)
   const {restId} = match.params

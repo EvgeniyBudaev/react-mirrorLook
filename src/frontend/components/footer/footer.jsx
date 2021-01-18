@@ -1,9 +1,11 @@
 import React from 'react'
 import classNames from 'classnames'
+import {Link} from 'react-router-dom'
 import styles from './footer.module.scss'
 import FooterLogoAndSocial from './footerLogoAndSocial/footerLogoAndSocial'
 import FooterForm from './footerForm'
 import FooterPolitics from './footerPolitics'
+import {ROUTES} from '../../routes'
 
 const Footer = () => {
   const footerLogoAndSocial = classNames(
@@ -20,22 +22,22 @@ const Footer = () => {
             <h4>Каталог</h4>
             <ul>
               <li>
-                <a href="#">Венецианские зеркала</a>
+                <Link to={ROUTES.HOME}>Венецианские зеркала</Link>
               </li>
               <li>
-                <a href="#">Напольные зеркала</a>
+                <Link to={ROUTES.HOME}>Напольные зеркала</Link>
               </li>
               <li>
-                <a href="#">Зеркала в рамах</a>
+                <Link to={ROUTES.HOME}>Зеркала в рамах</Link>
               </li>
               <li>
-                <a href="#">Зеркальные панно</a>
+                <Link to={ROUTES.HOME}>Зеркальные панно</Link>
               </li>
               <li>
-                <a href="#">Зеркало-солнце</a>
+                <Link to={ROUTES.HOME}>Зеркало-солнце</Link>
               </li>
               <li>
-                <a href="#">Консоли</a>
+                <Link to={ROUTES.HOME}>Консоли</Link>
               </li>
             </ul>
           </div>
@@ -43,19 +45,19 @@ const Footer = () => {
             <h4>Информация</h4>
             <ul>
               <li>
-                <a href="#">О магазине</a>
+                <Link to={ROUTES.HOME}>О магазине</Link>
               </li>
               <li>
-                <a href="#">Каталог</a>
+                <Link to={ROUTES.HOME}>Каталог</Link>
               </li>
               <li>
-                <a href="#">Распродажа</a>
+                <Link to={ROUTES.HOME}>Распродажа</Link>
               </li>
               <li>
-                <a href="#">Доставка и оплата</a>
+                <Link to={ROUTES.HOME}>Доставка и оплата</Link>
               </li>
               <li>
-                <a href="#">Контакты</a>
+                <Link to={ROUTES.HOME}>Контакты</Link>
               </li>
             </ul>
           </div>
@@ -63,13 +65,13 @@ const Footer = () => {
             <h4>Подборки</h4>
             <ul>
               <li>
-                <a href="#">Скидки</a>
+                <Link to={ROUTES.HOME}>Скидки</Link>
               </li>
               <li>
-                <a href="#">Лидеры продаж</a>
+                <Link to={ROUTES.HOME}>Лидеры продаж</Link>
               </li>
               <li>
-                <a href="#">Новинки</a>
+                <Link to={ROUTES.HOME}>Новинки</Link>
               </li>
             </ul>
           </div>

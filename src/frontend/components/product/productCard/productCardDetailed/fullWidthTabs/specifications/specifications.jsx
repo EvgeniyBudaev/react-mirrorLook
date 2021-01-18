@@ -1,5 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import {ROUTES} from '../../../../../../routes'
 import styles from './specifications.module.scss'
+
 
 const Specifications = (props) => {
   //console.log('[Specifications][props]', props)
@@ -127,7 +130,7 @@ const Specifications = (props) => {
         <div className={styles.item}>
           <div className={styles.line}></div>
           <div className={styles.naming}><span>Гарантия</span></div>
-          <div className={styles.date}><a href="#"><span>Гарантийные условия</span></a></div>
+          <div className={styles.date}><Link to={ROUTES.HOME}><span>Гарантийные условия</span></Link></div>
         </div>
       </div>
 

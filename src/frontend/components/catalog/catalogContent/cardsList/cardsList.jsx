@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import styles from './cardsList.module.scss'
 import Card from '../../../card'
 import {connect} from 'react-redux'
@@ -9,7 +9,7 @@ import {
 } from '../../../../redux/selectors'
 import {loadProducts} from '../../../../redux/actions/actions'
 import Loader from '../../../loader'
-import {useLocation, withRouter} from 'react-router'
+import {withRouter} from 'react-router'
 import {getPaginator, limit} from '../../../../utilities/utils'
 import {stringify} from 'query-string'
 
@@ -66,11 +66,11 @@ import {stringify} from 'query-string'
 // }
 
 const CardsList = (props) => {
-  console.log('[CardsList][props]', props)
+  //console.log('[CardsList][props]', props)
   const { loadProducts, categoryId, products, loading, loaded, location } = props;
 
     const {currentPage, offset} = getPaginator(location.search)
-    console.log('[CardsList][offset, currentPage]', offset, currentPage)
+    //console.log('[CardsList][offset, currentPage]', offset, currentPage)
     const stringifiedParams = stringify({
       limit,
       offset

@@ -12,12 +12,9 @@ import ProductCardDelivery from './productCardDelivery'
 import Reviews from './reviews'
 import {createStructuredSelector} from 'reselect'
 import {
-  reviewSelector,
-  reviewsLoadedSelector,
   reviewsSelector,
-  usersLoadedSelector
 } from '../../../../../redux/selectors'
-import Loader from '../../../../loader'
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

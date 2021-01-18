@@ -35,7 +35,7 @@ const Reviews = (props) => {
   return (
     <div className={styles.reviews}>
       <TransitionGroup>
-        {reviews.map((id) => (
+        {reviewsArrayId.map((id) => (
           <CSSTransition key={id} timeout={500} classNames={animationStyles} nodeRef={nodeRef}>
             <div ref={nodeRef}>
               <Review id={id} />
