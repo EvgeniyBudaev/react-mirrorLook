@@ -1,22 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
+import {BrowserRouter} from 'react-router-dom'
 import App from './frontend/components/app'
 import reportWebVitals from './reportWebVitals'
 import store from './frontend/redux/store'
 import 'normalize.css'
 import 'slick-carousel/slick/slick.css'
 import './index.css'
-import {ConnectedRouter} from 'connected-react-router'
-import history from './history'
+// import {ConnectedRouter} from 'connected-react-router'
+// import history from './history'
 
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
       <Provider store={store}>
-        <ConnectedRouter history={history }>
-          <App />
-        </ConnectedRouter>
+        <App />
       </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 )

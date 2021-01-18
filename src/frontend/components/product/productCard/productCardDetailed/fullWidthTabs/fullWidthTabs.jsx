@@ -93,7 +93,7 @@ function SimpleTabs(props) {
         <Specifications product={product} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {<Reviews productId={product.id} reviews={reviewsArray} />}
+        <Reviews productId={product.id} reviews={reviewsArray} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ProductCardDelivery />
