@@ -1,9 +1,10 @@
 import React from 'react'
+import cn from 'classnames'
 import styles from './menuTopCity.module.scss'
 
-const MenuTopCity = () => {
+const MenuTopCity = ({isClickedIconSearch}) => {
   return (
-    <span className={styles.menuTopCity}>
+    <span className={cn(styles.menuTopCity, {[styles.isClickedIconSearch]: isClickedIconSearch})}>
       <svg
         width="25"
         height="25"

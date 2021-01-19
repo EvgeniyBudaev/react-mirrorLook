@@ -21,6 +21,10 @@
   fill: var(--beige);
 }
 
+.isClickedIconSearch {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .menuTopCity {
     font-size: 12px;

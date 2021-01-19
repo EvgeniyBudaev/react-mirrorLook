@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {searchProduct} from '../../redux/actions/actions'
+import styles from './search.module.scss'
 
 class Search extends Component {
   constructor(props) {
@@ -26,14 +27,14 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.search}>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             onChange={this.handleChange}
           />
           <span>
-          <button>GO</button>
+          <button>Найти</button>
         </span>
         </form>
       </div>

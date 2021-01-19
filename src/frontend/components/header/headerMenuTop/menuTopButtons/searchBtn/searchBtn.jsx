@@ -1,27 +1,19 @@
-import React, {useState} from 'react'
+import React from 'react'
+import cn from 'classnames'
 import styles from './searchBtn.module.scss'
 import IconSearch from '../../../../UI/icons/iconSearch'
 import IconSearchClose from '../../../../UI/icons/iconSearchClose'
-// import Search from '../../../../search'
 
-const SearchBtn = () => {
-const [searchBtnIsClicked, setSearchBtnIsClicked] = useState(false)
 
-  const handleClickToggle = () => {
-    console.log('before searchBtnIsClicked', searchBtnIsClicked)
-    setSearchBtnIsClicked({
-      searchBtnIsClicked: true
-    })
-    console.log('after searchBtnIsClicked', searchBtnIsClicked)
-  }
+const SearchBtn = (props) => {
+const {isClickedIconSearch, handleClickIconSearch} = props
 
     return (
       <>
-        {/*<Search />*/}
-        <button className={styles.searchBtn} data-search="btn" onClick={handleClickToggle}>
+        <button className={cn(styles.searchBtn, {[styles.hide]: isClickedIconSearch})} onClick={() => handleClickIconSearch()}>
           <IconSearch />
         </button>
-        <button className={styles.searchCloseBtn} data-search="close-btn">
+        <button className={cn(styles.searchCloseBtn, {[styles.active]: isClickedIconSearch})} onClick={() => handleClickIconSearch()}>
           <IconSearchClose />
         </button>
       </>

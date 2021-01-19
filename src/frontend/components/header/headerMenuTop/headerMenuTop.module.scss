@@ -19,6 +19,10 @@
   color: var(--beige);
 }
 
+.isClickedIconSearch {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .menuTopTel {
     font-size: 12px;
