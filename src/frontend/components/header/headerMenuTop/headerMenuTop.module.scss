@@ -8,15 +8,6 @@
   align-items: center;
 }
 
-.menuTopButtons {
-  display: flex;
-  align-items: center;
-}
-
-.menuTopButtons li + li {
-  padding-left: 15px;
-}
-
 .menuTopTel {
   font-size: 18px;
   line-height: 1.25;
@@ -42,14 +33,5 @@
   .menuTopTel {
     display: none;
   }
-  .menuTopButtons {
-    position: relative;
-    top: 4px;
-  }
 }
 
-@media (max-width: 500px) {
-  .menuTopButtons {
-    display: none;
-  }
-}

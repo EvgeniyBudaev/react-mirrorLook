@@ -29,3 +29,4 @@ const IconSearch = () => (
 )
 
 export default IconSearch
+
