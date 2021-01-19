@@ -1,19 +1,24 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import styles from './searchBtn.module.scss'
 import IconSearch from '../../../../UI/icons/iconSearch'
 import IconSearchClose from '../../../../UI/icons/iconSearchClose'
+// import Search from '../../../../search'
 
-class SearchBtn extends Component {
+const SearchBtn = () => {
+const [searchBtnIsClicked, setSearchBtnIsClicked] = useState(false)
 
-  handleClickToggle = () => {
-    console.log('click')
+  const handleClickToggle = () => {
+    console.log('before searchBtnIsClicked', searchBtnIsClicked)
+    setSearchBtnIsClicked({
+      searchBtnIsClicked: true
+    })
+    console.log('after searchBtnIsClicked', searchBtnIsClicked)
   }
 
-  render() {
     return (
       <>
         {/*<Search />*/}
-        <button className={styles.searchBtn} data-search="btn" onClick={this.handleClickToggle}>
+        <button className={styles.searchBtn} data-search="btn" onClick={handleClickToggle}>
           <IconSearch />
         </button>
         <button className={styles.searchCloseBtn} data-search="close-btn">
@@ -22,6 +27,6 @@ class SearchBtn extends Component {
       </>
     )
   }
-}
+
 
 export default SearchBtn

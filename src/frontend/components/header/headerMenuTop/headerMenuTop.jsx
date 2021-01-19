@@ -7,7 +7,7 @@ const HeaderMenuTop = () => {
   return (
     <div className={styles.menuTop}>
       <MenuTopCity />
-      <a className={styles.menuTopTel} href="tel:89261113978">
+      <a className={styles.menuTopTel} href="tel:89261113978" data-menu="tel">
         +7 (926) 111-39-78
       </a>
       <MenuTopButtons />
