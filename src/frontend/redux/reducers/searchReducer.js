@@ -1,12 +1,15 @@
 import {SEARCH_PRODUCT} from '../constants'
 
+const initialState = {
+  entities: ''
+}
 
-const searchReducer = (state = {}, action) => {
+const searchReducer = (state = initialState , action) => {
   const {type, payload} = action
 
   switch (type) {
     case SEARCH_PRODUCT:
-      return {...state, payload}
+      return {...state, entities: payload}
     default:
       return state
   }

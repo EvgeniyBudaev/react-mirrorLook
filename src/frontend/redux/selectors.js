@@ -3,9 +3,10 @@ import {getById} from './utils'
 
 const categoriesSelector = (state) => state.categoriesReducer.entities
 const orderSelector = (state) => state.orderReducer
-const productsSelector = (state) => state.productsReducer.entities
+export const productsSelector = (state) => state.productsReducer.entities
 export const reviewsSelector = (state) => state.reviewsReducer.entities
 const usersSelector = (state) => state.usersReducer.entities
+export const searchSelector = (state) => state.searchReducer.entities
 
 export const categoriesLoadingSelector = (state) =>
   state.categoriesReducer.loading
