@@ -203,3 +203,33 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 500px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .card {
+    &:not(.active) {
+      height: 380px;
+      & .content {
+        justify-content: space-evenly;
+      }
+      & .footerBottomNum {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .card {
+    &:not(.active) {
+      height: 550px;
+      & .content {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
