@@ -7,7 +7,7 @@ const CatalogAside = () => {
   const catalogAside = ClassNames(styles.catalogAside, styles.asideFilter)
   return (
     <aside className={catalogAside}>
-      <button className={styles.filterButton} data-aside-filter-button="">
+      <button className={styles.filterButton}>
         <svg
           width="20"
           height="20"

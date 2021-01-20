@@ -22,3 +22,16 @@
     top: 3px;
   }
 }
+
+@media (max-width: 400px) {
+  .catalogTop {
+    & .box {
+      flex-direction: column;
+      & span {
+        margin-left: 0;
+        top: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

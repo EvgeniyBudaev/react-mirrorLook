@@ -40,7 +40,9 @@ const Card = (props) => {
               <img src={product.images} alt="images" />
             </Link>
           </div>
-          <p className={styles.contentTitle}>{product.name}</p>
+          <div className={styles.contentDescription}>
+            <p className={styles.contentTitle}>{product.name}</p>
+          </div>
         </div>
         <div className={styles.footer}>
           <div className={styles.footerTop}>

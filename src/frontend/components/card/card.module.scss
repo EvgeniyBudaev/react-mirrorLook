@@ -34,7 +34,7 @@
   &:not(.active) .contentTitle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    margin: 50px 0 20px 50px
+    margin-bottom: 20px;
   }
   &:not(.active) .contentDescription {
     max-width: 300px;
@@ -48,7 +48,7 @@
     display: block;
     margin-bottom: 5px;
   }
-  &:not(.active) .FooterTop {
+  &:not(.active) .footerTop {
     display: none;
   }
   &:not(.active) .footerBottom {

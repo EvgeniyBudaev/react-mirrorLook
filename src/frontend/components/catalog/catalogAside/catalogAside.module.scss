@@ -8,10 +8,20 @@
 }
 
 .filterButton {
+  display: none;
 }
 
 @media (max-width: 980px) {
   .catalogAside {
     margin-top: 0;
+  }
+  .filterButton {
+    display: block;
+    padding: 0;
+    margin-bottom: 20px;
+    & svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
