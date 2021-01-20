@@ -6,14 +6,17 @@ import IconSearchClose from '../../../../UI/icons/iconSearchClose'
 
 
 const SearchBtn = (props) => {
-const {isClickedIconSearch, handleClickIconSearch} = props
+  const {isClickedIconSearch, handleClickIconSearch} = props
+
+  const searchBtn = cn(styles.searchBtn, {[styles.hide]: isClickedIconSearch})
+  const searchCloseBtn = cn(styles.searchCloseBtn, {[styles.active]: isClickedIconSearch})
 
     return (
       <>
-        <button className={cn(styles.searchBtn, {[styles.hide]: isClickedIconSearch})} onClick={() => handleClickIconSearch()}>
+        <button className={searchBtn} onClick={() => handleClickIconSearch()}>
           <IconSearch />
         </button>
-        <button className={cn(styles.searchCloseBtn, {[styles.active]: isClickedIconSearch})} onClick={() => handleClickIconSearch()}>
+        <button className={searchCloseBtn} onClick={() => handleClickIconSearch()}>
           <IconSearchClose />
         </button>
       </>

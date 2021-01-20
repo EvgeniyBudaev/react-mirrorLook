@@ -19,6 +19,7 @@ const HeaderMenuTop = () => {
   })
 
   const [isClickedIconSearch, setIsClickedIconSearch] = useState(false)
+  const menuTopTel = cn(styles.menuTopTel, {[styles.isClickedIconSearch]: isClickedIconSearch})
 
   const handleClickIconSearch = () => {
     setIsClickedIconSearch(!isClickedIconSearch)
@@ -27,7 +28,7 @@ const HeaderMenuTop = () => {
   return (
     <div className={styles.menuTop}>
       <MenuTopCity isClickedIconSearch={isClickedIconSearch} />
-      <a className={cn(styles.menuTopTel, {[styles.isClickedIconSearch]: isClickedIconSearch})} href="tel:89261113978">
+      <a className={menuTopTel} href="tel:89261113978">
         +7 (926) 111-39-78
       </a>
       {

@@ -2,13 +2,15 @@ import React from 'react'
 import ClassNames from 'classnames'
 import styles from './catalogFilterButtons.module.scss'
 
-const CatalogFilterButtons = () => {
-  const btnLine = ClassNames(styles.btnLine, styles.button)
-  const btnGrid = ClassNames(styles.btnLine, styles.button, styles.active)
+const CatalogFilterButtons = (props) => {
+  const {isClickedBtnGrid, handleClickBtnGrid} = props
+
+  const btnLine = ClassNames(styles.btnLine, styles.button, {[styles.active]: !isClickedBtnGrid})
+  const btnGrid = ClassNames(styles.btnLine, styles.button, {[styles.active]: isClickedBtnGrid})
 
   return (
     <div className={styles.catalogFilterButtons}>
-      <button className={btnLine}>
+      <button className={btnLine} onClick={() => handleClickBtnGrid()}>
         <svg
           width="30"
           height="30"
@@ -30,7 +32,7 @@ const CatalogFilterButtons = () => {
           </g>
         </svg>
       </button>
-      <button className={btnGrid}>
+      <button className={btnGrid} onClick={() => handleClickBtnGrid()}>
         <svg
           width="30"
           height="30"

@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './catalogFilter.module.scss'
 import CatalogFilterButtons from './catalogFilterButtons'
 
 const CatalogFilter = () => {
+  const [isClickedBtnGrid, setIsClickedBtnGrid] = useState(true)
+
+  const handleClickBtnGrid = () => {
+    setIsClickedBtnGrid(!isClickedBtnGrid)
+  }
+
   return (
     <div className={styles.catalogFilter}>
       <ul>
@@ -41,7 +47,7 @@ const CatalogFilter = () => {
           </form>
         </div>
       </ul>
-      <CatalogFilterButtons />
+      <CatalogFilterButtons isClickedBtnGrid={isClickedBtnGrid} handleClickBtnGrid={handleClickBtnGrid} />
     </div>
   )
 }
