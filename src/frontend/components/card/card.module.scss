@@ -172,6 +172,29 @@
   color: #b0976a;
 }
 
+@media (max-width: 1200px) {
+  .footerBottom {
+    margin-right: 20px;
+  }
+  .contentImg {
+    margin-left: 15px;
+  }
+  .contentDescription {
+    max-width: 200px;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 980px) {
+  .contentDescription {
+    margin-left: 15px;
+    max-width: 130px;
+  }
+  .footerBottom {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 760px) {
   .contentTitle,
   .footerBottomLabel,

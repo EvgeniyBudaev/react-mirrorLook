@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  & .selects {}
   & .selectsWrapper {
     display: flex;
     align-items: center;
@@ -19,6 +20,45 @@
     height: 20px;
   }
   .filterElement + .filterElement {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .catalogFilter {
+    justify-content: flex-start;
+  }
+  .selects {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 980px) {
+  .catalogFilter {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .selects {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .selectsWrapper {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .selectsButton {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .filterElement {
     margin-left: 30px;
   }
 }

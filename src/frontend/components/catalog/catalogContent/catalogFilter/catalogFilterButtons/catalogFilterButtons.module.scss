@@ -30,3 +30,9 @@
 
 .active {
 }
+
+@media (max-width: 980px) {
+  .catalogFilterButtons {
+    margin: 0;
+  }
+}

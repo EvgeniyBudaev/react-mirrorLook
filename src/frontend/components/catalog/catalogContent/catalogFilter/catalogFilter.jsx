@@ -7,7 +7,7 @@ const CatalogFilter = (props) => {
 
   return (
     <div className={styles.catalogFilter}>
-      <ul>
+      <ul  className={styles.selects}>
         <button className={styles.selectsButton}>
           <svg
             width="14"

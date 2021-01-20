@@ -5,3 +5,10 @@
   margin-left: -10px;
   margin-bottom: 40px;
 }
+
+@media (max-width: 1200px) {
+  .cardsList {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
