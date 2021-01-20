@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import ClassNames from 'classnames'
 import styles from './card.module.scss'
 import {ROUTES} from '../../routes'
 import {connect} from 'react-redux'
@@ -9,12 +10,13 @@ import {productAmountSelector, productSelector} from '../../redux/selectors'
 
 const Card = (props) => {
   //console.log('[Card][props]', props)
-  const {product, productIncrement} = props
+  const {product, productIncrement, isClickedBtnGrid} = props
+  const card = ClassNames(styles.card, {[styles.active]: isClickedBtnGrid})
 
   if (!product) return null
 
   return (
-    <div className={styles.card}>
+    <div className={card}>
       <div className={styles.wrapper}>
         <div className={styles.content}>
           {/*<button className={styles.contentFavorite}>*/}
@@ -68,6 +70,7 @@ const Card = (props) => {
           <div className={styles.footerBottom}>
             <div className={styles.footerBottomNum}>{product.price} ₽</div>
             <div className={styles.footerBottomStatus}>В наличии</div>
+            <button className={styles.footerBottomBtn} onClick={() => productIncrement(product.id)}>В корзину</button>
             {/*<div>{amount || 0}</div>*/}
           </div>
         </div>

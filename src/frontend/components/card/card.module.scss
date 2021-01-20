@@ -11,32 +11,32 @@
   & .contentText {
     display: none;
   }
-  &.active {
+  &:not(.active) {
     max-width: 100%;
     flex-basis: calc(100% - 10px);
     height: 268px;
   }
-  &.active .wrapper {
+  &:not(.active) .wrapper {
     flex-direction: row;
   }
-  &.active .content {
+  &:not(.active) .content {
     display: flex;
   }
-  &.active .contentFavorite {
+  &:not(.active) .contentFavorite {
     left: 0;
   }
-  &.active .cardContentImg {
+  &:not(.active) .cardContentImg {
     height: 100%;
     display: flex;
     align-items: center;
     margin-left: 50px;
   }
-  &.active .contentTitle {
+  &:not(.active) .contentTitle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin: 50px 0 20px 50px
   }
-  &.active .contentDescription {
+  &:not(.active) .contentDescription {
     max-width: 300px;
     width: 100%;
     display: flex;
@@ -44,39 +44,44 @@
     flex-direction: column;
     margin-left: 50px;
   }
-  &.active .contentText {
+  &:not(.active) .contentText {
     display: block;
     margin-bottom: 5px;
   }
-  &.active .FooterTop {
+  &:not(.active) .FooterTop {
     display: none;
   }
-  &.active .footerBottom {
+  &:not(.active) .footerBottom {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     margin-right: 100px;
   }
-  &.active .footerBottomNum {
+  &:not(.active) .footerBottomNum {
     font-size: 24px;
     margin-bottom: 26px;
   }
   & .footerBottomDelivery,
-  & .cardFooterBottomBtn {
+  & .cardFooterBottomBtn,
+  & .footerBottomBtn {
     display: none;
   }
-  &.active .footerBottomDelivery,
-  &.active .footerBottomBtn {
+  &:not(.active) .footerTopBasket,
+  &:not(.active) .footerBottomLabel {
+    display: none;
+  }
+  &:not(.active) .footerBottomDelivery,
+  &:not(.active) .footerBottomBtn {
     display: block;
   }
-  &.active .footerBottomStatus {
+  &:not(.active) .footerBottomStatus {
     margin-bottom: 5px;
   }
   & .footerBottomDelivery {
     margin-bottom: 25px;
   }
-  &.active .footerBottomBtn {
+  &:not(.active) .footerBottomBtn {
     background-color: var(--beige);
     color: var(--white);
     outline: transparent;
@@ -84,6 +89,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     border: none;
     cursor: pointer;
+    margin-top: 25px;
   }
 }
 

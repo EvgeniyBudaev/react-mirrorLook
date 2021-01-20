@@ -67,7 +67,7 @@ import {stringify} from 'query-string'
 
 const CardsList = (props) => {
   //console.log('[CardsList][props]', props)
-  const { loadProducts, categoryId, products, loading, loaded, location } = props;
+  const { loadProducts, categoryId, products, loading, loaded, location, isClickedBtnGrid } = props;
 
     const {currentPage, offset} = getPaginator(location.search)
     //console.log('[CardsList][offset, currentPage]', offset, currentPage)
@@ -90,7 +90,7 @@ const CardsList = (props) => {
 
     return (
       <ul className={styles.cardsList}>
-        {products.map(id => <Card key={id} id={id} />)}
+        {products.map(id => <Card key={id} id={id} isClickedBtnGrid={isClickedBtnGrid} />)}
       </ul>
     )
 }
