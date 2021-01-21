@@ -7,6 +7,7 @@ export const productsSelector = (state) => state.productsReducer.entities
 export const reviewsSelector = (state) => state.reviewsReducer.entities
 const usersSelector = (state) => state.usersReducer.entities
 export const searchSelector = (state) => state.searchReducer.entities
+export const filterSelector = (state) => state.filterReducer.entities
 
 export const categoriesLoadingSelector = (state) =>
   state.categoriesReducer.loading

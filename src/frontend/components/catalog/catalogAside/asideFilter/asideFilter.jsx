@@ -1,8 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './asideFilter.module.scss'
 import AsideFilterItem from './asideFilterItem'
+import {connect} from 'react-redux'
+import {filterProduct} from '../../../../redux/actions/actions'
 
-const AsideFilter = () => {
+const AsideFilter = (props) => {
+  const [filterState, setFilterState] = useState(null)
+
+  const handleClickBtnFilter = checked => {
+    setFilterState(prevState => ({
+      ...prevState, filterState: checked
+    }))
+
+  }
+  console.log('[afterState]', filterState)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    props.filterProduct(filterState)
+  }
+
   return (
     <div className={styles.asideFilter}>
       <button className={styles.asideFilterButton}>
@@ -13,11 +30,11 @@ const AsideFilter = () => {
         </svg>
       </button>
       <div className={styles.asideFilterWrapper}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <ul>
-            <AsideFilterItem />
-            <AsideFilterItem />
-            <AsideFilterItem />
+            <AsideFilterItem handleClickBtnFilter={handleClickBtnFilter} />
+            {/*<AsideFilterItem />*/}
+            {/*<AsideFilterItem />*/}
           </ul>
         </form>
       </div>
@@ -25,4 +42,4 @@ const AsideFilter = () => {
   )
 }
 
-export default AsideFilter
+export default connect(null, {filterProduct})(AsideFilter)

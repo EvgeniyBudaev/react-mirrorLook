@@ -13,7 +13,8 @@ import {
   SUCCESS,
   FAILURE,
   ADD_REVIEW,
-  SEARCH_PRODUCT
+  SEARCH_PRODUCT,
+  FILTER_PRODUCT
 } from '../constants'
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
 
@@ -96,10 +97,13 @@ export const searchProduct = text => dispatch => {
   })
 }
 
-// export const searchProduct = (text) => ({
-//   type: SEARCH_PRODUCT,
-//   payload: text
-// })
+export const filterProduct = checked => dispatch => {
+  dispatch({
+    type: FILTER_PRODUCT,
+    payload: checked
+  })
+}
+
 
 
 

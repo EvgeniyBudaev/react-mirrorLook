@@ -42,8 +42,5 @@ class Search extends Component {
   }
 }
 
-const mapDispatchToProps = {
-  searchProduct
-}
 
-export default connect(null, mapDispatchToProps)(Search)
+export default connect(null, {searchProduct})(Search)

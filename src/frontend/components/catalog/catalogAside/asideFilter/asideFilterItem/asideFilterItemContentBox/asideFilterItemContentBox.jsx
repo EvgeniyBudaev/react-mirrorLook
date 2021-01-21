@@ -16,7 +16,8 @@ const GreenCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />)
 
-const AsideFilterItemContentBox = () => {
+const AsideFilterItemContentBox = (props) => {
+  const {handleClickBtnFilter} = props
   const [state, setState] = React.useState({
     checkedG: true,
   })
@@ -39,6 +40,7 @@ const AsideFilterItemContentBox = () => {
           label="Круглая"
         />
       </FormGroup>
+      <button onClick={() => handleClickBtnFilter(state)}>Найти</button>
     </div>
   )
 }
