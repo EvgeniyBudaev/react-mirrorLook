@@ -12,3 +12,9 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 500px) {
+  .cardsList {
+    margin-left: 0;
+  }
+}
