@@ -84,8 +84,23 @@ export const searchProductsByAllIdSelector = createSelector(
       const searchProductsByAll = productsAll.filter(item => {
         return item.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
       })
-      const searchProductsByAllId = searchProductsByAll.map (item => item.id)
+      const searchProductsByAllId = searchProductsByAll.map(item => item.id)
         return searchProductsByAllId
+    }
+  }
+)
+
+export const filterProductsByAllIdSelector = createSelector(
+  productsSelector,
+  filterSelector,
+  (productsAllByHashMap, filter) => {
+    if (productsAllByHashMap.length !== 0) {
+      const productsAll = Object.values(productsAllByHashMap)
+      const filterProductsByAll = productsAll.filter(item => {
+        return item.name.toLowerCase().indexOf(filter.toLowerCase()) > -1;
+      })
+      const filterProductsByAllId = filterProductsByAll.map(item => item.id)
+      return filterProductsByAllId
     }
   }
 )

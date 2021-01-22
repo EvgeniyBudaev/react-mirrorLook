@@ -6,6 +6,20 @@ import {filterProduct} from '../../../../redux/actions/actions'
 
 const AsideFilter = (props) => {
   const [filterState, setFilterState] = useState(null)
+  const [checked, setChecked] = React.useState([])
+
+  const handleChangeCheckedBox = value => {
+    const currentIndex = checked.indexOf(value)
+    const newChecked = [...checked]
+    if(currentIndex === -1) {
+      newChecked.push(value)
+    } else {
+      newChecked.splice(currentIndex, 1)
+    }
+
+      setChecked(newChecked);
+    // setChecked(value)
+  }
 
   const handleClickBtnFilter = checked => {
     setFilterState(prevState => ({
@@ -13,7 +27,7 @@ const AsideFilter = (props) => {
     }))
 
   }
-  console.log('[afterState]', filterState)
+  //console.log('[AsideFilter][afterState]', filterState)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -32,10 +46,11 @@ const AsideFilter = (props) => {
       <div className={styles.asideFilterWrapper}>
         <form onSubmit={handleSubmit}>
           <ul>
-            <AsideFilterItem handleClickBtnFilter={handleClickBtnFilter} />
+            <AsideFilterItem handleChangeCheckedBox={handleChangeCheckedBox} />
             {/*<AsideFilterItem />*/}
             {/*<AsideFilterItem />*/}
           </ul>
+          <button onClick={() => handleClickBtnFilter(checked)}>Найти</button>
         </form>
       </div>
     </div>

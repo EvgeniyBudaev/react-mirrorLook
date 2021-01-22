@@ -4,7 +4,7 @@ import styles from './asideFilterItem.module.scss'
 import AsideFilterItemContentBox from './asideFilterItemContentBox'
 import IconArrowUp from '../../../../UI/icons/iconArrowUp'
 
-const AsideFilterItem = ({handleClickBtnFilter}) => {
+const AsideFilterItem = ({handleChangeCheckedBox}) => {
   const headerItem = ClassNames(styles.header, styles.filterItem, styles.active)
   return (
     <div className={styles.asideFilterItem}>
@@ -13,8 +13,8 @@ const AsideFilterItem = ({handleClickBtnFilter}) => {
         <IconArrowUp />
       </div>
       <div className={styles.content}>
-        <AsideFilterItemContentBox handleClickBtnFilter={handleClickBtnFilter} />
-        {/*<AsideFilterItemContentBox />*/}
+        <AsideFilterItemContentBox handleChangeCheckedBox={handleChangeCheckedBox} />
+        {/*<AsideFilterItemContentBox handleChangeCheckedBox={handleChangeCheckedBox} label="Прямоугольная" />*/}
         {/*<AsideFilterItemContentBox />*/}
         {/*<AsideFilterItemContentBox />*/}
       </div>

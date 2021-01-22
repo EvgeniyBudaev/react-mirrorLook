@@ -1,7 +1,11 @@
 .asideFilter {
 }
 
-.asideFilterWrapper {}
+.asideFilterWrapper {
+  form {
+    flex-direction: column;
+  }
+}
 
 .asideFilterButton {
   display: none;
