@@ -1,7 +1,7 @@
 import {FILTER_PRODUCT} from '../constants'
 
 const initialState = {
-  entities: {}
+  entities: []
 }
 
 const filterReducer = (state = initialState , action) => {

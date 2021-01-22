@@ -1,61 +1,80 @@
-import React, {useEffect} from 'react'
-import {withStyles} from '@material-ui/core/styles'
+import React from 'react'
+import { makeStyles, withStyles } from '@material-ui/core/styles'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControl from '@material-ui/core/FormControl'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import styles from './asideFilterItemContentBox.module.scss'
 
-// const GreenCheckbox = withStyles({
-//   root: {
-//     padding: '5px',
-//     color: '#B0976A',
-//     '&$checked': {
-//       color: '#B0976A',
-//     },
-//   },
-//   checked: {},
-// })((props) => <Checkbox color="default" {...props} />)
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: '5px',
+  },
+  formControl: {
+    margin: theme.spacing(1),
+  },
+  formControlLabel: {},
+  checkbox: {},
+}));
+
+const BeigeCheckbox = withStyles({
+  root: {
+    '&$checked': {
+      color: '#B0976A',
+    },
+  },
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 const AsideFilterItemContentBox = (props) => {
-  const {handleChangeCheckedBox} = props
+  const {value = [], handleChangeCheckedBox} = props
+  const classes = useStyles();
 
-  const [state, setState] = React.useState({
-    circular: false,
-    rectangular: false,
-    figured: false,
-    checkbox: ''
-  })
 
   const handleChange = (event) => {
-    setState({...state, [event.target.name]: event.target.checked, [event.target.type]: event.target.value})
-    //console.log('state', state)
-    //props.handleChange(state)
+    const items = event.target.checked
+      ? [...value, event.target.value]
+      : value.filter(x => x !== event.target.value)
+    handleChangeCheckedBox(items)
   }
-
-  const {circular, rectangular, figured} = state
-
-  useEffect(() => {
-    console.log('state', state)
-    handleChangeCheckedBox(state)
-  }, [state])
 
   return (
     <div className={styles.asideFilterItemContentBox}>
       <FormGroup>
-        <FormControl>
+        <FormControl className={classes.formControl}>
           <FormControlLabel
-            control={<Checkbox checked={circular} onChange={handleChange} name="circular" value="Круглая" />}
+            control={
+              <BeigeCheckbox
+                checked={value.includes('Круглая')}
+                onChange={handleChange}
+                name="circular"
+                value="Круглая"
+                className={classes.checkbox}
+              />}
             label="Круглая"
+            className={classes.formControlLabel}
           />
 
           <FormControlLabel
-            control={<Checkbox checked={rectangular} onChange={handleChange} name="rectangular" value="Прямоугольная" />}
+            control={
+              <BeigeCheckbox
+                checked={value.includes('Прямоугольная')}
+                onChange={handleChange}
+                name="rectangular"
+                value="Прямоугольная"
+              />}
             label="Прямоугольная"
           />
 
           <FormControlLabel
-            control={<Checkbox checked={figured} onChange={handleChange} name="figured" value="Фигурная" />}
+            control={
+              <BeigeCheckbox
+                checked={value.includes('Фигурная')}
+                onChange={handleChange}
+                name="figured"
+                value="Фигурная"
+              />}
             label="Фигурная"
           />
         </FormControl>

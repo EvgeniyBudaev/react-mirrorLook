@@ -75,7 +75,7 @@ export const reviewWitUserSelector = createSelector(
   })
 )
 
-export const searchProductsByAllIdSelector = createSelector(
+export const searchProductsByAllSelector = createSelector(
   productsSelector,
   searchSelector,
   (productsAllByHashMap, search) => {
@@ -84,8 +84,7 @@ export const searchProductsByAllIdSelector = createSelector(
       const searchProductsByAll = productsAll.filter(item => {
         return item.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
       })
-      const searchProductsByAllId = searchProductsByAll.map(item => item.id)
-        return searchProductsByAllId
+      return searchProductsByAll
     }
   }
 )

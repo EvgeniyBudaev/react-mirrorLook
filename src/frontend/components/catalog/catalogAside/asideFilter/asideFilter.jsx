@@ -9,25 +9,15 @@ const AsideFilter = (props) => {
   const [checked, setChecked] = React.useState([])
 
   const handleChangeCheckedBox = value => {
-    const currentIndex = checked.indexOf(value)
-    const newChecked = [...checked]
-    if(currentIndex === -1) {
-      newChecked.push(value)
-    } else {
-      newChecked.splice(currentIndex, 1)
-    }
-
-      setChecked(newChecked);
-    // setChecked(value)
+    setChecked(value);
   }
 
   const handleClickBtnFilter = checked => {
     setFilterState(prevState => ({
       ...prevState, filterState: checked
     }))
-
   }
-  //console.log('[AsideFilter][afterState]', filterState)
+
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -46,7 +36,7 @@ const AsideFilter = (props) => {
       <div className={styles.asideFilterWrapper}>
         <form onSubmit={handleSubmit}>
           <ul>
-            <AsideFilterItem handleChangeCheckedBox={handleChangeCheckedBox} />
+            <AsideFilterItem value={checked} handleChangeCheckedBox={handleChangeCheckedBox} />
             {/*<AsideFilterItem />*/}
             {/*<AsideFilterItem />*/}
           </ul>

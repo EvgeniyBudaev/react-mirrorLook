@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './iconSearchClose.module.scss'
+// import styles from './iconSearchClose.module.scss'
 
 const IconSearchClose = () => (
   <svg
