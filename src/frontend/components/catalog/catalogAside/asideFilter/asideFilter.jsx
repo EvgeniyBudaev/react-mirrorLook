@@ -3,6 +3,7 @@ import styles from './asideFilter.module.scss'
 import AsideFilterItem from './asideFilterItem'
 import {connect} from 'react-redux'
 import {filterProduct} from '../../../../redux/actions/actions'
+import Button from '../../../UI/button'
 
 const AsideFilter = (props) => {
   const [filterState, setFilterState] = useState([])
@@ -40,7 +41,7 @@ const AsideFilter = (props) => {
             {/*<AsideFilterItem />*/}
             {/*<AsideFilterItem />*/}
           </ul>
-          <button onClick={() => handleClickBtnFilter(checked)}>Найти</button>
+          <Button text="Фильтр" fn={() => handleClickBtnFilter(checked)} />
         </form>
       </div>
     </div>

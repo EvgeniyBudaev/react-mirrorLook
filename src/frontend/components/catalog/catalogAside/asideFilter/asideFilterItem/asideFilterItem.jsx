@@ -1,23 +1,33 @@
-import React from 'react'
+import React, {useState, useRef} from 'react'
 import ClassNames from 'classnames'
 import styles from './asideFilterItem.module.scss'
 import AsideFilterItemContentBox from './asideFilterItemContentBox'
 import IconArrowUp from '../../../../UI/icons/iconArrowUp'
 
+
 const AsideFilterItem = ({value, handleChangeCheckedBox}) => {
-  const headerItem = ClassNames(styles.header, styles.filterItem, styles.active)
+  const [active, setActive] = useState('')
+  const [height, setHeight] = useState('0px')
+  const [rotate, setRotate] = useState(false)
+  const content = useRef(null)
+  const headerItem = ClassNames(styles.header, styles.filterItem, active)
+
+
+  function toggleAccordion() {
+    setActive(active === '' ? 'active' : '')
+    setHeight(active === 'active' ? '0px' : `${content.current.scrollHeight}px`)
+    setRotate(active !== 'active')
+  }
+
 
   return (
     <div className={styles.asideFilterItem}>
-      <div className={headerItem}>
+      <div className={headerItem} onClick={toggleAccordion}>
         <p className={styles.title}>Форма</p>
-        <IconArrowUp />
+        <IconArrowUp rotate={rotate} />
       </div>
-      <div className={styles.content}>
+      <div className={styles.content} ref={content} style={{maxHeight: `${height}`}}>
         <AsideFilterItemContentBox value={value} handleChangeCheckedBox={handleChangeCheckedBox} />
-        {/*<AsideFilterItemContentBox handleChangeCheckedBox={handleChangeCheckedBox} label="Прямоугольная" />*/}
-        {/*<AsideFilterItemContentBox />*/}
-        {/*<AsideFilterItemContentBox />*/}
       </div>
     </div>
   )
