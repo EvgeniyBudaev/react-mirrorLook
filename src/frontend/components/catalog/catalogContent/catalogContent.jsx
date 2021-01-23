@@ -9,7 +9,7 @@ import {
   productsSelector,
   searchSelector,
   filterSelector,
-  searchProductsByAllSelector
+  searchProductsByAllSelector, filterProductsByAllIdSelector
 } from '../../../redux/selectors'
 import Loader from '../../loader'
 import {getPaginator, limit} from '../../../utilities/utils'
@@ -19,7 +19,7 @@ import {createStructuredSelector} from 'reselect'
 
 const CatalogContent = (props) => {
   //console.log('[CatalogContent][props]', props)
-  const {location, match, searchProductsByAll, productsAllByHashMap, filter, search} = props
+  const {location, match, searchProductsByAll, filterProductsByAllId, filter, search} = props
 
   const [isClickedBtnGrid, setIsClickedBtnGrid] = useState(true)
 
@@ -41,12 +41,8 @@ const CatalogContent = (props) => {
     brr = searchProductsByAll.map(x => x.id),
     searched = arr.filter(s => brr.includes(s));
 
-  const productsAll = Object.values(productsAllByHashMap)
-  const filterProductsByAll = productsAll.filter(item => filter.includes(item.form));
-  const filterProductsByAllId = filterProductsByAll.map(item => item.id)
 
   let productsByAllFilter = [];
-
   if (filter.length) {
     productsByAllFilter = products.filter(productId => filterProductsByAllId.includes(productId))
   }
@@ -79,6 +75,7 @@ const mapStateToProps = createStructuredSelector({
   searchProductsByAll: searchProductsByAllSelector,
   productsAllByHashMap: productsSelector,
   filter: filterSelector,
+  filterProductsByAllId: filterProductsByAllIdSelector
 })
 
 export default withRouter(connect(mapStateToProps)(CatalogContent))

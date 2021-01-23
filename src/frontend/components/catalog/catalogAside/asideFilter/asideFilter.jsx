@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {filterProduct} from '../../../../redux/actions/actions'
 
 const AsideFilter = (props) => {
-  const [filterState, setFilterState] = useState(null)
+  const [filterState, setFilterState] = useState([])
   const [checked, setChecked] = React.useState([])
 
   const handleChangeCheckedBox = value => {

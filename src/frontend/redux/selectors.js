@@ -93,11 +93,9 @@ export const filterProductsByAllIdSelector = createSelector(
   productsSelector,
   filterSelector,
   (productsAllByHashMap, filter) => {
-    if (productsAllByHashMap.length !== 0) {
+    if (productsAllByHashMap) {
       const productsAll = Object.values(productsAllByHashMap)
-      const filterProductsByAll = productsAll.filter(item => {
-        return item.name.toLowerCase().indexOf(filter.toLowerCase()) > -1;
-      })
+      const filterProductsByAll = productsAll.filter(item => filter.includes(item.form));
       const filterProductsByAllId = filterProductsByAll.map(item => item.id)
       return filterProductsByAllId
     }
