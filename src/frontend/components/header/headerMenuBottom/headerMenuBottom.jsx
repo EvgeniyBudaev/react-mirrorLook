@@ -34,25 +34,25 @@ const HeaderMenuBottom = () => {
               Каталог
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to={ROUTES.CLEARANCE_SALE}
-              activeStyle={activeLink}
-              className={red}
-            >
-              Распродажа
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.DELIVERY} activeStyle={activeLink}>
-              Доставка и оплата
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.CONTACTS} activeStyle={activeLink}>
-              Контакты
-            </NavLink>
-          </li>
+          {/*<li>*/}
+          {/*  <NavLink*/}
+          {/*    to={ROUTES.CLEARANCE_SALE}*/}
+          {/*    activeStyle={activeLink}*/}
+          {/*    className={red}*/}
+          {/*  >*/}
+          {/*    Распродажа*/}
+          {/*  </NavLink>*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*  <NavLink to={ROUTES.DELIVERY} activeStyle={activeLink}>*/}
+          {/*    Доставка и оплата*/}
+          {/*  </NavLink>*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*  <NavLink to={ROUTES.CONTACTS} activeStyle={activeLink}>*/}
+          {/*    Контакты*/}
+          {/*  </NavLink>*/}
+          {/*</li>*/}
         </ul>
       </nav>
     </div>
