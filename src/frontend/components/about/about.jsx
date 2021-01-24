@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './about.module.scss'
 import AboutLeft from './aboutLeft'
-import AboutRight from './aboutRight'
+// import AboutRight from './aboutRight'
 
 const About = () => {
   return (
@@ -9,7 +9,7 @@ const About = () => {
       <div className={styles.container}>
         <div className={styles.inner}>
           <AboutLeft />
-          <AboutRight />
+          {/*<AboutRight />*/}
         </div>
       </div>
     </section>

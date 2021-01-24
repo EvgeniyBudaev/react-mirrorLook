@@ -20,17 +20,28 @@ const venetianMirror11 = require('../../src/assets/images/content/venetianMirror
 const venetianMirror12 = require('../../src/assets/images/content/venetianMirrors-12.jpg')
 const floorMirror1 = require('../../src/assets/images/content/productFloor-1.jpg')
 const floorMirror2 = require('../../src/assets/images/content/productFloor-2.jpg')
+const frameMirror1 = require('../../src/assets/images/content/frameMirror-1.jpg')
+const mirrorPanel1 = require('../../src/assets/images/content/mirrorPanel-1.jpg')
+const mirrorSun1 = require('../../src/assets/images/content/mirrorSun-1.jpg')
+const console1 = require('../../src/assets/images/content/console-1.jpg')
 
 const imagesFor02 = require('../../src/assets/images/content/venetianMirrors-2.jpg')
 const imagesNav01 = require('../../src/assets/images/content/slide-1.jpg')
 const imagesNav02 = require('../../src/assets/images/content/slide-2.jpg')
 const imagesNav03 = require('../../src/assets/images/content/slide-3.jpg')
 
+const categories1 = require('../../src/assets/images/content/categories-1.jpg')
+const categories2 = require('../../src/assets/images/content/categories-2.jpg')
+const categories3 = require('../../src/assets/images/content/categories-3.jpg')
+const categories4 = require('../../src/assets/images/content/categories-4.jpg')
+const categories5 = require('../../src/assets/images/content/categories-5.jpg')
+const categories6 = require('../../src/assets/images/content/categories-6.jpg')
 
 const normalizedCategories = [
   {
     id: 'ed24fdeb-84c4-4cc5-9518-e768e1e35cb6',
     name: 'Венецианские зеркала',
+    images: categories1,
     urlCategoryName: 'venetian-mirrors',
     products: [
       '87ef588c-c539-45f8-b3bd-bc3b6f63cd20',
@@ -50,10 +61,47 @@ const normalizedCategories = [
   {
     id: 'cde28e4f-9a85-45a4-8509-cc2b60843775',
     name: 'Напольные зеркала',
+    images: categories2,
     urlCategoryName: 'floor-mirrors',
     products: [
       '2149ef1c-990f-4940-91d6-aa26a0c0277e',
+      '476b1ec8-2423-4792-adac-ce34074c4c91',
+    ],
+  },
+  {
+    id: '9acaa112-d064-4930-b744-68ca059dd63c',
+    name: 'Зеркала в рамах',
+    images: categories3,
+    urlCategoryName: 'frame_mirrors',
+    products: [
       '9918a242-1bf5-4a4c-b167-9dfb6c5910f8',
+    ],
+  },
+  {
+    id: '006af800-91f4-4035-8020-2bb8fbc8790a',
+    name: 'Зеркальные панно',
+    images: categories4,
+    urlCategoryName: 'mirror_panels',
+    products: [
+      '5044b480-6aef-4b82-b2f3-6f224af68600',
+    ],
+  },
+  {
+    id: '36d925ea-060e-4112-b95d-3b69ed66aa7d',
+    name: 'Зеркало-солнце',
+    images: categories5,
+    urlCategoryName: 'mirrors_sun',
+    products: [
+      'a0b9e418-de39-496c-9de4-5013668a2d87',
+    ],
+  },
+  {
+    id: '615e0709-1776-41e9-bd3e-118f0f32c368',
+    name: 'Консоли',
+    images: categories6,
+    urlCategoryName: 'consoles',
+    products: [
+      '860900e9-0cdd-485b-b795-e46bab123665',
     ],
   },
 ]
@@ -69,6 +117,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Серебро',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -104,6 +153,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Серебро',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -125,8 +175,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
-      '429dea85-11dd-4054-a31e-c60c92e17255',
       '53b642d7-5e86-4717-a466-0640a1dee076',
     ],
   },
@@ -140,6 +188,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Античное золото',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -161,7 +210,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -174,6 +222,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Золото',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -195,7 +244,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -208,6 +256,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Античное золото',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -229,7 +278,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -242,6 +290,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Античное золото',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -263,7 +312,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -276,6 +324,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Золото',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -297,7 +346,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -310,6 +358,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Бронза',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -331,7 +380,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -344,6 +392,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Латунь',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -365,7 +414,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -378,6 +426,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Никель',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -399,7 +448,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -412,6 +460,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Шампань',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -433,7 +482,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -446,6 +494,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Золото',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -467,7 +516,6 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
@@ -480,6 +528,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Серебро',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -490,7 +539,7 @@ const normalizedProducts = [
     heightWithoutFrame: 78,
     weightWithoutFrame: 48,
     facet: true,
-    form: 'Прямогульная',
+    form: 'Прямоугольная',
     appointment: 'Ванная, гостиная, спальня, прихожая, холл, над камином',
     materialMirror: 'Влагостойкое серебряное зеркало',
     materialFrame: 'Основа МДФ',
@@ -501,11 +550,10 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
     ],
   },
   {
-    id: '9918a242-1bf5-4a4c-b167-9dfb6c5910f8',
+    id: '476b1ec8-2423-4792-adac-ce34074c4c91',
     name: 'Зеркало в полный рост Franco Mid (Франко)',
     price: 35000,
     images: floorMirror2,
@@ -514,6 +562,7 @@ const normalizedProducts = [
     images4: imagesNav02,
     images5: imagesNav03,
     code: 'VZ232SL',
+    colorFrame: 'Серебро',
     colorMirror: 'Серебро',
     baseColor: 'Черный',
     height: 110,
@@ -524,7 +573,7 @@ const normalizedProducts = [
     heightWithoutFrame: 78,
     weightWithoutFrame: 48,
     facet: true,
-    form: 'Прямогульная',
+    form: 'Прямоугольная',
     appointment: 'Ванная, гостиная, спальня, прихожая, холл, над камином',
     materialMirror: 'Влагостойкое серебряное зеркало',
     materialFrame: 'Основа МДФ',
@@ -535,7 +584,142 @@ const normalizedProducts = [
       'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
     inStock: true,
     reviews: [
-      '5909796d-5030-4e36-adec-68b8f9ec2d96',
+    ],
+  },
+  {
+    id: '9918a242-1bf5-4a4c-b167-9dfb6c5910f8',
+    name: 'Зеркало в резной раме Pretty Gold (Притти)',
+    price: 25000,
+    images: frameMirror1,
+    images2: imagesFor02,
+    images3: imagesNav01,
+    images4: imagesNav02,
+    images5: imagesNav03,
+    code: 'VZ232SL',
+    colorFrame: 'Античное золото',
+    colorMirror: 'Серебро',
+    baseColor: 'Черный',
+    height: 110,
+    width: 80,
+    weight: 13,
+    typeOfInstallation: 'Настенное',
+    typeOfMounting: 'Вертикальное/горизонтальное',
+    heightWithoutFrame: 78,
+    weightWithoutFrame: 48,
+    facet: true,
+    form: 'Прямоугольная',
+    appointment: 'Ванная, гостиная, спальня, прихожая, холл, над камином',
+    materialMirror: 'Влагостойкое серебряное зеркало',
+    materialFrame: 'Основа МДФ',
+    countryBrand: 'Россия',
+    countryManufacturer: 'Россия',
+    manufacturer: 'MirrorLook',
+    description: ['Влагостойкое серебряное зеркало в венецианском стиле Nikole (Николь), 80*110 см. ',
+      'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
+    inStock: true,
+    reviews: [
+    ],
+  },
+  {
+    id: '5044b480-6aef-4b82-b2f3-6f224af68600',
+    name: 'Зеркальное панно Ariel (Ариель)',
+    price: 25000,
+    images: mirrorPanel1,
+    images2: imagesFor02,
+    images3: imagesNav01,
+    images4: imagesNav02,
+    images5: imagesNav03,
+    code: 'VZ232SL',
+    colorFrame: 'Серебро',
+    colorMirror: 'Серебро',
+    baseColor: 'Черный',
+    height: 110,
+    width: 80,
+    weight: 13,
+    typeOfInstallation: 'Настенное',
+    typeOfMounting: 'Вертикальное/горизонтальное',
+    heightWithoutFrame: 78,
+    weightWithoutFrame: 48,
+    facet: true,
+    form: 'Прямоугольная',
+    appointment: 'Ванная, гостиная, спальня, прихожая, холл, над камином',
+    materialMirror: 'Влагостойкое серебряное зеркало',
+    materialFrame: 'Основа МДФ',
+    countryBrand: 'Россия',
+    countryManufacturer: 'Россия',
+    manufacturer: 'MirrorLook',
+    description: ['Влагостойкое серебряное зеркало в венецианском стиле Nikole (Николь), 80*110 см. ',
+      'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
+    inStock: true,
+    reviews: [
+    ],
+  },
+  {
+    id: 'a0b9e418-de39-496c-9de4-5013668a2d87',
+    name: 'Зеркало-солнце Mirax Gold (Миракс)',
+    price: 25000,
+    images: mirrorSun1,
+    images2: imagesFor02,
+    images3: imagesNav01,
+    images4: imagesNav02,
+    images5: imagesNav03,
+    code: 'VZ232SL',
+    colorFrame: 'Серебро',
+    colorMirror: 'Серебро',
+    baseColor: 'Черный',
+    height: 110,
+    width: 80,
+    weight: 13,
+    typeOfInstallation: 'Настенное',
+    typeOfMounting: 'Вертикальное/горизонтальное',
+    heightWithoutFrame: 78,
+    weightWithoutFrame: 48,
+    facet: true,
+    form: 'Круглая',
+    appointment: 'Ванная, гостиная, спальня, прихожая, холл, над камином',
+    materialMirror: 'Влагостойкое серебряное зеркало',
+    materialFrame: 'Основа МДФ',
+    countryBrand: 'Россия',
+    countryManufacturer: 'Россия',
+    manufacturer: 'MirrorLook',
+    description: ['Влагостойкое серебряное зеркало в венецианском стиле Nikole (Николь), 80*110 см. ',
+      'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
+    inStock: true,
+    reviews: [
+    ],
+  },
+  {
+    id: '860900e9-0cdd-485b-b795-e46bab123665',
+    name: 'Консоль декоративная Sculpture',
+    price: 25000,
+    images: console1,
+    images2: imagesFor02,
+    images3: imagesNav01,
+    images4: imagesNav02,
+    images5: imagesNav03,
+    code: 'VZ232SL',
+    colorFrame: 'Бронза',
+    colorMirror: 'Серебро',
+    baseColor: 'Бронза',
+    height: 110,
+    width: 80,
+    weight: 13,
+    typeOfInstallation: 'Напольное',
+    typeOfMounting: 'Вертикальное/горизонтальное',
+    heightWithoutFrame: 78,
+    weightWithoutFrame: 48,
+    facet: true,
+    form: 'Круглая',
+    appointment: 'Ванная, гостиная, спальня, прихожая, холл, над камином',
+    materialMirror: 'Влагостойкое серебряное зеркало',
+    materialFrame: 'Основа МДФ',
+    countryBrand: 'Россия',
+    countryManufacturer: 'Россия',
+    manufacturer: 'MirrorLook',
+    description: ['Влагостойкое серебряное зеркало в венецианском стиле Nikole (Николь), 80*110 см. ',
+      'Зеркала в венецианском стиле никогда не выходят из моды, являясь примером высокого мастерства и предметом роскоши.'],
+    inStock: true,
+    reviews: [
     ],
   },
 ]

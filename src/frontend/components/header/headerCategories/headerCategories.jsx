@@ -42,10 +42,9 @@ const HeaderCategories = (props) => {
     <>
       <ul className={styles.headerCategories}>
         {categories.map(({id, name, urlCategoryName}) => (
-          <NavLink to={ROUTES.CATALOG + urlCategoryName} key={id}>
+          <NavLink to={ROUTES.CATALOG + urlCategoryName} key={id} activeClassName={styles.active}>
             <li
               className={styles.item}
-              activeclassname={styles.active}
             >
               {name}
             </li>

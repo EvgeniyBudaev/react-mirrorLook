@@ -5,7 +5,7 @@ import AsideFilterItemContentBox from './asideFilterItemContentBox'
 import IconArrowUp from '../../../../UI/icons/iconArrowUp'
 
 
-const AsideFilterItem = ({value, handleChangeCheckedBox}) => {
+const AsideFilterItem = ({value, handleChangeCheckedBox, title, options}) => {
   const [active, setActive] = useState('')
   const [height, setHeight] = useState('0px')
   const [rotate, setRotate] = useState(false)
@@ -23,11 +23,11 @@ const AsideFilterItem = ({value, handleChangeCheckedBox}) => {
   return (
     <div className={styles.asideFilterItem}>
       <div className={headerItem} onClick={toggleAccordion}>
-        <p className={styles.title}>Форма</p>
+        <p className={styles.title}>{title}</p>
         <IconArrowUp rotate={rotate} />
       </div>
       <div className={styles.content} ref={content} style={{maxHeight: `${height}`}}>
-        <AsideFilterItemContentBox value={value} handleChangeCheckedBox={handleChangeCheckedBox} />
+        <AsideFilterItemContentBox value={value} handleChangeCheckedBox={handleChangeCheckedBox} options={options} />
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ import {createStructuredSelector} from 'reselect'
 
 const CatalogContent = (props) => {
   //console.log('[CatalogContent][props]', props)
-  const {location, match, searchProductsByAll, filterProductsByAllId, filter, search} = props
+  const {location, match, searchProductsByAll, productsAllByHashMap, filter, search} = props
 
   const [isClickedBtnGrid, setIsClickedBtnGrid] = useState(true)
 
@@ -41,6 +41,31 @@ const CatalogContent = (props) => {
     brr = searchProductsByAll.map(x => x.id),
     searched = arr.filter(s => brr.includes(s));
 
+  const productsAll = Object.values(productsAllByHashMap)
+  //console.log('filter', filter)
+  //console.log('productsAll', productsAll)
+
+  const filterByForm = productsAll.filter(item => filter.includes(item.form))
+  //console.log('filterByForm', filterByForm)
+  const filterByColorFrame = productsAll.filter(item => filter.includes(item.colorFrame))
+  //console.log('filterByColorFrame', filterByColorFrame)
+  const filterByAll = [...filterByForm, ...filterByColorFrame]
+  //console.log('filterByAll', filterByAll)
+
+
+  const filterProductsByAll = filterByAll.filter(item => {
+    if (filter.includes(item.form) && !filter.includes(item.colorFrame)) {
+      return filter.includes(item.form)
+    }  if (filter.includes(item.colorFrame) && !filter.includes(item.form)) {
+      return filter.includes(item.colorFrame)
+    }  if (filter.includes(item.form) && filter.includes(item.colorFrame)) {
+     // console.log('RES', filter.includes(item.form) && filter.includes(item.colorFrame))
+      return filter.includes(item.form) && filter.includes(item.colorFrame)
+    }
+  })
+  //console.log('filterProductsByAll', filterProductsByAll)
+
+  const filterProductsByAllId = filterProductsByAll ? filterProductsByAll.map(item => item.id) : filterByAll.map(item => item.id)
 
   let productsByAllFilter = [];
   if (filter.length) {
@@ -64,7 +89,7 @@ const CatalogContent = (props) => {
   return (
     <div className={styles.catalogContent}>
       <CatalogFilter isClickedBtnGrid={isClickedBtnGrid} handleClickBtnGrid={handleClickBtnGrid} />
-      <CardsList products={productsByAllFilter.length === 0 ? products : productsByAllFilter} categoryId={id} isClickedBtnGrid={isClickedBtnGrid} />
+      <CardsList products={productsByAllFilter.length === 0 && filter.length === 0 ? products : productsByAllFilter} categoryId={id} isClickedBtnGrid={isClickedBtnGrid} />
       <PaginationUI total={productsCount} limit={limit} url={url} currentPage={currentPage} />
     </div>
   )

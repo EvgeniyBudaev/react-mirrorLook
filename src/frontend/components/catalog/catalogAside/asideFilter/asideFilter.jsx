@@ -25,6 +25,11 @@ const AsideFilter = (props) => {
     props.filterProduct(filterState)
   }
 
+const options = {
+  form: ['Круглая', 'Прямоугольная', 'Фигурная'],
+  colorFrame: ['Античное золото', 'Античное серебро', 'Серебро', 'Золото', 'Бронза', 'Латунь', 'Хром', 'Никель', 'Шампань']
+}
+
   return (
     <div className={styles.asideFilter}>
       <button className={styles.asideFilterButton}>
@@ -37,9 +42,8 @@ const AsideFilter = (props) => {
       <div className={styles.asideFilterWrapper}>
         <form onSubmit={handleSubmit}>
           <ul>
-            <AsideFilterItem value={checked} handleChangeCheckedBox={handleChangeCheckedBox} />
-            {/*<AsideFilterItem />*/}
-            {/*<AsideFilterItem />*/}
+            <AsideFilterItem value={checked} handleChangeCheckedBox={handleChangeCheckedBox} title='Форма' options={options.form} />
+            <AsideFilterItem value={checked} handleChangeCheckedBox={handleChangeCheckedBox} title='Цвет рамы' options={options.colorFrame} />
           </ul>
           <Button text="Фильтр" fn={() => handleClickBtnFilter(checked)} />
         </form>

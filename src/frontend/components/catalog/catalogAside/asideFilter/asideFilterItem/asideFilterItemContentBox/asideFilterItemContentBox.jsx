@@ -28,7 +28,7 @@ const BeigeCheckbox = withStyles({
 })((props) => <Checkbox color="default" {...props} />);
 
 const AsideFilterItemContentBox = (props) => {
-  const {value = [], handleChangeCheckedBox} = props
+  const {value = [], handleChangeCheckedBox, options} = props
   const classes = useStyles();
 
 
@@ -39,44 +39,27 @@ const AsideFilterItemContentBox = (props) => {
     handleChangeCheckedBox(items)
   }
 
+
   return (
     <div className={styles.asideFilterItemContentBox}>
       <FormGroup>
         <FormControl className={classes.formControl}>
-          <FormControlLabel
-            control={
-              <BeigeCheckbox
-                checked={value.includes('Круглая')}
-                onChange={handleChange}
-                name="circular"
-                value="Круглая"
-                className={classes.checkbox}
-              />}
-            label="Круглая"
-            className={classes.formControlLabel}
-          />
-
-          <FormControlLabel
-            control={
-              <BeigeCheckbox
-                checked={value.includes('Прямоугольная')}
-                onChange={handleChange}
-                name="rectangular"
-                value="Прямоугольная"
-              />}
-            label="Прямоугольная"
-          />
-
-          <FormControlLabel
-            control={
-              <BeigeCheckbox
-                checked={value.includes('Фигурная')}
-                onChange={handleChange}
-                name="figured"
-                value="Фигурная"
-              />}
-            label="Фигурная"
-          />
+          {
+            options.map((item, index) => (
+              <FormControlLabel
+                key={item+':'+index}
+                control={
+                  <BeigeCheckbox
+                    checked={value.includes(item)}
+                    onChange={handleChange}
+                    value={item}
+                    className={classes.checkbox}
+                  />}
+                label={item}
+                className={classes.formControlLabel}
+              />
+            ))
+          }
         </FormControl>
       </FormGroup>
     </div>

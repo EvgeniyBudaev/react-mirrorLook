@@ -1,24 +1,25 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import styles from './categoriesCard.module.scss'
-import {ROUTES} from '../../../routes'
+import cn from 'classnames'
 
-import images1 from '../../../../assets/images/content/catalog-1.jpg'
 
-const CategoriesCard = () => {
+const CategoriesCard = (props) => {
+  const {name, images} = props
+  const content = cn(styles.content, styles.hoverShadow)
+
   return (
-    <Link to={ROUTES.CATALOG}>
+    <>
       <div className={styles.categoriesCard}>
         <div className={styles.wrapper}>
           <div className={styles.header}>
-            <h2 className={styles.categoriesCard}>Венецианские зеркала</h2>
+            <h2 className={styles.categoriesCard}>{name}</h2>
           </div>
-          <div className={styles.content}>
-            <img src={images1} alt="categories-images" />
+          <div className={content}>
+            <img src={images} alt="categories-images" />
           </div>
         </div>
       </div>
-    </Link>
+    </>
   )
 }
 
