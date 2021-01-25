@@ -118,7 +118,7 @@ class SliderAsNavFor extends Component {
 
           <div className={styles.btn}>
             <div className={styles.btnLink}>
-              <Link to={ROUTES.CATEGORIES}>Смотреть весь каталог</Link>
+              <Link to={ROUTES.CATALOG}>Смотреть весь каталог</Link>
             </div>
           </div>
         </div>
