@@ -56,7 +56,7 @@ const ProductCardData = (props) => {
           </div>
           <div className={styles.dataOrderBtn}>
             <Link to={ROUTES.BASKET}>
-              <button>В корзину</button>
+              <button>Перейти в корзину</button>
             </Link>
           </div>
         </div>

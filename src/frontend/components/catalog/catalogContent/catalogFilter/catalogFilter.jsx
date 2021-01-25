@@ -33,14 +33,14 @@ const CatalogFilter = (props) => {
               <div>Select</div>
             </li>
           </form>
-          <li className={styles.filterElement}>
-            <p>На странице</p>
-          </li>
-          <form className={styles.filterElement}>
-            <li>
-              <div>Select</div>
-            </li>
-          </form>
+          {/*<li className={styles.filterElement}>*/}
+          {/*  <p>На странице</p>*/}
+          {/*</li>*/}
+          {/*<form className={styles.filterElement}>*/}
+          {/*  <li>*/}
+          {/*    <div>Select</div>*/}
+          {/*  </li>*/}
+          {/*</form>*/}
         </div>
       </ul>
       <CatalogFilterButtons isClickedBtnGrid={isClickedBtnGrid} handleClickBtnGrid={handleClickBtnGrid} />

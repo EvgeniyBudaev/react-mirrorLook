@@ -53,6 +53,9 @@
 .btnLink:hover {
   color: var(--white);
   background-position: 99% 50%;
+  & a {
+    color: var(--white);
+  }
 }
 
 .navItem {

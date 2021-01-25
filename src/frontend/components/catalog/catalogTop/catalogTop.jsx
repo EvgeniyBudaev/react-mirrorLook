@@ -6,7 +6,7 @@ const CatalogTop = () => {
     <div className={styles.catalogTop}>
       <div className={styles.box}>
         <h2 className={styles.title}>Венецианские зеркала</h2>
-        <span>1-13 из 600 товаров</span>
+        {/*<span>1-13 из 600 товаров</span>*/}
       </div>
     </div>
   )
