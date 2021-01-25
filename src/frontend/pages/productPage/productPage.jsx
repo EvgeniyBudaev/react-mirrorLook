@@ -1,5 +1,4 @@
 import React from 'react'
-import Breadcrumbs from '../../components/breadcrumbs'
 import Product from '../../components/product'
 import SliderSimilarProducts from '../../components/sliderSimilarProducts'
 
@@ -10,7 +9,6 @@ const ProductPage = (props) => {
 
   return (
     <>
-      <Breadcrumbs />
       <Product productId={productId} match={match} />
       <SliderSimilarProducts />
     </>

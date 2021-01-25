@@ -1,11 +1,11 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import classNames from 'classnames'
+//import classNames from 'classnames'
 import styles from './headerMenuBottom.module.scss'
 import {ROUTES} from '../../../routes'
 
 const HeaderMenuBottom = () => {
-  const red = classNames(styles.red)
+  //const red = classNames(styles.red)
   const activeLink = {
     fontSize: '18px',
     lineHeight: 1.25,
@@ -30,7 +30,7 @@ const HeaderMenuBottom = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.CATEGORIES} activeStyle={activeLink}>
+            <NavLink to={ROUTES.CATALOG} activeStyle={activeLink}>
               Каталог
             </NavLink>
           </li>

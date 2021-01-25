@@ -7,8 +7,18 @@
 }
 
 .breadcrumbs {
+  margin-top: 30px;
   margin-bottom: 50px;
+  & a.link  {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  & p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
 }
+
 
 .list {
   background-color: var(--white);
