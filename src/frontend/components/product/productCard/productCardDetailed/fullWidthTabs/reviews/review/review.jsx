@@ -7,9 +7,8 @@ import styles from './review.module.scss'
 
 
 const Review = (props) => {
- //console.log('[Review][props]', props)
+  //console.log('[Review][props]', props)
   const {review: {user = 'Anonymous', text, rating}} = props
-  //console.log('[Review][rating]', rating)
 
   return (
     <div className={styles.review} data-id="review">

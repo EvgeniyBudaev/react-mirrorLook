@@ -1,5 +1,5 @@
 import produce from 'immer'
-import {LOAD_PRODUCT_BY_ID, REQUEST, SUCCESS, FAILURE} from '../constants'
+import {LOAD_PRODUCT_BY_ID, REQUEST, SUCCESS, FAILURE, ADD_REVIEW} from '../constants'
 import {arrToMap} from '../utils'
 
 
@@ -12,8 +12,8 @@ const initialState = {
 
 const productReducer = (state = initialState, action) =>
   produce(state, (draft) => {
+    const {type, productId, product, error, reviewId, payload} = action
     //console.log('[productReducer][action]', action)
-    const {type, productId, product, error} = action
 
     switch(type) {
       case LOAD_PRODUCT_BY_ID + REQUEST: {
@@ -34,6 +34,10 @@ const productReducer = (state = initialState, action) =>
         draft.error = error
         break
       }
+      case ADD_REVIEW:
+        return produce(state, draft => {
+          draft.entities[payload.productId].reviews.push(reviewId)
+        });
       default:
         return
     }

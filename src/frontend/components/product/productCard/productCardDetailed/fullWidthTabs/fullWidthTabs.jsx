@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -10,10 +9,6 @@ import Box from '@material-ui/core/Box';
 import Specifications from './specifications'
 import ProductCardDelivery from './productCardDelivery'
 import Reviews from './reviews'
-import {createStructuredSelector} from 'reselect'
-import {
-  reviewsSelector
-} from '../../../../../redux/selectors'
 
 
 function TabPanel(props) {
@@ -69,18 +64,15 @@ const useStyles = makeStyles((theme) => ({
 
 function SimpleTabs(props) {
   //console.log('[SimpleTabs][props]', props)
-  const {product, reviewsAll} = props
-  const reviewsAllArray = Object.values(reviewsAll)
-  const reviewsArray = reviewsAllArray.map(review => review.id)
-  //console.log('reviewsArray', reviewsArray)
+  const {product} = props
+  const reviewsAmount = `Отзывы (${product.reviews.length})`
+
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const reviewsAmount = `Отзывы (${product.reviews.length})`
 
   return (
     <div className={classes.root}>
@@ -95,7 +87,7 @@ function SimpleTabs(props) {
         <Specifications product={product} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Reviews productId={product.id} reviews={reviewsArray} />
+        <Reviews productId={product.id} reviews={product.reviews} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <ProductCardDelivery />
@@ -104,11 +96,7 @@ function SimpleTabs(props) {
   );
 }
 
-const mapStateToProps = createStructuredSelector({
-  reviewsAll: reviewsSelector,
-})
-
-export default connect(mapStateToProps )(SimpleTabs)
+export default SimpleTabs
 
 
 
