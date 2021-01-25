@@ -80,12 +80,14 @@ function SimpleTabs(props) {
     setValue(newValue);
   };
 
+  const reviewsAmount = `Отзывы (${product.reviews.length})`
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Характеристики" {...a11yProps(0)} />
-          <Tab label="Отзывы (0)" {...a11yProps(1)} />
+          <Tab label={reviewsAmount} {...a11yProps(1)} />
           <Tab label="Доставка и оплата" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
