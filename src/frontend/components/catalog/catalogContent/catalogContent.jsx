@@ -52,6 +52,9 @@ const CatalogContent = (props) => {
   const filterByAll = [...filterByForm, ...filterByColorFrame]
   //console.log('filterByAll', filterByAll)
 
+  // значения фильтров по типам на фронте
+  // const colorFList = ['Античное золото', 'Античное серебро', 'Серебро', 'Золото', 'Бронза', 'Латунь', 'Хром', 'Никель', 'Шампань']
+  // const formFList = ['Круглая', 'Прямоугольная', 'Фигурная']
 
   const filterProductsByAll = filterByAll.filter(item => {
     if (filter.includes(item.form) && !filter.includes(item.colorFrame)) {
@@ -85,7 +88,7 @@ const CatalogContent = (props) => {
     setIsClickedBtnGrid(!isClickedBtnGrid)
   }
 
-
+  console.log('filter', filter)
   return (
     <div className={styles.catalogContent}>
       <CatalogFilter isClickedBtnGrid={isClickedBtnGrid} handleClickBtnGrid={handleClickBtnGrid} />
