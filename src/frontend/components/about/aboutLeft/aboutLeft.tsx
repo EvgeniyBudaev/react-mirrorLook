@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './aboutLeft.module.scss'
 
-const AboutLeft = () => {
+const AboutLeft: React.FC = () => {
   return (
     <div className={styles.aboutLeft}>
       <h2>О магазине</h2>

@@ -4,7 +4,11 @@ import styles from './basketBottom.module.scss'
 import {ROUTES} from '../../../routes'
 import Button from '../../UI/button'
 
-const BasketBottom = (props) => {
+interface BasketBottomProps {
+  total: number
+}
+
+const BasketBottom: React.FC<BasketBottomProps> = (props) => {
   const {total} = props
 
   return (

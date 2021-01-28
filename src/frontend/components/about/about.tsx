@@ -3,7 +3,7 @@ import styles from './about.module.scss'
 import AboutLeft from './aboutLeft'
 // import AboutRight from './aboutRight'
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section className={styles.about}>
       <div className={styles.container}>

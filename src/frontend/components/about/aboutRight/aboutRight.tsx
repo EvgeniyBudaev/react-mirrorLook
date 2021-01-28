@@ -3,7 +3,7 @@ import styles from './aboutRight.module.scss'
 import AboutBasket from './aboutBasket'
 import AboutViewed from './aboutViewed'
 
-const AboutRight = () => {
+const AboutRight: React.FC = () => {
   return (
     <div className={styles.aboutRight}>
       <AboutBasket />

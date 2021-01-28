@@ -3,7 +3,7 @@ import styles from './aboutViewedItem.module.scss'
 
 import images1 from '../../../../../../assets/images/content/about-1.png'
 
-const AboutViewedItem = () => {
+const AboutViewedItem: React.FC = () => {
   return (
     <div className={styles.item}>
       <div>
