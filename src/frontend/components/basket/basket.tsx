@@ -6,7 +6,26 @@ import {createStructuredSelector} from 'reselect'
 import {connect} from 'react-redux'
 import {orderProductsSelector, totalSelector} from '../../redux/selectors'
 
-const Basket = (props) => {
+type BasketPropsType = {
+  total: number,
+  orderProducts: Array<IOrderProducts>
+}
+
+type IOrderProducts = {
+  product: ProductType,
+  amount: number,
+  subtotal: number,
+}
+
+type ProductType = {
+  id: string,
+  name: string,
+  price: number,
+  images: string,
+}
+
+
+const Basket: React.FC<BasketPropsType> = (props) => {
   const {total, orderProducts} = props
   //console.log('total', total)
   //console.log('orderProducts', orderProducts)

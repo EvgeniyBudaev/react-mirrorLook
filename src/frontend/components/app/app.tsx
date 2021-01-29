@@ -8,6 +8,7 @@ import Basket from '../basket/basket'
 import ProductPage from '../../pages/productPage/productPage'
 import CatalogPage from '../../pages/catalogPage'
 
+
 const App: React.FC = () => {
   return (
     <MainLayout>

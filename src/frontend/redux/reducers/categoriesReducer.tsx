@@ -1,14 +1,20 @@
 import {arrToMap} from '../utils'
 import {FAILURE, LOAD_CATEGORIES, REQUEST, SUCCESS} from '../constants'
+import {LoadCategoriesActionType} from '../actions/actions'
 
 const initialState = {
   entities: {},
   loading: false,
   loaded: false,
-  error: null,
+  error: null as object | null,
+  response: null as object | null,
 }
 
-const categoriesReducer = (state = initialState, action) => {
+export type InitialStateCategoriesType = typeof initialState
+type Types = LoadCategoriesActionType & InitialStateCategoriesType
+
+
+const categoriesReducer = (state = initialState, action: Types) => {
   const {type, response, error} = action
 
   switch (type) {
@@ -37,4 +43,4 @@ const categoriesReducer = (state = initialState, action) => {
   }
 }
 
-export default categoriesReducer
+export {categoriesReducer}

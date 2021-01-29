@@ -1,9 +1,41 @@
 import React from 'react'
 import styles from './basketCard.module.scss'
-import {connect} from 'react-redux'
+import {connect, ConnectedProps} from 'react-redux'
 import {productDecrement, productIncrement, productRemove} from '../../../redux/actions/actions'
+import {ProductDecrement} from '../../../redux/actions/actions'
+import {ProductRemove} from '../../../redux/actions/actions'
+import {ProductIncrement} from '../../../redux/actions/actions'
 
-const BasketCard = (props) => {
+type BasketCardPropsType = {
+  product: ProductType,
+  amount: number,
+  subtotal: number,
+  productDecrement: ProductDecrement,
+  productIncrement: ProductIncrement,
+  productRemove: ProductRemove,
+}
+
+type ProductType = {
+  id: string,
+  name: string,
+  price: number,
+  images: string,
+}
+
+type PropsType = BasketCardPropsType  & DispatchPropsType
+
+const connector = connect(null, {productIncrement, productDecrement, productRemove})
+
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+type DispatchPropsType = PropsFromRedux & {
+  productDecrement: ProductDecrement,
+  productIncrement: ProductIncrement,
+  productRemove: ProductRemove,
+}
+
+
+const BasketCard: React.FC<PropsType> = (props) => {
   const {product, amount, subtotal, productDecrement, productIncrement, productRemove} = props
   const {id, images, name, price} = product
   //console.log('[basketCard][props]', props)
@@ -70,4 +102,4 @@ const BasketCard = (props) => {
   )
 }
 
-export default connect(null, {productIncrement, productDecrement, productRemove})(BasketCard)
+export default connector(BasketCard)

@@ -1,17 +1,44 @@
-import produce from 'immer'
+import produce, {Draft} from 'immer'
 import {LOAD_PRODUCT_BY_ID, REQUEST, SUCCESS, FAILURE, ADD_REVIEW} from '../constants'
 import {arrToMap} from '../utils'
 
+type LoadingType = {
+  [productId: string]: boolean
+}
 
-const initialState = {
+type LoadedType = {
+  [productId: string]: boolean
+}
+
+type ReviewIdType = {
+  reviewId: string,
+}
+
+type PayloadType = {
+  productId: string,
+  reviews: Array<ReviewIdType>
+}
+
+type EntitiesType = {
+  [payload: string]: PayloadType
+}
+
+export type InitialStateProductsType = {
+  loading: LoadingType
+  loaded: LoadedType,
+  error: object | null,
+  entities: EntitiesType
+}
+
+const initialState: InitialStateProductsType = {
   loading: {},
   loaded: {},
   error: null,
   entities: {},
 }
 
-const productReducer = (state = initialState, action) =>
-  produce(state, (draft) => {
+const productReducer = (state = initialState, action: any):InitialStateProductsType =>
+  produce(state, (draft: Draft<InitialStateProductsType>) => {
     const {type, productId, product, error, reviewId, payload} = action
     //console.log('[productReducer][action]', action)
 
@@ -45,4 +72,4 @@ const productReducer = (state = initialState, action) =>
 
 
 
-export default productReducer
+export {productReducer}
