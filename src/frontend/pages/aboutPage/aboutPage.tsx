@@ -1,7 +1,7 @@
 import React from 'react'
 import About from '../../components/about'
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
     <>
       <About />

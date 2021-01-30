@@ -4,7 +4,7 @@ import SliderNewProducts from '../../components/sliderNewProducts'
 import Banner from '../../components/banner'
 import SliderPopularProducts from '../../components/sliderPopularProducts'
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <SliderAsNavFor />

@@ -1,7 +1,7 @@
 import React from 'react'
 import Basket from '../../components/basket/basket'
 
-const BasketPage = () => {
+const BasketPage: React.FC = () => {
   return (
     <>
       <Basket />
