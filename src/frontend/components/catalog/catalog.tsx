@@ -4,7 +4,7 @@ import CatalogTop from './catalogTop/catalogTop'
 import CatalogAside from './catalogAside'
 import CatalogContent from './catalogContent'
 
-const Catalog = () => {
+const Catalog: React.FC = () => {
   //console.log('[Catalog][props]', props)
   return (
     <section className={styles.catalog}>

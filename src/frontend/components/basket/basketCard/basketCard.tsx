@@ -5,24 +5,10 @@ import {productDecrement, productIncrement, productRemove} from '../../../redux/
 import {ProductDecrement} from '../../../redux/actions/actions'
 import {ProductRemove} from '../../../redux/actions/actions'
 import {ProductIncrement} from '../../../redux/actions/actions'
+import {IBasketCardProps} from './interface'
 
-type BasketCardPropsType = {
-  product: ProductType,
-  amount: number,
-  subtotal: number,
-  productDecrement: ProductDecrement,
-  productIncrement: ProductIncrement,
-  productRemove: ProductRemove,
-}
 
-type ProductType = {
-  id: string,
-  name: string,
-  price: number,
-  images: string,
-}
-
-type PropsType = BasketCardPropsType  & DispatchPropsType
+type PropsType = IBasketCardProps  & DispatchPropsType
 
 const connector = connect(null, {productIncrement, productDecrement, productRemove})
 
@@ -38,7 +24,7 @@ type DispatchPropsType = PropsFromRedux & {
 const BasketCard: React.FC<PropsType> = (props) => {
   const {product, amount, subtotal, productDecrement, productIncrement, productRemove} = props
   const {id, images, name, price} = product
-  //console.log('[basketCard][props]', props)
+  console.log('[basketCard][props]', props)
 
   return (
     <div className={styles.basketCard}>

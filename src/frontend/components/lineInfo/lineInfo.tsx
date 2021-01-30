@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './lineInfo.module.scss'
 
-const LineInfo = () => {
+const LineInfo: React.FC = () => {
   return (
     <div className={styles.lineInfo}>
       <p>

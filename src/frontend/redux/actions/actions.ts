@@ -20,6 +20,7 @@ import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, user
 import {Dispatch, Action} from 'redux'
 import {RootStateType} from '../reducers'
 import {ThunkAction} from 'redux-thunk'
+import {AppThunk, GetStateType, IProduct} from '../types'
 
 export const handleWindowScroll = (isOffset:any) => ({
   type: IS_WINDOW_SCROLL,
@@ -78,30 +79,17 @@ export const loadProducts = (categoryId: string, stringifiedParams: any): LoadPr
   categoryId,
 })
 
-export type ActionTypes =  LoadCategoriesActionType | LoadProductByIdActionType | LoadProductsActionType
-
-type GetStateType = () => RootStateType
 
 
-type ProductType = {
-  id: string,
-  name: string,
-  price: number,
-  images: string,
-}
-type LoadProductByIdActionType = {
+export interface ILoadProductByIdAction {
   type: typeof LOAD_PRODUCT_BY_ID
   productId: string,
-  product: Array<ProductType>,
+  product: Array<IProduct>,
   error: object
 }
 
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootStateType,
-  unknown,
-  Action<string>
-  >
+export type ActionsType =  ILoadProductByIdAction
+
 
 export const loadProductById = (productId: string): AppThunk => async (dispatch) => {
   dispatch({type: LOAD_PRODUCT_BY_ID + REQUEST, productId})
@@ -119,6 +107,19 @@ export const loadProductById = (productId: string): AppThunk => async (dispatch)
   }
 }
 
+interface IReview {
+  id: string,
+  user: string,
+  userId: string,
+  text: string,
+  rating: number,
+}
+interface ILoadReviewsAction {
+  type: typeof LOAD_REVIEWS
+  productId: string,
+  product: Array<IReview>,
+  error: object
+}
 export const loadReviews = (productId: string): AppThunk => async (dispatch, getState: GetStateType) => {
   const state = getState()
   const loading = reviewsLoadingSelector(state, {productId})
@@ -149,16 +150,16 @@ export const loadUsers = () => async (dispatch: any, getState: any) => {
 }
 
 
-type AddReviewActionPayloadType = {
-  review: object,
+interface IAddReviewActionPayload {
+  review: IReview,
   productId: string
 }
-type AddReviewActionType = {
+export interface IAddReviewAction {
   type: typeof ADD_REVIEW,
-  payload: AddReviewActionPayloadType,
+  payload: IAddReviewActionPayload,
   generateId: Array<string>
 }
-export const addReview = (review: object, productId: string): AddReviewActionType => ({
+export const addReview = (review: IReview, productId: string): IAddReviewAction => ({
   type: ADD_REVIEW,
   payload: {review, productId},
   generateId: ['reviewId', 'userId'],

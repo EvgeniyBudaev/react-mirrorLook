@@ -5,27 +5,10 @@ import BasketBottom from './basketBottom'
 import {createStructuredSelector} from 'reselect'
 import {connect} from 'react-redux'
 import {orderProductsSelector, totalSelector} from '../../redux/selectors'
-
-type BasketPropsType = {
-  total: number,
-  orderProducts: Array<IOrderProducts>
-}
-
-type IOrderProducts = {
-  product: ProductType,
-  amount: number,
-  subtotal: number,
-}
-
-type ProductType = {
-  id: string,
-  name: string,
-  price: number,
-  images: string,
-}
+import {IBasket} from './interface'
 
 
-const Basket: React.FC<BasketPropsType> = (props) => {
+const Basket: React.FC<IBasket> = (props) => {
   const {total, orderProducts} = props
   //console.log('total', total)
   //console.log('orderProducts', orderProducts)

@@ -14,7 +14,7 @@ export type InitialStateCategoriesType = typeof initialState
 type Types = LoadCategoriesActionType & InitialStateCategoriesType
 
 
-const categoriesReducer = (state = initialState, action: Types) => {
+const categoriesReducer = (state = initialState, action: Types):InitialStateCategoriesType => {
   const {type, response, error} = action
 
   switch (type) {

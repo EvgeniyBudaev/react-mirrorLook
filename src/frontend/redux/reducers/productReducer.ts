@@ -1,69 +1,62 @@
 import produce, {Draft} from 'immer'
 import {LOAD_PRODUCT_BY_ID, REQUEST, SUCCESS, FAILURE, ADD_REVIEW} from '../constants'
 import {arrToMap} from '../utils'
+import {ILoading, ILoaded, IReviewId, AppThunk} from '../types'
+import {ILoadProductByIdAction, IAddReviewAction} from '../actions/actions'
 
-type LoadingType = {
-  [productId: string]: boolean
-}
 
-type LoadedType = {
-  [productId: string]: boolean
-}
-
-type ReviewIdType = {
-  reviewId: string,
-}
-
-type PayloadType = {
+interface IPayload {
   productId: string,
-  reviews: Array<ReviewIdType>
+  reviews: Array<IReviewId>
 }
 
-type EntitiesType = {
-  [payload: string]: PayloadType
+interface IEntities {
+  [payload: string]: IPayload
 }
 
-export type InitialStateProductsType = {
-  loading: LoadingType
-  loaded: LoadedType,
+export interface IStateProduct {
+  loading: ILoading
+  loaded: ILoaded,
   error: object | null,
-  entities: EntitiesType
+  entities: IEntities
 }
 
-const initialState: InitialStateProductsType = {
+const initialState: IStateProduct  = {
   loading: {},
   loaded: {},
   error: null,
   entities: {},
 }
 
-const productReducer = (state = initialState, action: any):InitialStateProductsType =>
-  produce(state, (draft: Draft<InitialStateProductsType>) => {
-    const {type, productId, product, error, reviewId, payload} = action
+type ActionsType = IAddReviewAction & ILoadProductByIdAction
+
+const productReducer = (state = initialState, action: any):IStateProduct  =>
+  produce(state, (draft: Draft<IStateProduct>) => {
+    // const {type, productId, product, error, reviewId, payload} = action
     //console.log('[productReducer][action]', action)
 
-    switch(type) {
+    switch(action.type) {
       case LOAD_PRODUCT_BY_ID + REQUEST: {
-        draft.loading[productId] = true
+        draft.loading[action.productId] = true
         draft.error = null
         break
       }
       case LOAD_PRODUCT_BY_ID + SUCCESS: {
-        draft.loading[productId] = false
-        draft.loaded[productId] = true
+        draft.loading[action.productId] = false
+        draft.loaded[action.productId] = true
         draft.error = null
-        draft.entities = {...draft.entities, ...arrToMap(product)}
+        draft.entities = {...draft.entities, ...arrToMap(action.product)}
         break
       }
       case LOAD_PRODUCT_BY_ID + FAILURE: {
-        draft.loading[productId] = false
-        draft.loaded[productId] = false
-        draft.error = error
+        draft.loading[action.productId] = false
+        draft.loaded[action.productId] = false
+        draft.error = action.error
         break
       }
       case ADD_REVIEW:
         return produce(state, draft => {
-          draft.entities[payload.productId].reviews.push(reviewId)
+          draft.entities[action.payload.productId].reviews.push(action.reviewId)
         });
       default:
         return

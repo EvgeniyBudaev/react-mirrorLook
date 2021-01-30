@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './catalogTop.module.scss'
 
-const CatalogTop = () => {
+const CatalogTop: React.FC = () => {
   return (
     <div className={styles.catalogTop}>
       <div className={styles.box}>

@@ -3,12 +3,10 @@ import {Link} from 'react-router-dom'
 import styles from './basketBottom.module.scss'
 import {ROUTES} from '../../../routes'
 import Button from '../../UI/button'
+import {IBasketBottom} from './interface'
 
-interface IBasketBottomProps {
-  total: number
-}
 
-const BasketBottom: React.FC<IBasketBottomProps> = (props) => {
+const BasketBottom: React.FC<IBasketBottom> = (props) => {
   const {total} = props
 
   return (
