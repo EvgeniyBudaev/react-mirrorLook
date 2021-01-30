@@ -88,7 +88,7 @@ const CatalogContent = (props) => {
     setIsClickedBtnGrid(!isClickedBtnGrid)
   }
 
-  console.log('filter', filter)
+  //console.log('filter', filter)
   return (
     <div className={styles.catalogContent}>
       <CatalogFilter isClickedBtnGrid={isClickedBtnGrid} handleClickBtnGrid={handleClickBtnGrid} />
