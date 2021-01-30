@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter} from 'react-router'
+import {withRouter, RouteComponentProps} from 'react-router'
 import styles from './mainLayout.module.scss'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
@@ -7,7 +7,10 @@ import BreadcrumbsUI from '../../components/breadcrumbs/breadcrumbs'
 // import Sidebar from '../../components/sidebar'
 // import Bar from '../../components/proSidebar'
 
-const MainLayout = (props) => {
+
+interface IMainLayoutProps extends RouteComponentProps<any> {}
+
+const MainLayout: React.FC<IMainLayoutProps> = (props) => {
   const {location} = props
   const pathNames = location.pathname.split("/").filter(x => x)
 
