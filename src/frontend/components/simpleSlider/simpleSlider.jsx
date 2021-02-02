@@ -51,3 +51,4 @@ class SimpleSlider extends Component {
 }
 
 export default SimpleSlider
+
