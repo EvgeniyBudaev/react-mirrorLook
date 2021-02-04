@@ -1,4 +1,7 @@
 import {replace} from 'connected-react-router'
+import { createAsyncAction } from 'typesafe-actions'
+import axios from 'axios'
+import {Dispatch} from "redux"
 import {
   PRODUCT_INCREMENT,
   IS_WINDOW_SCROLL,
@@ -6,7 +9,6 @@ import {
   PRODUCT_REMOVE,
   LOAD_CATEGORIES,
   LOAD_PRODUCTS,
-  LOAD_PRODUCT_BY_ID,
   LOAD_REVIEWS,
   LOAD_USERS,
   REQUEST,
@@ -14,13 +16,12 @@ import {
   FAILURE,
   ADD_REVIEW,
   SEARCH_PRODUCT,
-  FILTER_PRODUCT
+  FILTER_PRODUCT, LOAD_PRODUCT_BY_ID_REQUEST, LOAD_PRODUCT_BY_ID_SUCCESS, LOAD_PRODUCT_BY_ID_FAILURE
 } from '../constants'
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
-import {Dispatch, Action} from 'redux'
 import {RootStateType} from '../reducers'
 import {ThunkAction} from 'redux-thunk'
-import {AppThunk, GetStateType, IProduct} from '../types'
+import {AppThunk, GetStateType, IProduct, IReview, ProductByIdThunk, ProductByIdTypes} from '../types'
 
 export const handleWindowScroll = (isOffset:any) => ({
   type: IS_WINDOW_SCROLL,
@@ -81,39 +82,29 @@ export const loadProducts = (categoryId: string, stringifiedParams: any): LoadPr
 
 
 
-export interface ILoadProductByIdAction {
-  type: typeof LOAD_PRODUCT_BY_ID
-  productId: string,
-  product: Array<IProduct>,
-  error: object
-}
+const fetchProductByIdAsync = createAsyncAction(
+  LOAD_PRODUCT_BY_ID_REQUEST,
+  LOAD_PRODUCT_BY_ID_SUCCESS,
+  LOAD_PRODUCT_BY_ID_FAILURE,
+)<void, Array<IProduct>, Error>();
 
-export type ActionsType =  ILoadProductByIdAction
-
-
-export const loadProductById = (productId: string): AppThunk => async (dispatch) => {
-  dispatch({type: LOAD_PRODUCT_BY_ID + REQUEST, productId})
+export const loadProductById = (productId: string): ProductByIdThunk => async (dispatch: Dispatch<ProductByIdTypes>) => {
+  dispatch({type: LOAD_PRODUCT_BY_ID_REQUEST, productId})
   try {
     const response = await fetch(
       `/api/products?id=${productId}`
     ).then((res) => res.json())
-    const productObj = response.find((product: any) => product.id === productId)
-    const product = []
+    const productObj = response.find((product: IProduct) => product.id === productId)
+    const product: Array<IProduct> = []
     product.push(productObj)
-    dispatch({type: LOAD_PRODUCT_BY_ID + SUCCESS, product, productId})
+    dispatch({type: LOAD_PRODUCT_BY_ID_SUCCESS, product, productId})
   } catch (error) {
-    dispatch({type: LOAD_PRODUCT_BY_ID + FAILURE, error, productId})
-    dispatch(replace('/error'))
+    dispatch({type: LOAD_PRODUCT_BY_ID_FAILURE, productId, error})
+    //dispatch(replace('/error'))
   }
 }
 
-interface IReview {
-  id: string,
-  user: string,
-  userId: string,
-  text: string,
-  rating: number,
-}
+
 interface ILoadReviewsAction {
   type: typeof LOAD_REVIEWS
   productId: string,
@@ -152,7 +143,7 @@ export const loadUsers = () => async (dispatch: any, getState: any) => {
 
 interface IAddReviewActionPayload {
   review: IReview,
-  productId: string
+  productId: string,
 }
 export interface IAddReviewAction {
   type: typeof ADD_REVIEW,
