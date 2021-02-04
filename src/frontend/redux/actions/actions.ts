@@ -19,9 +19,14 @@ import {
   FILTER_PRODUCT, LOAD_PRODUCT_BY_ID_REQUEST, LOAD_PRODUCT_BY_ID_SUCCESS, LOAD_PRODUCT_BY_ID_FAILURE
 } from '../constants'
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
-import {RootStateType} from '../reducers'
-import {ThunkAction} from 'redux-thunk'
-import {AppThunk, GetStateType, IProduct, IReview, ProductByIdThunk, ProductByIdTypes} from '../types'
+import {
+  AppThunk,
+  GetStateType,
+  IProduct,
+  IReview,
+  ProductByIdThunk,
+  ProductByIdTypes, ProductDecrement, ProductIncrement, ProductRemove
+} from '../types'
 
 export const handleWindowScroll = (isOffset:any) => ({
   type: IS_WINDOW_SCROLL,
@@ -29,33 +34,10 @@ export const handleWindowScroll = (isOffset:any) => ({
 })
 
 
-type ProductIncrementActionPayloadType = {
-  id: string,
-}
-type ProductIncrementActionType = {
-  type: typeof PRODUCT_INCREMENT,
-  payload: ProductIncrementActionPayloadType
-}
-export type ProductIncrement = (id: string) => ProductIncrementActionType
 export const productIncrement: ProductIncrement = (id) => ({type: PRODUCT_INCREMENT, payload: {id}})
 
-
-type ProductDecrementActionPayloadType = {
-  id: string
-}
-type ProductDecrementActionType = {
-  type: typeof PRODUCT_DECREMENT,
-  payload: ProductDecrementActionPayloadType
-}
-export type ProductDecrement = (id: string) => ProductDecrementActionType
 export const productDecrement: ProductDecrement = (id) => ({type: PRODUCT_DECREMENT, payload: {id}})
 
-
-type ProductRemoveActionType = {
-  type: typeof PRODUCT_REMOVE,
-  payload: {id: string}
-}
-export type ProductRemove = (id: string) => ProductRemoveActionType
 export const productRemove: ProductRemove = (id) => ({type: PRODUCT_REMOVE, payload: {id}})
 
 
@@ -131,7 +113,6 @@ export const loadReviews = (productId: string): AppThunk => async (dispatch, get
 
 export const loadUsers = () => async (dispatch: any, getState: any) => {
   const state = getState()
-  //console.log('[actions][loadUsers][state]', state)
   const loading = usersLoadingSelector(state)
   const loaded = usersLoadedSelector(state)
 

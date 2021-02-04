@@ -1,7 +1,13 @@
 import {ThunkAction} from 'redux-thunk'
 import {RootStateType} from './reducers'
 import {Action} from 'redux'
-import {ADD_REVIEW, LOAD_PRODUCT_BY_ID_FAILURE, LOAD_PRODUCT_BY_ID_REQUEST, LOAD_PRODUCT_BY_ID_SUCCESS} from './constants'
+import {
+  ADD_REVIEW,
+  LOAD_PRODUCT_BY_ID_FAILURE,
+  LOAD_PRODUCT_BY_ID_REQUEST,
+  LOAD_PRODUCT_BY_ID_SUCCESS, PRODUCT_DECREMENT,
+  PRODUCT_INCREMENT, PRODUCT_REMOVE
+} from './constants'
 
 export interface ILoading {
   [productId: string]: boolean
@@ -79,3 +85,30 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   >
 
 export type GetStateType = () => RootStateType
+
+
+type ProductIncrementActionPayloadType = {
+  id: string,
+}
+export type ProductIncrementActionType = {
+  type: typeof PRODUCT_INCREMENT,
+  payload: ProductIncrementActionPayloadType
+}
+export type ProductIncrement = (id: string) => ProductIncrementActionType
+
+
+type ProductDecrementActionPayloadType = {
+  id: string
+}
+type ProductDecrementActionType = {
+  type: typeof PRODUCT_DECREMENT,
+  payload: ProductDecrementActionPayloadType
+}
+export type ProductDecrement = (id: string) => ProductDecrementActionType
+
+
+type ProductRemoveActionType = {
+  type: typeof PRODUCT_REMOVE,
+  payload: {id: string}
+}
+export type ProductRemove = (id: string) => ProductRemoveActionType
