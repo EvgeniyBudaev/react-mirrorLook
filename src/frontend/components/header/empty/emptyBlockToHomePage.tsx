@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './emptyBlockToHomePage.module.scss'
 
-const EmptyBlockToHomePage = () => {
+const EmptyBlockToHomePage: React.FC = () => {
   return <div className={styles.emptyBlockToHomePage}></div>
 }
 
