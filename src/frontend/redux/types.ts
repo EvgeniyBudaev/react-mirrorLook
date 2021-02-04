@@ -94,7 +94,7 @@ export type ProductIncrementActionType = {
   type: typeof PRODUCT_INCREMENT,
   payload: ProductIncrementActionPayloadType
 }
-export type ProductIncrement = (id: string) => ProductIncrementActionType
+export type ProductIncrementType = (id: string) => ProductIncrementActionType
 
 
 type ProductDecrementActionPayloadType = {
@@ -104,11 +104,11 @@ type ProductDecrementActionType = {
   type: typeof PRODUCT_DECREMENT,
   payload: ProductDecrementActionPayloadType
 }
-export type ProductDecrement = (id: string) => ProductDecrementActionType
+export type ProductDecrementType = (id: string) => ProductDecrementActionType
 
 
 type ProductRemoveActionType = {
   type: typeof PRODUCT_REMOVE,
   payload: {id: string}
 }
-export type ProductRemove = (id: string) => ProductRemoveActionType
+export type ProductRemoveType = (id: string) => ProductRemoveActionType

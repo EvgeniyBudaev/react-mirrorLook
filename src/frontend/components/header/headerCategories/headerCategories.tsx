@@ -10,17 +10,18 @@ import {
 } from '../../../redux/selectors'
 import {loadCategories} from '../../../redux/actions/actions'
 import Loader from '../../loader'
-import {createStructuredSelector} from 'reselect'
+import {RootStateType} from '../../../redux/reducers'
+import {HeaderCategoriesPopsType, MapStatePropsHeaderCategoriesType} from './types'
 // import { matchPath, useLocation} from 'react-router'
 
 
-const HeaderCategories = (props) => {
+const HeaderCategories: React.FC<HeaderCategoriesPopsType> = (props) => {
   //console.log('[HeaderCategories][props]', props)
   const {
     categories,
     loadCategories,
-    loading,
-    loaded,
+    loadingHeaderCategories,
+    loadedHeaderCategories,
   } = props
 
   // const location = useLocation()
@@ -33,10 +34,10 @@ const HeaderCategories = (props) => {
 
 
   useEffect(() => {
-    if (!loading && !loaded) loadCategories()
-  }, [loadCategories, loading, loaded])
+    if (!loadingHeaderCategories && !loadedHeaderCategories) loadCategories()
+  }, [loadCategories, loadingHeaderCategories, loadedHeaderCategories])
 
-  if (loading || !loaded) return <Loader />
+  if (loadingHeaderCategories || !loadedHeaderCategories) return <Loader />
 
   return (
     <>
@@ -55,11 +56,12 @@ const HeaderCategories = (props) => {
   )
 }
 
-export default connect(
-  createStructuredSelector({
-    categories: categoriesListSelector,
-    loading: categoriesLoadingSelector,
-    loaded: categoriesLoadedSelector,
-  }),
-  {loadCategories}
-)(HeaderCategories)
+const mapStateToProps = (state: RootStateType): MapStatePropsHeaderCategoriesType => {
+  return {
+    categories: categoriesListSelector(state),
+    loadingHeaderCategories: categoriesLoadingSelector(state),
+    loadedHeaderCategories: categoriesLoadedSelector(state),
+  }
+}
+
+export default connect(mapStateToProps,{loadCategories})(HeaderCategories)

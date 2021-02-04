@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from './basketCard.module.scss'
 import {connect, ConnectedProps} from 'react-redux'
-import {productDecrement, productIncrement, productRemove} from '../../../redux/actions/actions'
-import {ProductDecrement} from '../../../redux/actions/actions'
-import {ProductRemove} from '../../../redux/actions/actions'
-import {ProductIncrement} from '../../../redux/actions/actions'
 import {IBasketCardProps} from './interface'
+import {productDecrement, productIncrement, productRemove} from '../../../redux/actions/actions'
+import {ProductDecrementType, ProductIncrementType, ProductRemoveType} from '../../../redux/types'
 
 
 type PropsType = IBasketCardProps  & DispatchPropsType
@@ -15,9 +13,9 @@ const connector = connect(null, {productIncrement, productDecrement, productRemo
 type PropsFromRedux = ConnectedProps<typeof connector>
 
 type DispatchPropsType = PropsFromRedux & {
-  productDecrement: ProductDecrement,
-  productIncrement: ProductIncrement,
-  productRemove: ProductRemove,
+  productDecrement: ProductDecrementType,
+  productIncrement: ProductIncrementType,
+  productRemove: ProductRemoveType,
 }
 
 

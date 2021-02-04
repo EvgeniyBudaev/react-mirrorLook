@@ -25,7 +25,7 @@ import {
   IProduct,
   IReview,
   ProductByIdThunk,
-  ProductByIdTypes, ProductDecrement, ProductIncrement, ProductRemove
+  ProductByIdTypes, ProductDecrementType, ProductIncrementType, ProductRemoveType
 } from '../types'
 
 export const handleWindowScroll = (isOffset:any) => ({
@@ -34,11 +34,11 @@ export const handleWindowScroll = (isOffset:any) => ({
 })
 
 
-export const productIncrement: ProductIncrement = (id) => ({type: PRODUCT_INCREMENT, payload: {id}})
+export const productIncrement: ProductIncrementType = (id) => ({type: PRODUCT_INCREMENT, payload: {id}})
 
-export const productDecrement: ProductDecrement = (id) => ({type: PRODUCT_DECREMENT, payload: {id}})
+export const productDecrement: ProductDecrementType = (id) => ({type: PRODUCT_DECREMENT, payload: {id}})
 
-export const productRemove: ProductRemove = (id) => ({type: PRODUCT_REMOVE, payload: {id}})
+export const productRemove: ProductRemoveType = (id) => ({type: PRODUCT_REMOVE, payload: {id}})
 
 
 export type LoadCategoriesActionType = {
