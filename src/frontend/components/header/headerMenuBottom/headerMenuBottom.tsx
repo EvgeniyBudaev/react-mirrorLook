@@ -1,12 +1,15 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import * as CSS from 'csstype'
 //import classNames from 'classnames'
 import styles from './headerMenuBottom.module.scss'
 import {ROUTES} from '../../../routes'
 
-const HeaderMenuBottom = () => {
+
+
+const HeaderMenuBottom: React.FC = () => {
   //const red = classNames(styles.red)
-  const activeLink = {
+  const activeLink: CSS.Properties = {
     fontSize: '18px',
     lineHeight: 1.25,
     fontFamily: 'Montserrat',
@@ -14,6 +17,7 @@ const HeaderMenuBottom = () => {
     pointerEvents: 'none',
     cursor: 'default',
   }
+
 
   return (
     <div className={styles.headerMenuBottom}>
