@@ -1,7 +1,7 @@
-import produce, {Draft} from 'immer'
-import {ADD_REVIEW, LOAD_PRODUCT_BY_ID_REQUEST, LOAD_PRODUCT_BY_ID_SUCCESS, LOAD_PRODUCT_BY_ID_FAILURE} from '../constants'
+import produce, { Draft } from 'immer'
+import { ADD_REVIEW, LOAD_PRODUCT_BY_ID_REQUEST, LOAD_PRODUCT_BY_ID_SUCCESS, LOAD_PRODUCT_BY_ID_FAILURE } from '../constants'
 import {arrToMap} from '../utils'
-import {ILoading, ILoaded, IReviewId, IFailure, ProductByIdTypes} from '../types'
+import { ILoading, ILoaded, IReviewId, IFailure, ProductByIdTypes } from '../types'
 
 
 interface IPayload {

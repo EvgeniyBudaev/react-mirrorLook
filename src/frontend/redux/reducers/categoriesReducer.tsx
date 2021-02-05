@@ -1,6 +1,6 @@
-import {arrToMap} from '../utils'
-import {FAILURE, LOAD_CATEGORIES, REQUEST, SUCCESS} from '../constants'
-import {LoadCategoriesActionType} from '../actions/actions'
+import { arrToMap } from '../utils'
+import { FAILURE, LOAD_CATEGORIES, REQUEST, SUCCESS}  from '../constants'
+import { LoadCategoriesActionType } from '../actions/actions'
 
 const initialState = {
   entities: {},

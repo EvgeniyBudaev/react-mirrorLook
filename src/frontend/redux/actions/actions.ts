@@ -23,7 +23,7 @@ import {
   AppThunk,
   GetStateType, IFilterProduct, IFilterState, IHandleWindowScroll,
   IProduct,
-  IReview,
+  IReview, ISearchProduct,
   ProductByIdThunk,
   ProductByIdTypes, ProductDecrementType, ProductIncrementType, ProductRemoveType
 } from '../types'
@@ -141,7 +141,7 @@ export const addReview = (review: IReview, productId: string): IAddReviewAction 
 
 
 
-export const searchProduct = (text: string) => (dispatch: any) => {
+export const searchProduct = (text: string) => (dispatch: Dispatch<ISearchProduct>) => {
   dispatch({
     type: SEARCH_PRODUCT,
     payload: text

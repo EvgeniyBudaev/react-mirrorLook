@@ -6,7 +6,7 @@ import {
   LOAD_PRODUCT_BY_ID_FAILURE,
   LOAD_PRODUCT_BY_ID_REQUEST,
   LOAD_PRODUCT_BY_ID_SUCCESS, PRODUCT_DECREMENT,
-  PRODUCT_INCREMENT, PRODUCT_REMOVE
+  PRODUCT_INCREMENT, PRODUCT_REMOVE, SEARCH_PRODUCT
 } from './constants'
 
 interface IIsOffset {
@@ -130,4 +130,10 @@ export interface IFilterState {
 export interface IFilterProduct {
   type: typeof FILTER_PRODUCT,
   payload: IFilterState
+}
+
+
+export interface ISearchProduct {
+  type: typeof SEARCH_PRODUCT,
+  payload: string
 }
