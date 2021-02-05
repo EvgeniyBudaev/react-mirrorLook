@@ -10,9 +10,10 @@ import HeaderMenuTop from './headerMenuTop'
 import HeaderMenuBottom from './headerMenuBottom'
 import HeaderCategories from './headerCategories'
 import EmptyBlockToHomePage from './empty'
+import {RootStateType} from '../../redux/reducers'
 
-const Header = () => {
-  const offset = useSelector((state) => state.windowScrollReducer.offset)
+const Header: React.FC = () => {
+  const offset = useSelector((state: RootStateType):number =>  state.windowScrollReducer.offset)
   const dispatch = useDispatch()
 
   const isOffset = useWindowScroll({timerLength: offset})

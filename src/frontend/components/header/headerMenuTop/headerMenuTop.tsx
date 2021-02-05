@@ -9,8 +9,8 @@ import { useLocation, matchPath, RouteComponentProps } from 'react-router'
 import {ROUTES} from '../../../routes'
 
 interface IHeaderMenuTop {
-  isClickedIconSearch: boolean,
-  handleClickIconSearch: () => void
+  isClickedIconSearch?: boolean,
+  handleClickIconSearch?: () => void
 }
 
 type PropsType = IHeaderMenuTop & RouteComponentProps

@@ -6,14 +6,14 @@ interface IStateWindowScroll {
   isOffset: boolean
 }
 
-const initialState = {
+const initialState: IStateWindowScroll = {
   offset: 100,
   isOffset: false,
 }
 
 
 
-const windowScrollReducer = (state = initialState, action: IHandleWindowScroll): IStateWindowScroll => {
+const windowScrollReducer = (state: IStateWindowScroll = initialState, action: IHandleWindowScroll): IStateWindowScroll => {
   const {type, payload} = action
 
   switch (type) {

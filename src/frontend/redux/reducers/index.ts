@@ -1,16 +1,16 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import windowScrollReducer from './windowScrollReducer'
 import orderReducer from './orderReducer'
-import {categoriesReducer} from './categoriesReducer'
+import { categoriesReducer } from './categoriesReducer'
 import productsReducer from './productsReducer'
-import {productReducer} from './productReducer'
+import { productReducer } from './productReducer'
 import usersReducer from './usersReducer'
 import reviewsReducer from './reviewsReducer'
 import searchReducer from './searchReducer'
 import filterReducer from './filterReducer'
 
 
- const rootReducer = () => combineReducers({
+ const rootReducer = combineReducers({
   windowScrollReducer,
   orderReducer,
   categoriesReducer,
