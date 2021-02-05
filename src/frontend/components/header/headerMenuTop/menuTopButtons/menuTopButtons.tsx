@@ -1,15 +1,22 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {useLocation, withRouter} from 'react-router'
+import { Link } from 'react-router-dom'
+import { useLocation, withRouter } from 'react-router'
 import styles from './menuTopButtons.module.scss'
 import IconBasket from '../../../UI/icons/iconBasket'
 import {ROUTES} from '../../../../routes'
 import SearchBtn from './searchBtn/searchBtn'
-import matchPath from 'react-router/modules/matchPath'
+import { matchPath, RouteComponentProps } from 'react-router'
 // import IconHeart from '../../UI/icons/iconHeart'
 
 
-const MenuTopButtons = (props) => {
+interface IMenuTopButtons {
+  isClickedIconSearch: boolean,
+  handleClickIconSearch: () => void
+}
+
+type PropsType = IMenuTopButtons & RouteComponentProps
+
+const MenuTopButtons: React.FC<PropsType> = (props) => {
   const {isClickedIconSearch, handleClickIconSearch} = props
   //console.log('[MenuTopButtons][props]', props)
 

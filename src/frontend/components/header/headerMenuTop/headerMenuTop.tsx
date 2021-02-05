@@ -1,16 +1,21 @@
-import React, {useState} from 'react'
-import {withRouter} from "react-router"
+import React, { useState } from 'react'
+import { withRouter } from "react-router"
 import styles from './headerMenuTop.module.scss'
 import MenuTopCity from './menuTopCity'
 import MenuTopButtons from './menuTopButtons'
 import cn from 'classnames'
 import Search from '../../search/search'
-import {useLocation} from 'react-router'
-import { matchPath } from "react-router"
+import { useLocation, matchPath, RouteComponentProps } from 'react-router'
 import {ROUTES} from '../../../routes'
 
+interface IHeaderMenuTop {
+  isClickedIconSearch: boolean,
+  handleClickIconSearch: () => void
+}
 
-const HeaderMenuTop: React.FC = () => {
+type PropsType = IHeaderMenuTop & RouteComponentProps
+
+const HeaderMenuTop: React.FC<PropsType> = () => {
   const location = useLocation()
   const isCatalogPage = matchPath(location.pathname, {
     path: ROUTES.CATALOG + ":restId",
