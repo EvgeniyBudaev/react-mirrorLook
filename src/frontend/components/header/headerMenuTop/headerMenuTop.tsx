@@ -6,11 +6,11 @@ import MenuTopButtons from './menuTopButtons'
 import cn from 'classnames'
 import Search from '../../search/search'
 import {useLocation} from 'react-router'
-import matchPath from 'react-router/modules/matchPath'
+import { matchPath } from "react-router"
 import {ROUTES} from '../../../routes'
 
 
-const HeaderMenuTop = () => {
+const HeaderMenuTop: React.FC = () => {
   const location = useLocation()
   const isCatalogPage = matchPath(location.pathname, {
     path: ROUTES.CATALOG + ":restId",
