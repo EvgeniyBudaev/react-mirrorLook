@@ -1,11 +1,19 @@
 import {IS_WINDOW_SCROLL} from '../constants'
+import {IHandleWindowScroll} from '../types'
+
+interface IStateWindowScroll {
+  offset: number,
+  isOffset: boolean
+}
 
 const initialState = {
   offset: 100,
   isOffset: false,
 }
 
-const windowScrollReducer = (state = initialState, action) => {
+
+
+const windowScrollReducer = (state = initialState, action: IHandleWindowScroll): IStateWindowScroll => {
   const {type, payload} = action
 
   switch (type) {

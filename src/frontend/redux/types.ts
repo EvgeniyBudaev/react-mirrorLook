@@ -2,12 +2,21 @@ import {ThunkAction} from 'redux-thunk'
 import {RootStateType} from './reducers'
 import {Action} from 'redux'
 import {
-  ADD_REVIEW,
+  ADD_REVIEW, IS_WINDOW_SCROLL,
   LOAD_PRODUCT_BY_ID_FAILURE,
   LOAD_PRODUCT_BY_ID_REQUEST,
   LOAD_PRODUCT_BY_ID_SUCCESS, PRODUCT_DECREMENT,
   PRODUCT_INCREMENT, PRODUCT_REMOVE
 } from './constants'
+
+interface IIsOffset {
+  isOffset: boolean
+}
+
+export interface IHandleWindowScroll {
+  type: typeof IS_WINDOW_SCROLL,
+  payload: IIsOffset
+}
 
 export interface ILoading {
   [productId: string]: boolean

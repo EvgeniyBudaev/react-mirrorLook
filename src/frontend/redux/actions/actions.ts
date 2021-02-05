@@ -21,14 +21,16 @@ import {
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
 import {
   AppThunk,
-  GetStateType,
+  GetStateType, IHandleWindowScroll,
   IProduct,
   IReview,
   ProductByIdThunk,
   ProductByIdTypes, ProductDecrementType, ProductIncrementType, ProductRemoveType
 } from '../types'
 
-export const handleWindowScroll = (isOffset:any) => ({
+
+
+export const handleWindowScroll = (isOffset: boolean): IHandleWindowScroll => ({
   type: IS_WINDOW_SCROLL,
   payload: {isOffset},
 })
