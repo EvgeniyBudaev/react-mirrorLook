@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Twitter = () => (
+const Twitter: React.FC = () => (
   <svg
     width="29"
     height="29"

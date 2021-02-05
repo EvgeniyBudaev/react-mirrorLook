@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Facebook = () => (
+const Facebook: React.FC = () => (
   <svg
     width="29"
     height="29"

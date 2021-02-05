@@ -7,7 +7,7 @@ import FooterForm from './footerForm'
 import FooterPolitics from './footerPolitics'
 import {ROUTES} from '../../routes'
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const footerLogoAndSocial = classNames(
     styles.innerItem,
     styles.footerLogoAndSocial

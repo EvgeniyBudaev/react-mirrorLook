@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FooterLogo = () => (
+const FooterLogo: React.FC = () => (
   <svg
     width="200"
     height="60"

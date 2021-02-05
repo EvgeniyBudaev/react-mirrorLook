@@ -6,7 +6,7 @@ import VK from './vk'
 import Instagram from './instagram'
 import Twitter from './twitter'
 
-const FooterLogoAndSocial = () => {
+const FooterLogoAndSocial: React.FC = () => {
   return (
     <>
       <div className={styles.footerLogo}>

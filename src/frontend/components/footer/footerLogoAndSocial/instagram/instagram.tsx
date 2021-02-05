@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Instagram = () => (
+const Instagram: React.FC = () => (
   <svg
     width="30"
     height="30"

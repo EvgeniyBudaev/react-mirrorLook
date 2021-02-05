@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VK = () => (
+const VK: React.FC = () => (
   <svg
     width="29"
     height="29"

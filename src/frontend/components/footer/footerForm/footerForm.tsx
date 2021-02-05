@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './footerForm.module.scss'
 import FooterInput from './footerInput'
 
-const FooterForm = () => {
+const FooterForm: React.FC = () => {
   return (
     <div className={styles.form}>
       <div className={styles.formTitle}>
