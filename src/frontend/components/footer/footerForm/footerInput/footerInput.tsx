@@ -27,7 +27,12 @@ const CssTextField = withStyles({
   },
 })(TextField)
 
-const FooterInput = (props) => {
+interface IFooterInput {
+  id: string,
+  label: string
+}
+
+const FooterInput: React.FC<IFooterInput> = (props) => {
   const {id, label} = props
 
   return (
