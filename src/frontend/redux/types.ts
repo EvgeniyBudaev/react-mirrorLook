@@ -2,7 +2,7 @@ import {ThunkAction} from 'redux-thunk'
 import {RootStateType} from './reducers'
 import {Action} from 'redux'
 import {
-  ADD_REVIEW, IS_WINDOW_SCROLL,
+  ADD_REVIEW, FILTER_PRODUCT, IS_WINDOW_SCROLL,
   LOAD_PRODUCT_BY_ID_FAILURE,
   LOAD_PRODUCT_BY_ID_REQUEST,
   LOAD_PRODUCT_BY_ID_SUCCESS, PRODUCT_DECREMENT,
@@ -121,3 +121,13 @@ type ProductRemoveActionType = {
   payload: {id: string}
 }
 export type ProductRemoveType = (id: string) => ProductRemoveActionType
+
+
+export interface IFilterState {
+  filterState: Array<string>
+}
+
+export interface IFilterProduct {
+  type: typeof FILTER_PRODUCT,
+  payload: IFilterState
+}

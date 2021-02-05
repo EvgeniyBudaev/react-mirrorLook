@@ -21,7 +21,7 @@ import {
 import {reviewsLoadedSelector, reviewsLoadingSelector, usersLoadedSelector, usersLoadingSelector} from '../selectors'
 import {
   AppThunk,
-  GetStateType, IHandleWindowScroll,
+  GetStateType, IFilterProduct, IFilterState, IHandleWindowScroll,
   IProduct,
   IReview,
   ProductByIdThunk,
@@ -149,8 +149,7 @@ export const searchProduct = (text: string) => (dispatch: any) => {
 }
 
 
-
-export const filterProduct = (checked: any) => (dispatch: any) => {
+export const filterProduct = (checked: IFilterState) => (dispatch: Dispatch<IFilterProduct>) => {
   dispatch({
     type: FILTER_PRODUCT,
     payload: checked
