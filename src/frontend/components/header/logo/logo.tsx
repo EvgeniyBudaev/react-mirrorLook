@@ -4,7 +4,7 @@ import styles from './logo.module.scss'
 import './logo.scss'
 import {ROUTES} from '../../../routes'
 
-const Logo = () => {
+const Logo: React.FC = () => {
   return (
     <Link className={styles.logo} to={ROUTES.HOME}>
       <svg
