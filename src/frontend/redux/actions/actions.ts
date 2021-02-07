@@ -53,7 +53,7 @@ export const loadCategories = (): LoadCategoriesActionType => ({
 })
 
 
-type LoadProductsActionType = {
+export type LoadProductsActionType = {
   type: string,
   CallAPI: string,
   categoryId: string

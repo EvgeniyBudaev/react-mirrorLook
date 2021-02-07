@@ -42,7 +42,6 @@ interface IPaginationUI {
 
 const PaginationUI: React.FC<IPaginationUI> = (props) => {
   const {total, limit, url, currentPage} = props
-  console.log('PROPS', props)
   const pagesCount = Math.ceil(total / limit)
   const classes = useStyles()
 

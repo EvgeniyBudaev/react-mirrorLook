@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react'
-import {connect} from 'react-redux'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import ProductCard from './productCard'
-import {loadProductById} from '../../redux/actions/actions'
-import {createStructuredSelector} from 'reselect'
+import { loadProductById } from '../../redux/actions/actions'
+import { createStructuredSelector } from 'reselect'
 import {
   productByIdSelector,
   productLoadedSelector,
@@ -11,7 +11,7 @@ import {
 import Loader from '../loader'
 
 const Product = (props) => {
-  //console.log('[Product][props]', props)
+  console.log('[Product][props]', props)
   const {match, loadProductById, loading, loaded, product} = props
   const id = match.params.id
 
